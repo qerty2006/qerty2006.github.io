@@ -11,7 +11,7 @@ So a neural network is a multivariable function that returns a multivariable ans
 
 In order to create the neural network, we need to know what problem we are trying to solve; for machine learning models, the starting point is recognizing handwritten digits from the [MNIST dataset][dataset] 
 
-![Example Images](/qerty2006.github.io/_site/assets/MnistExamplesModified.png)
+![Example Images](_site/assets/MnistExamplesModified.png)
 
 
 
