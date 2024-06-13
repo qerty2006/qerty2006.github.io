@@ -8,7 +8,8 @@ categories: jekyll update
 In this post, I'll explain the fundamentals of a neural network in a way that a high school maths student, even with almost no computer science background, would be able to understand it as: an optimization problem.
 
 ## So what is a neural network?
-A neural network is a multivariable function that returns a multivariable answer. How it does that is what I will first explain.
+A neural network is a multivariable function that returns a multivariable answer.  
+To understand how this works, let's start with a simple explanation.
 
 In order to create the neural network, we need to know what problem we are trying to solve; for machine learning models, the starting point is recognizing handwritten digits from the [MNIST dataset][dataset], all numbers between 0 and 9.
 
@@ -31,7 +32,7 @@ All images are 28x28 pixel drawings with black backgrounds with grayscale drawin
 1 row   |   0,0,0,0,0,....0  
         |____________________]
 ```
-In the eyes of the neural network, as long as the 28x28 matrix is mapped to this 1x784 matrix  in the exact same way each time, these 2 matricies are the same thing, one version for the human to understand as a grayscale image, and one version for the neural network to do calulations on to get an answer. 
+In the eyes of the neural network, as long as the 28x28 matrix is mapped to this 1x784 matrix in the exact same way every time, these 2 matricies are just two forms of the same thing. One version is for the human to understand it as a grayscale image, and the other version is the format used by the neural network for calculations. 
 
 
 As for calculations, how does the neural network arrive at its answer?
@@ -63,7 +64,7 @@ What we get when we start:
 
 model => [0.456, 0.675, 0.986, 0.67...]
 ```
-
+This jumble 
 
 ## But How Is This Optimization?
 
