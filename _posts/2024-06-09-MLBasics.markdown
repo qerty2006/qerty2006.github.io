@@ -4,6 +4,30 @@ title:  "The Basics of a Neural Network Through the Eyes of a (Student) Mathemat
 date:   2024-06-12 12:00:00 -0700
 categories: jekyll update
 ---
+
+Today, I'll be trying to explain the very basics of a neural network, in a way that a high school calculus student with almost no computer science background would be able to understand it as: an optimization problem.
+
+So a neural network is a multivariable function that returns a multivariable answer. How it does that is what I will first explain.
+
+In order to create the neural network, we need to know what problem we are trying to solve; for machine learning models, the starting point is recognizing handwritten digits from the [MNIST dataset][dataset] 
+
+![Example Images](/qerty2006.github.io/_site/assets/MnistExamplesModified.png)
+
+
+
+
+
+
+
+
+
+
+
+
+[dataset]: https://www.kaggle.com/datasets/hojjatk/mnist-dataset
+
+
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
