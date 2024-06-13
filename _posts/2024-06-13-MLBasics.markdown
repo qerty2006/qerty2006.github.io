@@ -39,16 +39,15 @@ As for calculations, how does the neural network arrive at its answer?
 
 ## Neural Network Parts
 
-This section discusses the basic parts we put into a neural network to let it work.
-Neural networks work by activating layers of artificial nuerons to different extents until a final answer is reached after the final layer. 
+In this part, I'll explain the basic parts we put into a neural network for it to work. 
 
-A particular neuron performs 3 steps:
+Neural networks work by sequentially activating layers of artificial nuerons until a final answer is reached after passing through the last layer. A particular neuron performs 3 steps:
 
-1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it. It's like caring about some factors more than others, like seeing if there are loops in an image when seeing if it's a 3 vs an 8.
+1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it. It's like caring about some factors more than others, like seeing if there are loops in an image when thinking if an image is a 3 vs an 8.
 
 2. Apply a **bias** to the weight sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don't output really high values to increse their base value. 
 
-3. Apply an **activation function** to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmita value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values become closer to -1 and 1. For this purpose, We'll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.
+3. Apply an **activation function** to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmita value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values become closer to -1 and 1. For this model, we'll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.
  
 This is repeated for every layer of neurons one by one until the final layer, which in this case gives a 1x10 matrix, with the values of the 10 cells tied to which number the model thinks is being shown. 
 ```
