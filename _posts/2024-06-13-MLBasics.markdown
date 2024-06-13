@@ -5,7 +5,7 @@ date:   2024-06-13 12:00:00 -0700
 categories: jekyll update
 ---
 
-Today, I'll be trying to explain the very basics of a neural network, in a way that a high school calculus student with almost no computer science background would be able to understand it as: an optimization problem.
+In this post, I'll explain the fundamentals of a neural network in a way that a high school maths student, even with almost no computer science background, would be able to understand it as: an optimization problem.
 
 ## So what is a neural network?
 A neural network is a multivariable function that returns a multivariable answer. How it does that is what I will first explain.
