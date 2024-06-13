@@ -7,45 +7,235 @@ categories: jekyll update
 
 Today, I'll be trying to explain the very basics of a neural network, in a way that a high school calculus student with almost no computer science background would be able to understand it as: an optimization problem.
 
-So a neural network is a multivariable function that returns a multivariable answer. How it does that is what I will first explain.
+## So what is a neural network?
+A neural network is a multivariable function that returns a multivariable answer. How it does that is what I will first explain.
 
-In order to create the neural network, we need to know what problem we are trying to solve; for machine learning models, the starting point is recognizing handwritten digits from the [MNIST dataset][dataset] 
+In order to create the neural network, we need to know what problem we are trying to solve; for machine learning models, the starting point is recognizing handwritten digits from the [MNIST dataset][dataset], all numbers between 0 and 9.
 
-![Example Images](_site/assets/MnistExamplesModified.png)
+![Example Images](/assets/MNIST.png)
+
+All images are 28x28 pixel drawings with black backgrounds with grayscale drawings of numbers on top, so to make an input for our function, we'll turn this 28x28 matrix of numbers into a 1x784 vector (meaning 1 row matrix), stacking each of the 28 rows next to each other:
+
+```
+        ______________________[
+        |       28 columns
+        |   [0,0,0,0,0,....0],
+        |   [0,0,0,0,0,....0],
+28 rows |   ...
+        |   [0,0,0,0,0,....0]
+        |_____________________]
+
+        ||
+        \/
+
+        _____________________[
+        |     784 columns
+1 row   |   0,0,0,0,0,....0  
+        |____________________]
+```
+In the eyes of the neural network, as long as the 28x28 matrix is mapped to this 1x784 matrix  in the exact same way each time, these 2 matricies are the same thing, one version for the human to understand as a grayscale image, and one version for the neural network to do calulations on to get an answer. 
 
 
+As for calculations, how does the neural network arrive at its answer?
+
+## Neural Network Parts
+
+This section discusses the basic parts we put into a neural network to let it work.
+Neural networks work by activating layers of artificial nuerons to different extents until a final answer is reached after the final layer. 
+
+A particular neuron performs 3 steps:
+
+1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it. It's like caring about some factors more than others, like seeing if there are loops in an image when seeing if it's a 3 vs an 8.
+
+2. Apply a **bias** to the weight sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don't output really high values to increse their base value. 
+
+3. Apply an **activation function** to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmita value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values become closer to -1 and 1. For this purpose, We'll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.
+ 
+This is repeated for every layer of neurons one by one until the final layer, which in this case gives a 1x10 matrix, with the values of the 10 cells tied to which number the model thinks is being shown. 
+```
+Expected values
+0 => [1,0,0,0,0,0,0,0,0,0]
+1 => [0,1,0,0,0,0,0,0,0,0]
+2 => [0,0,1,0,0,0,0,0,0,0]
+...
+9 => [0,0,0,0,0,0,0,0,0,1]
 
 
+What we get when we start:
+
+model => [0.456, 0.675, 0.986, 0.67...]
+```
 
 
+## But How Is This Optimization?
+
+In college calculus classes (and AP Calculus AB and BC), students learn that optimization problems are when derivatives are used to minimize or maximize the value of a single number through derivatives. In order to turn our training session into an optimization problem, we need to turn 10 numbers into 1. Our answer: the error function. 
+{% highlight python %}
+Error(expected_matrix, output_matrix) =
+   squarederror = 0
+   for each cell in the same position in both matricies a:
+   add (output_matrix[a] - expected_matrix[0])^2
+   return squarederror
+{% endhighlight %}
+This error function should be as close to 0 as possible, but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the currect iteration of the network. The gradient will return a matrix that gives the values needed to adjust the current neurons with, **but** using these values directly will *increase* the error, not reduce it! Simply flip the sign to go in the direction to make the error go down. 
+
+## Gameplan to Make Our Neural Network
+
+Before I show you how to make a neural network in python, let's go over the key steps that if you understand you can translate this process over to other languages:
+
+1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can tranlast into arrays your neural network can read. You'll also need a way to translate the integers given as the answer in the dataset into arrays to use in the error function, a method which I showed two sections ago.
+2. Make your starting neural network. You'll not only need to know how many layers and neurons per layer that you want, but also the size of your input matirx and output matrix.
+3. Write the function that takes in your input matrix and neuron values to make the output matrix
+4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.
+5. Test the model! It is good practice to separate training data from testing data to see how the model does with something new.
+
+## Making the Neural Network in Python
+
+Before we begin, remember this exercise is merely a exercise in seeing how neural networks learn, and there are FAR better models that use libraries like pytorch to train faster, but I feel that seeing the inner workings of a basic model makes it easier to understand much more complicated concepts in that same field.
+
+To begin, import the following libraries:
+{% highlight python %}
+import numpy as np
+import math
+import csv
+import random as r
+import numdifftools as nd
+{% endhighlight %}
+
+1. Getting the dataset:
+{% highlight python %}
+labels = []
+data = []
+with open('./sample_data/mnist_train_small.csv', newline='') as csvfile:
+    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    for row in spamreader:
+      unfiltered_data = row[0].split(",")
+      unfiltered_data = [float(i) for i in unfiltered_data]
+      label = [0 for i in range(10)]
+      label[int(unfiltered_data.pop(0))] = 1
+      labels.append(label)
+      data.append(unfiltered_data)
+{% endhighlight %}
+
+This turns the csv into easy to use arrays that we can input into our model.
+
+2. Making the starting neural network:
+
+{% highlight python %}
 
 
+#creating the brain
+layers = 2 # all layers have the same number of neurons
+neurons = 2
+
+input_size = 28**2 #size of the images from MNIST
+output_size = 10 # 0 - 9
+
+relu = lambda x: x if x>0 else 0 #our activation function
+
+# Turns our 1d array into a many dimensional array that we need for our network
+def _1d_brain(x): 
+  global index
+  index = -1
+  #print(index)
+  def next():
+    global index
+    index = index + 1
+    #print(x[index])
+    return x[index]
+
+  brain = []
+  brain.append([[[next() for i in range(input_size)],next()] for i in range(neurons)])
+  #print("reach")
+  for i in range(1,layers):
+    brain.append([])
+    for j in range(neurons):
+      brain[i].append([[next() for i in range(neurons)],next()])
+  #print("reach")
+  brain.append([[[next() for i in range(neurons)],next()] for i in range(output_size)])
+  return brain
+
+# Turns our many dimensional array into a 1d array
+def flatten(data): 
+  flat_list = []
+  for item in data:
+    if isinstance(item, (list, tuple)):
+      flat_list.extend(flatten(item))
+    else:
+      flat_list.append(item)
+  return flat_list
 
 
+# matrix multiplication for a single cell, this can definitely be optimized
+# by using once operation to return an entire matrix
+def matmul(a,b):
+  return sum([a[i]*b[i] for i in range(len(a))]) if len(a) == len(b) else None
 
+
+# This is how we will get a result from our neural network
+
+#count = 0
+def runbrain(brain, input):
+  #global count
+  #count+=1
+  #if count%10000 == 0:
+    #print(count)
+  isfirst = True
+  for layer in range(len(brain)-1):
+    if isfirst:
+      #print(len(input))
+      output = [relu(matmul(input,neuron[0]) + neuron[1]) for neuron in brain[layer]]
+      isfirst = False
+    else:
+      output = [relu(matmul(output,neuron[0]) + neuron[1]) for neuron in brain[layer]]
+  return [relu(matmul(output,neuron[0]) + neuron[1]) for neuron in brain[-1]]
+
+# error function
+def error(output, expected):
+  #print(output)
+  #print(expected)
+  output = [i/sum(output) for i in output]
+  return sum([(output[i]-expected[i])**2 for i in range(len(output))])
+
+# 2 functions in 1
+def run1dbrainerror(brain,index):
+   return error(runbrain(_1d_brain(brain.tolist()), data[index]),labels[index])
+
+
+# make the brain
+brain =  _1d_brain([r.uniform(-1,1) for i in range((input_size+1)*neurons + neurons*(neurons+1)*(layers-1) + (neurons+1)*output_size)])
+print(brain)
+
+
+{% endhighlight %}
+
+All of this is the work that allows us to run a neural network, now we just need to train it:
+
+{% highlight python %}
+learning_rate = 0.1
+for i in range(10):
+  sum_grad = [0 for i in range(len(flatten(brain)))]
+  for j in range(10):
+    input = r.randint(0,len(data)-1)
+    print(error(runbrain(brain,data[input]),labels[input]))
+    print(i,j)
+    def fun(brain):
+      return run1dbrainerror(brain,input)
+    grad2 = nd.Gradient(fun)(flatten(brain))
+    sum_grad = [sum_grad[k] + grad2[k] for k in range(len(grad2))]
+  sum_grad = [i/10 for i in sum_grad]
+  flatbrain = flatten(brain)
+  for i in range(len(flatbrain)):
+    flatbrain[i] -= learning_rate*sum_grad[i]
+  brain = _1d_brain(flatbrain)
+  print(brain)
+{% endhighlight %}
+
+nd.Gradient runs our neural network a couple thousand times (because of the 1000s of variables in the neural network) to find the gradient at a particular point, so it's important that our brain running program runs as fast as possible. If I were to reprogram this, I would use some linear algebra tricks to perform a single matrix multiplication and addition per layer and speed this up.
+
+But this is it! Now you have made (or copied, it's okay as long as you understand it) your own little neural network that tries to recognize digits. At the end of this post, I've placed my own Google Colab so you can see this [neural network][nn] in action!
 
 [dataset]: https://www.kaggle.com/datasets/hojjatk/mnist-dataset
+[nn]: https://colab.research.google.com/drive/1-s3ygDGrsKSEHgs9cGBZWEo6PuSwixwa?usp=sharing
 
 
-
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-```
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/

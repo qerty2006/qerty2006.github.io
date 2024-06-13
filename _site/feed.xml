@@ -1,4 +1,230 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-08T15:46:55-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Royans!</title><link href="http://localhost:4000/jekyll/update/2024/06/08/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Royans!" /><published>2024-06-08T15:39:35-07:00</published><updated>2024-06-08T15:39:35-07:00</updated><id>http://localhost:4000/jekyll/update/2024/06/08/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/06/08/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-06-13T15:25:43-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">The Basics of a Neural Network Through the Eyes of a (Student) Mathematician</title><link href="http://localhost:4000/jekyll/update/2024/06/12/MLBasics.html" rel="alternate" type="text/html" title="The Basics of a Neural Network Through the Eyes of a (Student) Mathematician" /><published>2024-06-12T12:00:00-07:00</published><updated>2024-06-12T12:00:00-07:00</updated><id>http://localhost:4000/jekyll/update/2024/06/12/MLBasics</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/06/12/MLBasics.html"><![CDATA[<p>Today, I’ll be trying to explain the very basics of a neural network, in a way that a high school calculus student with almost no computer science background would be able to understand it as: an optimization problem.</p>
+
+<h2 id="so-what-is-a-neural-network">So what is a neural network?</h2>
+<p>A neural network is a multivariable function that returns a multivariable answer. How it does that is what I will first explain.</p>
+
+<p>In order to create the neural network, we need to know what problem we are trying to solve; for machine learning models, the starting point is recognizing handwritten digits from the <a href="https://www.kaggle.com/datasets/hojjatk/mnist-dataset">MNIST dataset</a>, all numbers between 0 and 9.</p>
+
+<p><img src="/assets/MNIST.png" alt="Example Images" /></p>
+
+<p>All images are 28x28 pixel drawings with black backgrounds with grayscale drawings of numbers on top, so to make an input for our function, we’ll turn this 28x28 matrix of numbers into a 1x784 vector (meaning 1 row matrix), stacking each of the 28 rows next to each other:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        ______________________[
+        |       28 columns
+        |   [0,0,0,0,0,....0],
+        |   [0,0,0,0,0,....0],
+28 rows |   ...
+        |   [0,0,0,0,0,....0]
+        |_____________________]
+
+        ||
+        \/
+
+        _____________________[
+        |     784 columns
+1 row   |   0,0,0,0,0,....0  
+        |____________________]
+</code></pre></div></div>
+<p>In the eyes of the neural network, as long as the 28x28 matrix is mapped to this 1x784 matrix  in the exact same way each time, these 2 matricies are the same thing, one version for the human to understand as a grayscale image, and one version for the neural network to do calulations on to get an answer.</p>
+
+<p>As for calculations, how does the neural network arrive at its answer?</p>
+
+<h2 id="neural-network-parts">Neural Network Parts</h2>
+
+<p>This section discusses the basic parts we put into a neural network to let it work.
+Neural networks work by activating layers of artificial nuerons to different extents until a final answer is reached after the final layer.</p>
+
+<p>A particular neuron performs 3 steps:</p>
+
+<ol>
+  <li>
+    <p>Compute a <strong>weighted sum</strong> of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it. It’s like caring about some factors more than others, like seeing if there are loops in an image when seeing if it’s a 3 vs an 8.</p>
+  </li>
+  <li>
+    <p>Apply a <strong>bias</strong> to the weight sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don’t output really high values to increse their base value.</p>
+  </li>
+  <li>
+    <p>Apply an <strong>activation function</strong> to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmita value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values become closer to -1 and 1. For this purpose, We’ll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.</p>
+  </li>
+</ol>
+
+<p>This is repeated for every layer of neurons one by one until the final layer, which in this case gives a 1x10 matrix, with the values of the 10 cells tied to which number the model thinks is being shown.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Expected values
+0 =&gt; [1,0,0,0,0,0,0,0,0,0]
+1 =&gt; [0,1,0,0,0,0,0,0,0,0]
+2 =&gt; [0,0,1,0,0,0,0,0,0,0]
+...
+9 =&gt; [0,0,0,0,0,0,0,0,0,1]
+
+
+What we get when we start:
+
+model =&gt; [0.456, 0.675, 0.986, 0.67...]
+</code></pre></div></div>
+
+<h2 id="but-how-is-this-optimization">But How Is This Optimization?</h2>
+
+<p>In college calculus classes (and AP Calculus AB and BC), students learn that optimization problems are when derivatives are used to minimize or maximize the value of a single number through derivatives. In order to turn our training session into an optimization problem, we need to turn 10 numbers into 1. Our answer: the error function.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">Error</span><span class="p">(</span><span class="n">expected_matrix</span><span class="p">,</span> <span class="n">output_matrix</span><span class="p">)</span> <span class="o">=</span>
+   <span class="n">squarederror</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">for</span> <span class="n">each</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">both</span> <span class="n">matricies</span> <span class="n">a</span><span class="p">:</span>
+   <span class="n">add</span> <span class="p">(</span><span class="n">output_matrix</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-</span> <span class="n">expected_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">^</span><span class="mi">2</span>
+   <span class="k">return</span> <span class="n">squarederror</span></code></pre></figure>
+
+<p>This error function should be as close to 0 as possible, but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the currect iteration of the network. The gradient will return a matrix that gives the values needed to adjust the current neurons with, <strong>but</strong> using these values directly will <em>increase</em> the error, not reduce it! Simply flip the sign to go in the direction to make the error go down.</p>
+
+<h2 id="gameplan-to-make-our-neural-network">Gameplan to Make Our Neural Network</h2>
+
+<p>Before I show you how to make a neural network in python, let’s go over the key steps that if you understand you can translate this process over to other languages:</p>
+
+<ol>
+  <li>Get your dataset. For this project, I’ll be using the <a href="https://www.kaggle.com/datasets/hojjatk/mnist-dataset">MNIST dataset</a> as shown above, but this will work for any dataset that you can tranlast into arrays your neural network can read. You’ll also need a way to translate the integers given as the answer in the dataset into arrays to use in the error function, a method which I showed two sections ago.</li>
+  <li>Make your starting neural network. You’ll not only need to know how many layers and neurons per layer that you want, but also the size of your input matirx and output matrix.</li>
+  <li>Write the function that takes in your input matrix and neuron values to make the output matrix</li>
+  <li>Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.</li>
+  <li>Test the model! It is good practice to separate training data from testing data to see how the model does with something new.</li>
+</ol>
+
+<h2 id="making-the-neural-network-in-python">Making the Neural Network in Python</h2>
+
+<p>Before we begin, remember this exercise is merely a exercise in seeing how neural networks learn, and there are FAR better models that use libraries like pytorch to train faster, but I feel that seeing the inner workings of a basic model makes it easier to understand much more complicated concepts in that same field.</p>
+
+<p>To begin, import the following libraries:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="n">r</span>
+<span class="kn">import</span> <span class="nn">numdifftools</span> <span class="k">as</span> <span class="n">nd</span></code></pre></figure>
+
+<ol>
+  <li>Getting the dataset:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'./sample_data/mnist_train_small.csv'</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s">''</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">spamreader</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">' '</span><span class="p">,</span> <span class="n">quotechar</span><span class="o">=</span><span class="s">'|'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">spamreader</span><span class="p">:</span>
+      <span class="n">unfiltered_data</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">split</span><span class="p">(</span><span class="s">","</span><span class="p">)</span>
+      <span class="n">unfiltered_data</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">unfiltered_data</span><span class="p">]</span>
+      <span class="n">label</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+      <span class="n">label</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">unfiltered_data</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))]</span> <span class="o">=</span> <span class="mi">1</span>
+      <span class="n">labels</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+      <span class="n">data</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">unfiltered_data</span><span class="p">)</span></code></pre></figure>
+
+<p>This turns the csv into easy to use arrays that we can input into our model.</p>
+
+<ol>
+  <li>Making the starting neural network:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1">#creating the brain
+</span><span class="n">layers</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># all layers have the same number of neurons
+</span><span class="n">neurons</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">input_size</span> <span class="o">=</span> <span class="mi">28</span><span class="o">**</span><span class="mi">2</span> <span class="c1">#size of the images from MNIST
+</span><span class="n">output_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># 0 - 9
+</span>
+<span class="n">relu</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="c1">#our activation function
+</span>
+<span class="c1"># Turns our 1d array into a many dimensional array that we need for our network
+</span><span class="k">def</span> <span class="nf">_1d_brain</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+  <span class="k">global</span> <span class="n">index</span>
+  <span class="n">index</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="c1">#print(index)
+</span>  <span class="k">def</span> <span class="nf">next</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">index</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1">#print(x[index])
+</span>    <span class="k">return</span> <span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+  <span class="n">brain</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">brain</span><span class="p">.</span><span class="n">append</span><span class="p">([[[</span><span class="nb">next</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_size</span><span class="p">)],</span><span class="nb">next</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">neurons</span><span class="p">)])</span>
+  <span class="c1">#print("reach")
+</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">layers</span><span class="p">):</span>
+    <span class="n">brain</span><span class="p">.</span><span class="n">append</span><span class="p">([])</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">neurons</span><span class="p">):</span>
+      <span class="n">brain</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">([[</span><span class="nb">next</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">neurons</span><span class="p">)],</span><span class="nb">next</span><span class="p">()])</span>
+  <span class="c1">#print("reach")
+</span>  <span class="n">brain</span><span class="p">.</span><span class="n">append</span><span class="p">([[[</span><span class="nb">next</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">neurons</span><span class="p">)],</span><span class="nb">next</span><span class="p">()]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">output_size</span><span class="p">)])</span>
+  <span class="k">return</span> <span class="n">brain</span>
+
+<span class="c1"># Turns our many dimensional array into a 1d array
+</span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">data</span><span class="p">):</span> 
+  <span class="n">flat_list</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+      <span class="n">flat_list</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">flat_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">flat_list</span>
+
+
+<span class="c1"># matrix multiplication for a single cell, this can definitely be optimized
+# by using once operation to return an entire matrix
+</span><span class="k">def</span> <span class="nf">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+  <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">else</span> <span class="bp">None</span>
+
+
+<span class="c1"># This is how we will get a result from our neural network
+</span>
+<span class="c1">#count = 0
+</span><span class="k">def</span> <span class="nf">runbrain</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
+  <span class="c1">#global count
+</span>  <span class="c1">#count+=1
+</span>  <span class="c1">#if count%10000 == 0:
+</span>    <span class="c1">#print(count)
+</span>  <span class="n">isfirst</span> <span class="o">=</span> <span class="bp">True</span>
+  <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">isfirst</span><span class="p">:</span>
+      <span class="c1">#print(len(input))
+</span>      <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">relu</span><span class="p">(</span><span class="n">matmul</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">neuron</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">neuron</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">neuron</span> <span class="ow">in</span> <span class="n">brain</span><span class="p">[</span><span class="n">layer</span><span class="p">]]</span>
+      <span class="n">isfirst</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">relu</span><span class="p">(</span><span class="n">matmul</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="n">neuron</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">neuron</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">neuron</span> <span class="ow">in</span> <span class="n">brain</span><span class="p">[</span><span class="n">layer</span><span class="p">]]</span>
+  <span class="k">return</span> <span class="p">[</span><span class="n">relu</span><span class="p">(</span><span class="n">matmul</span><span class="p">(</span><span class="n">output</span><span class="p">,</span><span class="n">neuron</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">neuron</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">neuron</span> <span class="ow">in</span> <span class="n">brain</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="c1"># error function
+</span><span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+  <span class="c1">#print(output)
+</span>  <span class="c1">#print(expected)
+</span>  <span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">output</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">output</span><span class="p">]</span>
+  <span class="k">return</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">expected</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">output</span><span class="p">))])</span>
+
+<span class="c1"># 2 functions in 1
+</span><span class="k">def</span> <span class="nf">run1dbrainerror</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span><span class="n">index</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">error</span><span class="p">(</span><span class="n">runbrain</span><span class="p">(</span><span class="n">_1d_brain</span><span class="p">(</span><span class="n">brain</span><span class="p">.</span><span class="n">tolist</span><span class="p">()),</span> <span class="n">data</span><span class="p">[</span><span class="n">index</span><span class="p">]),</span><span class="n">labels</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+
+<span class="c1"># make the brain
+</span><span class="n">brain</span> <span class="o">=</span>  <span class="n">_1d_brain</span><span class="p">([</span><span class="n">r</span><span class="p">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">((</span><span class="n">input_size</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">neurons</span> <span class="o">+</span> <span class="n">neurons</span><span class="o">*</span><span class="p">(</span><span class="n">neurons</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">layers</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">neurons</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">output_size</span><span class="p">)])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span></code></pre></figure>
+
+<p>All of this is the work that allows us to run a neural network, now we just need to train it:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+  <span class="n">sum_grad</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flatten</span><span class="p">(</span><span class="n">brain</span><span class="p">)))]</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">input</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">error</span><span class="p">(</span><span class="n">runbrain</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="nb">input</span><span class="p">]),</span><span class="n">labels</span><span class="p">[</span><span class="nb">input</span><span class="p">]))</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">brain</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">run1dbrainerror</span><span class="p">(</span><span class="n">brain</span><span class="p">,</span><span class="nb">input</span><span class="p">)</span>
+    <span class="n">grad2</span> <span class="o">=</span> <span class="n">nd</span><span class="p">.</span><span class="n">Gradient</span><span class="p">(</span><span class="n">fun</span><span class="p">)(</span><span class="n">flatten</span><span class="p">(</span><span class="n">brain</span><span class="p">))</span>
+    <span class="n">sum_grad</span> <span class="o">=</span> <span class="p">[</span><span class="n">sum_grad</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">grad2</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">grad2</span><span class="p">))]</span>
+  <span class="n">sum_grad</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sum_grad</span><span class="p">]</span>
+  <span class="n">flatbrain</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">flatbrain</span><span class="p">)):</span>
+    <span class="n">flatbrain</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">learning_rate</span><span class="o">*</span><span class="n">sum_grad</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="n">brain</span> <span class="o">=</span> <span class="n">_1d_brain</span><span class="p">(</span><span class="n">flatbrain</span><span class="p">)</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">brain</span><span class="p">)</span></code></pre></figure>
+
+<p>nd.Gradient runs our neural network a couple thousand times (because of the 1000s of variables in the neural network) to find the gradient at a particular point, so it’s important that our brain running program runs as fast as possible. If I were to reprogram this, I would use some linear algebra tricks to perform a single matrix multiplication and addition per layer and speed this up.</p>
+
+<p>But this is it! Now you have made (or copied, it’s okay as long as you understand it) your own little neural network that tries to recognize digits. At the end of this post, I’ve placed my own Google Colab so you can see this <a href="https://colab.research.google.com/drive/1-s3ygDGrsKSEHgs9cGBZWEo6PuSwixwa?usp=sharing">neural network</a> in action!</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Today, I’ll be trying to explain the very basics of a neural network, in a way that a high school calculus student with almost no computer science background would be able to understand it as: an optimization problem.]]></summary></entry><entry><title type="html">Welcome to Royans!</title><link href="http://localhost:4000/jekyll/update/2024/06/08/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Royans!" /><published>2024-06-08T15:39:35-07:00</published><updated>2024-06-08T15:39:35-07:00</updated><id>http://localhost:4000/jekyll/update/2024/06/08/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/06/08/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
