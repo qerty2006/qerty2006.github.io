@@ -41,7 +41,7 @@ As for calculations, how does the neural network arrive at its answer?
 
 In this part, I'll explain the basic parts we put into a neural network for it to work. 
 
-Neural networks work by sequentially activating layers of artificial nuerons until a final answer is reached after passing through the last layer. A particular neuron performs 3 steps:
+Neural networks work by sequentially activating layers of artificial nuerons to varying degrees. A final answer is reached after the network passes results through the last layer. A particular neuron performs 3 steps:
 
 1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it. It's like caring about some factors more than others, like seeing if there are loops in an image when thinking if an image is a 3 vs an 8.
 
