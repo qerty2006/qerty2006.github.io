@@ -84,9 +84,9 @@ This error function should be as close to 0 as possible (in our case, above 1), 
 Before I show you how to make a neural network in python, let's go over the key steps to this process (when understood, you can translate these steps to other coding languages):
 
 1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can translate into arrays that your neural network can read. You'll also need a way to translate the answers in the dataset (given as integers) into arrays to use in the error function. I showed a method [two sections ago][tsa].
-2. Make your starting neural network. You'll not only need to know how many layers and neurons per layer that you want, but also the size of your input matrix and output matrix.
+2. Make your starting neural network. You'll not only need to know the size of your input matrix and output matrix, but also decide how many layers and neurons per layer that you want.
 3. Write the function that takes in your input matrix and neuron values to make the output matrix.
-4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.=
+4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.
 5. Test the model! It is good practice to separate training data from testing data to see how the model does with something new.
 
 ## Making the Neural Network in Python
@@ -231,7 +231,7 @@ for i in range(10):
   print(brain)
 {% endhighlight %}
 
-nd.Gradient runs our neural network a couple thousand times (because of the 1000s of variables in the neural network) to find the gradient at a particular point, so it's important that our brain running program runs as fast as possible. If I were to reprogram this, I would use some linear algebra tricks to perform a single matrix multiplication and addition per layer and speed this up.
+*nd.Gradient* runs our neural network a couple thousand times (because of the 1000s of variables in the neural network) to find the gradient at a particular point, so it's important that our *runbrain* function runs as fast as possible. If I were to reprogram this, I would use some linear algebra tricks to perform a single matrix multiplication and addition per layer and speed this up.
 
 But this is it! Now you have made (or copied, it's okay as long as you understand it) your own little neural network that tries to recognize digits. At the end of this post, I've placed my own Google Colab so you can see this [neural network][nn] in action!
 
