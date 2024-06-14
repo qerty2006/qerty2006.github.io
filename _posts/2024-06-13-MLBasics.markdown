@@ -83,7 +83,7 @@ This error function should be as close to 0 as possible (in our case, above 1), 
 
 Before I show you how to make a neural network in python, let's go over the key steps to this process (when understood, you can translate these steps to other coding languages):
 
-1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can tranlast into arrays your neural network can read. You'll also need a way to translate the integers given as the answer in the dataset into arrays to use in the error function. I showed a method two sections ago.
+1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can translate into arrays that your neural network can read. You'll also need a way to translate the answers in the dataset (given as integers) into arrays to use in the error function. I showed a method [two sections ago][tsa].
 2. Make your starting neural network. You'll not only need to know how many layers and neurons per layer that you want, but also the size of your input matrix and output matrix.
 3. Write the function that takes in your input matrix and neuron values to make the output matrix.
 4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.=
@@ -237,5 +237,6 @@ But this is it! Now you have made (or copied, it's okay as long as you understan
 
 [dataset]: https://www.kaggle.com/datasets/hojjatk/mnist-dataset
 [nn]: https://colab.research.google.com/drive/1-s3ygDGrsKSEHgs9cGBZWEo6PuSwixwa?usp=sharing
+[tsa]: https://qerty2006.github.io/jekyll/update/2024/06/13/MLBasics.html#:~:text=is%20being%20shown.-,Expected%20values,-0%20%3D%3E%20%5B1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%5D%0A1
 
 
