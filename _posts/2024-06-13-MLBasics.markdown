@@ -77,13 +77,13 @@ Error(expected_matrix, output_matrix) =
    return squarederror
 {% endhighlight %}
 
-This error function should be as close to 0 as possible (in our case, above 1), but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the current iteration of the neurons' values. The gradient will return a matrix that gives the values needed to adjust the current neurons with, **but** using these values directly will *increase* the error, not reduce it! Simply flip the sign to go in the direction to make the error go down. 
+This error function should be as close to 0 as possible (in our case, above 1), but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the current iteration of the neurons' values. The gradient will return a matrix that gives the values needed to adjust the current neurons, **but** using these values directly will *increase* the error, not reduce it! Simply flip the signs to go in the direction that makes the error go down. 
 
 ## Gameplan to Make Our Neural Network
 
-Before I show you how to make a neural network in python, let's go over the key steps that if you understand you can translate this process over to other languages:
+Before I show you how to make a neural network in python, let's go over the key steps to this process (when understood, you can translate these steps to other coding languages):
 
-1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can tranlast into arrays your neural network can read. You'll also need a way to translate the integers given as the answer in the dataset into arrays to use in the error function, a method which I showed two sections ago.
+1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can tranlast into arrays your neural network can read. You'll also need a way to translate the integers given as the answer in the dataset into arrays to use in the error function. I showed a method two sections ago.
 2. Make your starting neural network. You'll not only need to know how many layers and neurons per layer that you want, but also the size of your input matrix and output matrix.
 3. Write the function that takes in your input matrix and neuron values to make the output matrix.
 4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.=
