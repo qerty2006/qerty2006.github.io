@@ -45,11 +45,11 @@ Neural networks work by sequentially activating layers of artificial nuerons to 
 
 1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it to prioritize some neurons' values over others.
        
-2. Apply a **bias** to the weight sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don't output really high values to increse their base value. 
+2. Apply a **bias** to the weighted sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don't output really high values to increase their base value. 
 
-3. Apply an **activation function** to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmita value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values become closer to -1 and 1. For this model, we'll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.
+3. Apply an **activation function** to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmit a value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values coming closer to -1 and 1. For this model, we'll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.
  
-This is repeated for every layer of neurons one by one until the final layer, which in this case gives a 1x10 matrix, with the values of the 10 cells tied to which number the model thinks is being shown. 
+This is repeated for every layer of neurons one layer at a time until the final layer outputs its answer, which in this case gives a 1x10 matrix. The values of the 10 cells are  tied to which number the model thinks is being shown. 
 ```
 Expected values
 0 => [1,0,0,0,0,0,0,0,0,0]
@@ -84,9 +84,9 @@ This error function should be as close to 0 as possible (in our case, above 1), 
 Before I show you how to make a neural network in python, let's go over the key steps that if you understand you can translate this process over to other languages:
 
 1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can tranlast into arrays your neural network can read. You'll also need a way to translate the integers given as the answer in the dataset into arrays to use in the error function, a method which I showed two sections ago.
-2. Make your starting neural network. You'll not only need to know how many layers and neurons per layer that you want, but also the size of your input matirx and output matrix.
-3. Write the function that takes in your input matrix and neuron values to make the output matrix
-4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.
+2. Make your starting neural network. You'll not only need to know how many layers and neurons per layer that you want, but also the size of your input matrix and output matrix.
+3. Write the function that takes in your input matrix and neuron values to make the output matrix.
+4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.=
 5. Test the model! It is good practice to separate training data from testing data to see how the model does with something new.
 
 ## Making the Neural Network in Python
