@@ -233,10 +233,10 @@ for i in range(10):
 
 *nd.Gradient* runs our neural network a couple thousand times (because of the 1000s of variables in the neural network) to find the gradient at a particular point, so it's important that our *runbrain* function runs as fast as possible. If I were to reprogram this, I would use some linear algebra tricks to perform a single matrix multiplication and addition per layer and speed this up.
 
-But this is it! Now you have made (or copied, it's okay as long as you understand it) your own little neural network that tries to recognize digits. At the end of this post, I've placed my own Google Colab so you can see this [neural network][nn] in action!
+But this is it! Now you have made (or copied, it's okay as long as you understand it) your own little neural network that tries to recognize digits. At the end of this post, I've made my own Github repository so you can see this [neural network][nn] in action!
 
 [dataset]: https://www.kaggle.com/datasets/hojjatk/mnist-dataset
-[nn]: https://colab.research.google.com/drive/1-s3ygDGrsKSEHgs9cGBZWEo6PuSwixwa?usp=sharing
+[nn]: https://github.com/qerty2006/The-Hello-World-of-Neural-Networks
 [tsa]: https://qerty2006.github.io/jekyll/update/2024/06/13/MLBasics.html#:~:text=is%20being%20shown.-,Expected%20values,-0%20%3D%3E%20%5B1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%5D%0A1
 
 
