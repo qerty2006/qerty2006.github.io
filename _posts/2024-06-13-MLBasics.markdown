@@ -43,7 +43,7 @@ In this part, I'll explain the basic parts we put into a neural network for it t
 
 Neural networks work by sequentially activating layers of artificial nuerons to varying degrees. A final answer is reached after the network passes results through the last layer. A particular neuron performs 3 steps:
 
-1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it. It's like prioritizing some factors over others. For example, when trying to distinguish between a 3 and 8, the prescence of loops is much more important than the number of lines identified.
+1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it to prioritize some neurons' values over others.
        
 2. Apply a **bias** to the weight sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don't output really high values to increse their base value. 
 
@@ -77,7 +77,7 @@ Error(expected_matrix, output_matrix) =
    return squarederror
 {% endhighlight %}
 
-This error function should be as close to 0 as possible (in our case, above 1), but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the currect iteration of the network. The gradient will return a matrix that gives the values needed to adjust the current neurons with, **but** using these values directly will *increase* the error, not reduce it! Simply flip the sign to go in the direction to make the error go down. 
+This error function should be as close to 0 as possible (in our case, above 1), but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the current iteration of the neurons' values. The gradient will return a matrix that gives the values needed to adjust the current neurons with, **but** using these values directly will *increase* the error, not reduce it! Simply flip the sign to go in the direction to make the error go down. 
 
 ## Gameplan to Make Our Neural Network
 
