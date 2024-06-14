@@ -49,7 +49,7 @@ Neural networks work by sequentially activating layers of artificial nuerons to 
 
 3. Apply an **activation function** to the weighted sum + bias value. Activation functions tell how a given sum+bias combination can transmit a value to the next set of neurons. For example, the sigmoid function turns the real number line into values from -1 to 1, with more extreme values coming closer to -1 and 1. For this model, we'll use the Relu activation function, which turns all negative sums into the number 0 but leaves positive numbers alone.
  
-This is repeated for every layer of neurons one layer at a time until the final layer outputs its answer, which in this case gives a 1x10 matrix. The values of the 10 cells are  tied to which number the model thinks is being shown. 
+This is repeated for every layer of neurons one layer at a time until the final layer outputs its answer, which in this case gives a 1x10 matrix. The values of the 10 cells are tied to the number the model thinks is being shown. 
 ```
 Expected values
 0 => [1,0,0,0,0,0,0,0,0,0]
