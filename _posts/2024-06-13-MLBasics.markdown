@@ -2,7 +2,7 @@
 layout: post
 title:  "The Basics of a Neural Network Through the Eyes of a (Student) Mathematician"
 date:   2024-06-13 12:00:00 -0700
-categories: jekyll update
+categories: NeuralNetwork Math
 ---
 
 In this post, I'll explain the fundamentals of a neural network in a way that a high school maths student, even with almost no computer science background, would be able to understand it as: an optimization problem.
@@ -237,6 +237,6 @@ But this is it! Now you have made (or copied, it's okay as long as you understan
 
 [dataset]: https://www.kaggle.com/datasets/hojjatk/mnist-dataset
 [nn]: https://github.com/qerty2006/The-Hello-World-of-Neural-Networks
-[tsa]: https://qerty2006.github.io/jekyll/update/2024/06/13/MLBasics.html#:~:text=is%20being%20shown.-,Expected%20values,-0%20%3D%3E%20%5B1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%5D%0A1
+[tsa]: https://qerty2006.github.io/neuralnetwork/math/2024/06/13/MLBasics.html#:~:text=is%20being%20shown.-,Expected%20values,-0%20%3D%3E%20%5B1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%5D%0A1
 
 
