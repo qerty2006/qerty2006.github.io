@@ -237,6 +237,6 @@ But this is it! Now you have made (or copied, it's okay as long as you understan
 
 [dataset]: https://www.kaggle.com/datasets/hojjatk/mnist-dataset
 [nn]: https://github.com/qerty2006/The-Hello-World-of-Neural-Networks
-[tsa]: https://qerty2006.github.io/jekyll/update/2024/06/13/MLBasics.html#:~:text=is%20being%20shown.-,Expected%20values,-0%20%3D%3E%20%5B1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%5D%0A1
+[tsa]: https://qerty2006.github.io/neuralnetwork/math/2024/06/13/MLBasics.html#:~:text=is%20being%20shown.-,Expected%20values,-0%20%3D%3E%20%5B1%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%2C0%5D%0A1
 
 
