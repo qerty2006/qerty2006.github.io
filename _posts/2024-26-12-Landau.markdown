@@ -64,7 +64,7 @@ In calculus, Big O notation is used to determine if a given function is the deri
 
 The version of Big O notation we will use is as follows:
 
-Let f and g be two functions defined in $$\mathbf{R}^n$$ (set of all points in an n-dimensional space where each coordinate can be any real number). Also let x and a be elements of this same $$\mathbf{R}^n$$:
+Let f and g be two functions defined in $\mathbf{R}^n$ (set of all points in an n-dimensional space where each coordinate can be any real number). Also let x and a be elements of this same $\mathbf{R}^n$:
 
 $$f: \mathbf{R}^n\to \mathbf{R}^m \text{ }; g: \mathbf{R}^n\to \mathbf{R}^m \text{ }; x,a \in \mathbf{R}^n$$
 
