@@ -13,9 +13,6 @@ categories: compsci math
     }
   });
 
-window.MathJax = {
-  loader: {load: ['input/TeX', 'output/CommonHTML']}
-};
 </script>
 
 <script type="text/javascript" charset="utf-8" 
