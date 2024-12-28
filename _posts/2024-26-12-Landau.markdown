@@ -100,6 +100,8 @@ where h is our
 $$|x-a|$$ 
 from before.
 
+
+
 ### Example: Limit Definition of Derivative
 
 Consider the limit definition of a derivative:
