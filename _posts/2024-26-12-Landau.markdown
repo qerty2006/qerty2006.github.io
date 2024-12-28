@@ -81,7 +81,7 @@ Let f and g be two functions defined in $\mathbf{R}^n$ (set of all points in an 
 
 $$f: \mathbf{R}^n\to \mathbf{R}^m \text{ }; g: \mathbf{R}^n\to \mathbf{R}^m \text{ }; x,a \in \mathbf{R}^n$$
 
-We say that for some bounded ball in $$\mathbf{R}^n$$ (our multidimensional equivalent of an interval on the real number line)
+We say that for some bounded ball in $\mathbf{R}^n$ (our multidimensional equivalent of an interval on the real number line)
 
 $$ f(x) = O(g(x)) \text{ as } x \to a $$
 
@@ -89,15 +89,14 @@ if and only if there exist positive constants δ and M such that
 
 $$ |f(x) - f(a)| \leq M|g(x) - g(a)| $$
 
-for all x satisfying
-
+for all x satisfying 
 $$ 0 < |x - a| < δ $$
-
+\
 In this case, we use Big O notation in the opposite direction, watching |x-a| approach 0 rather than infinity. This also gives us the following properties when using limits:
 
 $$ \left\{\begin{aligned}&{|o(1)|}\to 0\\&\frac{|O(h)|}{|h|}\to a\in \mathbf{R}\\&\frac{|o(h)|}{|h|}\to 0\end{aligned}\right\}\text{ as }h\to 0 $$
 
-where h is our |x-a| from before.
+where h is our $|x-a|$ from before.
 
 ### Example: Limit Definition of Derivative
 
