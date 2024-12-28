@@ -2,7 +2,7 @@
 layout: post
 title:  "The Basics of a Neural Network Through the Eyes of a (Student) Mathematician"
 date:   2024-06-13 12:00:00 -0700
-categories: jekyll update
+categories: NeuralNetwork Math
 ---
 
 In this post, I'll explain the fundamentals of a neural network in a way that a high school maths student, even with almost no computer science background, would be able to understand it as: an optimization problem.
