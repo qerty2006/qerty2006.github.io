@@ -190,3 +190,9 @@ Bachmann-Landau notation is invaluable in algorithm analysis and optimization. F
 
 Bachmann-Landau notation provides a standardized way to describe function behavior and algorithm complexity. By understanding and utilizing this notation, we can more effectively analyze and optimize mathematical functions and computer algorithms. Its applications span from basic algorithm analysis to complex mathematical proofs, making it an essential tool in both computer science and mathematics.
 
+**The Cauchy-Schwarz Inequality**\
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
