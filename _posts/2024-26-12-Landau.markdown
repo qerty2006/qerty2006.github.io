@@ -1,0 +1,192 @@
+---
+layout: post
+title: "Bachmann-Landau Notation and Its Use in Computer Science and Mathematics"
+date: 2024-12-27 22:34:00
+categories: compsci math
+---
+
+# Understanding Bachmann-Landau Notation
+
+Bachmann-Landau notation, also known as asymptotic notation, is a powerful tool in mathematics and computer science for describing the limiting behavior of functions. This notation is particularly useful when analyzing algorithm complexity and comparing the growth rates of different functions. In calculus, it has an unexpected application in proving derivatives.
+
+## The Basics of Bachmann-Landau Notation
+
+The Bachmann-Landau family consists of several notations, each serving a specific purpose in describing function behavior:
+
+1. **Big O Notation (O)**: Describes an upper bound on the growth rate of a function.
+2. **Big Omega Notation (Ω)**: Describes a lower bound on the growth rate of a function.
+3. **Big Theta Notation (Θ)**: Describes both upper and lower bounds on the growth rate of a function.
+4. **Little o Notation (o)**: Describes a strict upper bound on the growth rate of a function.
+5. **Little Omega Notation (ω)**: Describes a strict lower bound on the growth rate of a function.
+
+The most useful ones for our current discussion are Big O and Little o notation, as they often define the worst-case scenario for algorithms or mathematical functions.
+
+## Big O Notation
+
+Big O notation is perhaps the most commonly used member of the Bachmann-Landau family. It's defined as follows:
+
+For functions f(x) and g(x), we say f(x) = O(g(x)) if there exist positive constants M and x₀ such that:
+
+$$|f(x)| \leq M|g(x)| \quad \text{for all } x \geq x_0$$
+
+### Example in Python
+
+Let's consider a simple example of how Big O notation applies to a Python function:
+
+```python
+def sum_of_squares(n):
+    # Calculate the sum of squares from 0 to n-1
+    total = 0
+    for i in range(n):
+        total += i**2
+    return total
+```
+
+This function has a time complexity of O(n), as it performs a single loop that iterates n times.
+
+| n | iterations of sum_of_squares | g(n) = n | g(n) = n^2 | g(n) = lg(n) |
+|---|-------------------------------|----------|------------|--------------|
+| 1 | 1 | 1 | 1 | 0.0 |
+| 2 | 2 | 2 | 4 | 1.0 |
+| 3 | 3 | 3 | 9 | 1.58 |
+| 4 | 4 | 4 | 16 | 2.0 |
+| 5 | 5 | 5 | 25 | 2.32 |
+| 10 | 10 | 10 | 100 | 3.32 |
+| 100 | 100 | 100 | 10000 | 6.64 |
+| 1000 | 1000 | 1000 | 1000000 | 9.97 |
+| 1e6 | 1e6 | 1e6 | 1e+12 | 19.93 |
+
+It's important to note that `sum_of_squares` is both an O(n) and O(n^2) function, because for M = 1 and n ≥ 1, the number of iterations is bounded by both of these functions. However, it's **not** O(lg(n)) (lg is log base 2) because there is no starting x that we can use that means that the number of iterations of our function is bounded underneath it.
+
+## Bachmann-Landau Notation in Calculus
+
+In calculus, Big O notation is used to determine if a given function is the derivative of another function. This is especially useful when checking the differentiability of a function at a point. Let's explore this with examples from single-variable and multivariable calculus.
+
+The version of Big O notation we will use is as follows:
+
+Let f and g be two functions defined in $$\mathbf{R}^n$$ (set of all points in an n-dimensional space where each coordinate can be any real number). Also let x and a be elements of this same $$\mathbf{R}^n$$:
+
+$$f: \mathbf{R}^n\to \mathbf{R}^m \text{ }; g: \mathbf{R}^n\to \mathbf{R}^m \text{ }; x,a \in \mathbf{R}^n$$
+
+We say that for some bounded ball in $$\mathbf{R}^n$$ (our multidimensional equivalent of an interval on the real number line)
+
+$$ f(x) = O(g(x)) \text{ as } x \to a $$
+
+if and only if there exist positive constants δ and M such that
+
+$$ |f(x) - f(a)| \leq M|g(x) - g(a)| $$
+
+for all x satisfying
+
+$$ 0 < |x - a| < δ $$
+
+In this case, we use Big O notation in the opposite direction, watching |x-a| approach 0 rather than infinity. This also gives us the following properties when using limits:
+
+$$ \left\{\begin{aligned}&{|o(1)|}\to 0\\&\frac{|O(h)|}{|h|}\to a\in \mathbf{R}\\&\frac{|o(h)|}{|h|}\to 0\end{aligned}\right\}\text{ as }h\to 0 $$
+
+where h is our |x-a| from before.
+
+### Example: Limit Definition of Derivative
+
+Consider the limit definition of a derivative:
+
+$$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$
+
+We can use Bachmann-Landau notation to express this more precisely:
+
+$$f(x + h) - f(x) - f'(x)h = o(h) \quad \text{as } h \to 0$$
+
+where f'(x) is a valid linear transformation (an interesting topic for another time, just know that all matrix multiplications and outputs of polynomial functions satisfy this)
+
+This notation tells us that the error term o(h) approaches zero faster than h does as h approaches zero. This also means that if we pick the right f'(x) for an f(x) this equation will be satisfied.
+
+An example of showing this works is:
+$$f(x) = x^2 + 2x,\quad x = 10 $$
+
+Plugging into our equation above:
+$$(x^2 + 2xh + h^2 +2x + 2h) - x^2 - 2x - f'(x)h = o(h) \quad \text{as } h \to 0$$
+
+$$\to 22h+h^2 - f'(x)h = o(h)\quad \text{as } h \to 0$$
+
+In this case, it's easy to see that if f'(10) = 22 (the correct derivative for f(x) at x = 10) we would be left with 
+$$h^2 = o(h) \quad \text{ as } h \to 0$$ 
+which is a valid statement. Since it's valid, we know our choice for f'(x) was correct; one cool property about using this is that if an f'(x) that we choose results in an o(h) equation, it is the only one that can fulfill that requirement.
+
+## Detailed Proof
+
+Let's consider a more complex example from multivariable calculus:
+
+$$ \text{Define } f:\mathbf{R}^2 \to \mathbf{R} \text{ by} $$
+
+$$ f(x,y) = \left\{\begin{aligned}&\frac{2x^3+2xy^2+y^4}{x^2+y^2} \text{ if } (x,y) \neq (0,0)\\&0 \text{ if } (x,y) = (0,0)\end{aligned}\right\} $$
+
+$$\text{Determine whether or not f is differentiable at the origin (0,0).}$$
+
+This problem is easily solved with Big O notation; if we can show that the equation above works (and our attempt is a linear mapping), then it's differentiable.
+
+To come up with our guess for what the derivative is at (0,0), we use our old limit definition, but just along one of the variables at a time:
+
+$$\lim_{h\to0} \begin{bmatrix} \frac{f(h,0)-0}{h} & \frac{f(0,h)-0}{h} \end{bmatrix} = \begin{bmatrix} 2 & 0 \end{bmatrix}$$
+
+Now to check, we need to change our h from earlier to 2 variables, h and k, which change independently:
+
+$$\frac{2(x+h)^3+2(x+h)(y+k)^2+(y+k)^4}{(x+h)^2+(y+k)^2} - \frac{2x^3+2xy^2+y^4}{x^2+y^2} - \begin{bmatrix} 2 & 0 \end{bmatrix}\begin{bmatrix} h\\ k \end{bmatrix}$$
+
+### Step 1: Expand the numerator
+
+Expand the terms in the numerator:
+
+$$\frac{2x^3+6x^2h+6xh^2+2h^3+2xy^2+4xyk+2xk^2+2hy^2+4hyk+2hk^2+y^4+4y^3k+6y^2k^2+4yk^3+k^4}{(x+h)^2+(y+k)^2} - \frac{2x^3+2xy^2+y^4}{x^2+y^2} - 2h$$
+
+### Step 2: Find a common denominator
+
+$$\frac{(2x^3+6x^2h+6xh^2+2h^3+2xy^2+4xyk+2xk^2+2hy^2+4hyk+2hk^2+y^4+4y^3k+6y^2k^2+4yk^3+k^4)(x^2+y^2)}{((x+h)^2+(y+k)^2)(x^2+y^2)} - \frac{(2x^3+2xy^2+y^4)((x+h)^2+(y+k)^2)}{(x^2+y^2)((x+h)^2+(y+k)^2)} - \frac{2h((x+h)^2+(y+k)^2)}{(x+h)^2+(y+k)^2}$$
+
+### Step 3: Expand and cancel terms
+
+After expanding and cancelling terms, we get:
+
+$$\frac{6x^2hy^2+6xh^2y^2+2h^3y^2+4xy^3k+4x^2hk^2+6xy^2k^2+4xh^2k^2+4y^3hk+6y^2h^2k+4y^3k^2+6y^2hk^2+4yhk^3+k^4y^2}{((x+h)^2+(y+k)^2)(x^2+y^2)}$$
+
+### Step 4: Factor out (h^2 + k^2)
+
+We can factor out (h^2 + k^2) from the numerator:
+
+$$(h^2+k^2)\frac{6x^2y^2\frac{h}{h^2+k^2}+6xy^2\frac{h^2}{h^2+k^2}+2y^2\frac{h^3}{h^2+k^2}+4xy^3\frac{k}{h^2+k^2}+4x^2\frac{hk^2}{h^2+k^2}+6xy^2\frac{k^2}{h^2+k^2}+4x\frac{h^2k^2}{h^2+k^2}+4y^3\frac{hk}{h^2+k^2}+6y^2\frac{h^2k}{h^2+k^2}+4y^3\frac{k^2}{h^2+k^2}+6y^2\frac{hk^2}{h^2+k^2}+4y\frac{hk^3}{h^2+k^2}+y^2\frac{k^4}{h^2+k^2}}{((x+h)^2+(y+k)^2)(x^2+y^2)}$$
+
+### Step 5: Bound the function
+
+Note that for small h and k, we have:
+
+$$\frac{h}{h^2+k^2} \leq \frac{1}{\sqrt{h^2+k^2}}, \frac{k}{h^2+k^2} \leq \frac{1}{\sqrt{h^2+k^2}}, \frac{h^2}{h^2+k^2} \leq 1, \frac{k^2}{h^2+k^2} \leq 1$$
+
+Let M be a constant such that:
+
+$$|f(x,y,h,k)| \leq M(h^2 + k^2)$$
+
+for sufficiently small h and k.
+
+### Step 6: Divide by \|(h,k)\| and take the limit
+
+$$\lim_{(h,k)\to(0,0)} \frac{|f(x,y,h,k)|}{\sqrt{h^2+k^2}} \leq \lim_{(h,k)\to(0,0)} \frac{M(h^2 + k^2)}{\sqrt{h^2+k^2}} = \lim_{(h,k)\to(0,0)} M\sqrt{h^2+k^2} = 0$$
+
+Therefore, we have shown that:
+
+$$f(x,y,h,k) = o(\|(h,k)\|)$$
+
+as (h,k) approaches (0,0), proving that the function is indeed bounded by an o(h,k) function and is therefore differentiable at the origin.
+
+## Practical Applications
+
+Bachmann-Landau notation is invaluable in algorithm analysis and optimization. For instance, when comparing sorting algorithms:
+
+| Algorithm | Best Time | Average Time | Worst Time | Space Complexity |
+|-----------|-----------|--------------|------------|------------------|
+| Bubble Sort | O(n) | O(n²) | O(n²) | O(1) |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) - Best/Avg, O(n) - Worst |
+
+## Conclusion
+
+Bachmann-Landau notation provides a standardized way to describe function behavior and algorithm complexity. By understanding and utilizing this notation, we can more effectively analyze and optimize mathematical functions and computer algorithms. Its applications span from basic algorithm analysis to complex mathematical proofs, making it an essential tool in both computer science and mathematics.
+
