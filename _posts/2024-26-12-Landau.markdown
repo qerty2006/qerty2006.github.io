@@ -12,6 +12,7 @@ categories: compsci math
       processEscapes: true
     }
   });
+
 </script>
 
 <script type="text/javascript" charset="utf-8" 
