@@ -91,10 +91,13 @@ $$ |f(x) - f(a)| \leq M|g(x) - g(a)| $$
 
 for all x satisfying 
 $$ 0 < |x - a| < δ $$
-\
+<br/>
 In this case, we use Big O notation in the opposite direction, watching |x-a| approach 0 rather than infinity. This also gives us the following properties when using limits:
+ <br/>
 
 $$ \left\{\begin{aligned}&{|o(1)|}\to 0\\&\frac{|O(h)|}{|h|}\to a\in \mathbf{R}\\&\frac{|o(h)|}{|h|}\to 0\end{aligned}\right\}\text{ as }h\to 0 $$
+
+<br/>
 
 where h is our 
 $$|x-a|$$ 
