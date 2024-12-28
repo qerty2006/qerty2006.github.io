@@ -73,7 +73,7 @@ This function has a time complexity of O(n), as it performs a single loop that i
 | 1000 | 1000 | 1000 | 1000000 | 9.97 |
 | 1e6 | 1e6 | 1e6 | 1e+12 | 19.93 |
 
-It's important to note that `sum_of_squares` is both an O(n) and O(n^2) function, because for M = 1 and n ≥ 1, the number of iterations is bounded by both of these functions. However, it's **not** O(lg(n)) (lg is log base 2) because there is no starting x that we can use that means that the number of iterations of our function is bounded underneath it.
+It's important to note that `sum_of_squares` is both an O(n) and O(n<sup>2</sup>) function, because for M = 1 and n ≥ 1, the number of iterations is bounded by both of these functions. However, it's **not** O(lg(n)) (lg is log base 2) because there is no starting x that we can use that means that the number of iterations of our function is bounded underneath it.
 
 ## Bachmann-Landau Notation in Calculus
 
@@ -89,16 +89,20 @@ We say that for some bounded ball in $\mathbf{R}^n$ (our multidimensional equiva
 
 $$ f(x) = O(g(x)) \text{ as } x \to a $$
 
-if and only if there exist positive constants δ and M such that
+if and only if there exist positive constants $δ$ and M such that
 
 $$ |f(x) - f(a)| \leq M|g(x) - g(a)| $$
 
 for all x satisfying 
 $$ 0 < |x - a| < δ $$
-\
+<br/>
 In this case, we use Big O notation in the opposite direction, watching |x-a| approach 0 rather than infinity. This also gives us the following properties when using limits:
+ <br/> 
+ <br/>
 
 $$ \left\{\begin{aligned}&{|o(1)|}\to 0\\&\frac{|O(h)|}{|h|}\to a\in \mathbf{R}\\&\frac{|o(h)|}{|h|}\to 0\end{aligned}\right\}\text{ as }h\to 0 $$
+
+<br/>
 
 where h is our 
 $$|x-a|$$ 
@@ -168,7 +172,7 @@ After expanding and cancelling terms, we get:
 
 $$\frac{6x^2hy^2+6xh^2y^2+2h^3y^2+4xy^3k+4x^2hk^2+6xy^2k^2+4xh^2k^2+4y^3hk+6y^2h^2k+4y^3k^2+6y^2hk^2+4yhk^3+k^4y^2}{((x+h)^2+(y+k)^2)(x^2+y^2)}$$
 
-### Step 4: Factor out (h^2 + k^2)
+### Step 4: Factor out $(h^2 + k^2)$
 
 We can factor out (h^2 + k^2) from the numerator:
 
@@ -186,7 +190,7 @@ $$|f(x,y,h,k)| \leq M(h^2 + k^2)$$
 
 for sufficiently small h and k.
 
-### Step 6: Divide by \|(h,k)\| and take the limit
+### Step 6: Divide by $|(h,k)|$ and take the limit
 
 $$\lim_{(h,k)\to(0,0)} \frac{|f(x,y,h,k)|}{\sqrt{h^2+k^2}} \leq \lim_{(h,k)\to(0,0)} \frac{M(h^2 + k^2)}{\sqrt{h^2+k^2}} = \lim_{(h,k)\to(0,0)} M\sqrt{h^2+k^2} = 0$$
 
