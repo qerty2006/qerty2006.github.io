@@ -29,6 +29,8 @@ github_username:  qerty2006
 
 # Build settings
 theme: minima
+minima:
+  skin: auto
 plugins:
   - jekyll-feed
   - 
