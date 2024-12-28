@@ -160,7 +160,8 @@ $$\frac{2x^3+6x^2h+6xh^2+2h^3+2xy^2+4xyk+2xk^2+2hy^2+4hyk+2hk^2+y^4+4y^3k+6y^2k^
 
 ### Step 2: Find a common denominator
 
-$$\frac{(2x^3+6x^2h+6xh^2+2h^3+2xy^2+4xyk+2xk^2+2hy^2+4hyk+2hk^2+y^4+4y^3k+6y^2k^2+4yk^3+k^4)(x^2+y^2)}{((x+h)^2+(y+k)^2)(x^2+y^2)} - \frac{(2x^3+2xy^2+y^4)((x+h)^2+(y+k)^2)}{(x^2+y^2)((x+h)^2+(y+k)^2)} - \frac{2h((x+h)^2+(y+k)^2)}{(x+h)^2+(y+k)^2}$$
+$$\frac{(2x^3+6x^2h+6xh^2+2h^3+2xy^2+4xyk+2xk^2+2hy^2+4hyk+2hk^2+y^4+4y^3k+6y^2k^2+4yk^3+k^4)(x^2+y^2)}{((x+h)^2+(y+k)^2)(x^2+y^2)}$$
+$$ - \frac{(2x^3+2xy^2+y^4)((x+h)^2+(y+k)^2)}{(x^2+y^2)((x+h)^2+(y+k)^2)} - \frac{2h((x+h)^2+(y+k)^2)}{(x+h)^2+(y+k)^2}$$
 
 ### Step 3: Expand and cancel terms
 
