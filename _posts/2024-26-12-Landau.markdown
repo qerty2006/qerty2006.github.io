@@ -87,7 +87,9 @@ In this case, we use Big O notation in the opposite direction, watching |x-a| ap
 
 $$ \left\{\begin{aligned}&{|o(1)|}\to 0\\&\frac{|O(h)|}{|h|}\to a\in \mathbf{R}\\&\frac{|o(h)|}{|h|}\to 0\end{aligned}\right\}\text{ as }h\to 0 $$
 
+
 where h is our $|x-a|$ from before.
+
 
 ### Example: Limit Definition of Derivative
 
