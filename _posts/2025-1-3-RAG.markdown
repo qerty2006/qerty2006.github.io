@@ -3,6 +3,7 @@ layout: post
 title: "RAG: What is it, and why should we care?"
 date: 2025-01-03 19:00:00
 categories: AI 
+author: 'Nishanth Tharakan'
 ---
 
 <script type="text/x-mathjax-config">
