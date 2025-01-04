@@ -1,0 +1,69 @@
+---
+layout: post
+title: "RAG: What is it, and why should we care?"
+date: 2025-01-03 19:00:00
+categories: AI 
+---
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\$$","\$$"] ],
+      processEscapes: true
+    }
+  });
+
+</script>
+
+<script type="text/javascript" charset="utf-8" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
+https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
+
+
+In the rapidly evolving landscape of artificial intelligence, Retrieval-Augmented Generation (RAG) has emerged as a game-changing approach that combines the power of large language models with the precision of existing databases. Its pros massively outweigh its cons when dealing in specific topics, and  you can see versions of RAG used by Google and Perplexity to enchance their current LLMs.  
+
+## The Basics of RAG
+
+RAG has three core components, which is best explained with a library:
+
+1. **The LLM**: I mean, it's AI. This is our main AI component that takes in questions and spits out answers. Note that the way these are trained, they take in a lot of *general* data to get the gist of natural language, and this is important for later. With how unspecialized it is, the LLM is like a person (without the internet) with a question they don't really know the answer to but has to figure out the answer anyway. 
+
+2. **The Knowledge Area:** This part is the library the LLM will have access to, and is typically filled just with the things the AI should be an "expert" in.
+
+3. **Query Enhancer**: Going off of the library analogy, this is our librarian, who based off of the original question, cannot neccessarily answer it themselves, but can point to relevant books to look at to get the answer.
+
+## How to put it together:
+
+A RAG model answering a question is very much like making a kid write a research papaer for school, and telling them they can't use the internet:
+
+1. The kid goes to the library, because without the internet how can they possible know enough to write the paper just from their head? they possess a general idea of everything that has happened in their short lifespan, but it's far smaller than the vast collection of books in the library. This is where our knowledge area comes in. It's like a specialized section of the library, filled with books on the topic the kid needs to write about.
+
+2. The librarian (our query enhancer) listens to the kid's question and helps them find the right books. They might even suggest related topics the kid hadn't thought of, just like how a good query enhancer can expand on the original question to find more relevant information.
+
+3. Now, the kid (our LLM) sits down with the books the librarian suggested and starts reading. They're not just copying word for word, but using their general knowledge and language skills to understand and synthesize the information.
+
+4. Finally, the kid writes the paper, combining what they've learned from the books with their own understanding and way of explaining things. This is like the LLM generating its final response, using both the retrieved information and its ability to generate human-like text.
+
+## Why Should We Care?
+
+RAG is a big deal because it solves some major problems with traditional AI:
+
+1. **Up-to-date info**: Remember how we said the LLM is trained on general data? Well, that data can get old fast. With RAG, we can keep the knowledge area fresh without having to retrain the whole AI. It's like giving our kid access to the latest books without making them go back to kindergarten everytime new information appears.
+
+2. **Specialized knowledge**: RAG lets us create AI that's an expert in specific fields. Want an AI that knows everything about astrophysics? Just fill the knowledge area with astrophysics info. It's like giving our kid a library card that only works in the science section.
+
+3. **Less hallucination**: RAG helps prevent the model saying plausible but incorrect data that by grounding the AI's responses in actual information from the knowledge area. It's like making sure our kid cites their sources properly so they can reference the facts from the original source.
+
+4. **Transparency**: With RAG, we can often trace back where the AI got its information from. This is super important in fields like medicine or law where you need to know the source of information.
+
+## The Bottom Line
+
+RAG isn't just another AI buzzword - it's a practical solution to some of the biggest challenges in AI today. By combining the flexibility of large language models with the reliability of curated knowledge bases, RAG is paving the way for more accurate, trustworthy, and specialized AI applications.
+
+As I said earlier, Google and Perplexity have RAG or RAGish models. Perplexity uses RAG to enhance the accuracy of its answers, and with a premium plan you can use a more time intensive version tht does more research. Google's "deep research" version of 1.5 Pro does a similar thing, allowing you to output research into a Google Doc like this one: [Retrieval-Augmented Generation (RAG) Models: A Comprehensive Guide to Resources][RAG]. An example of RAG for a specialized purpose is [gbash][gbash], a project where the knowledge base is your Linux system, and Gemini can help you from your terminal, running linux commands as part of its reserach to find answers. 
+
+
+
+[RAG]: https://docs.google.com/document/d/19KyjXVNEaG0dr0HHd-cJZbYpDVP5U5-g0_1S86c0gdI/edit?usp=sharing
+
+[gbash]: https://github.com/royans/gbash
