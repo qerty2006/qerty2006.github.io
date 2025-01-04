@@ -3,6 +3,7 @@ layout: post
 title: "Bachmann-Landau Notation and Its Use in Computer Science and Mathematics"
 date: 2024-12-27 22:34:00
 categories: compsci math
+author: 'Nishanth Tharakan'
 ---
 
 <script type="text/x-mathjax-config">
