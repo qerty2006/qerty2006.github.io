@@ -27,7 +27,7 @@ In the rapidly evolving landscape of artificial intelligence, Retrieval-Augmente
 
 RAG has three core components, which is best explained with a library:
 
-1. **The LLM**: I mean, it's AI. This is our main AI component that takes in questions and spits out answers. Note that the way these are trained, they take in a lot of *general* data to get the gist of natural language, and this is important for later. With how unspecialized it is, the LLM is like a person (without the internet) with a question they don't really know the answer to but has to figure out the answer anyway. 
+1. **The Large Language Model (LLM)**: I mean, it's AI. This is our main AI component that takes in questions and spits out answers. Note that the way these are trained, they take in a lot of *general* data to get the gist of natural language, and this is important for later. With how unspecialized it is, the LLM is like a person (without the internet) with a question they don't really know the answer to but has to figure out the answer anyway. 
 
 2. **The Knowledge Area:** This part is the library the LLM will have access to, and is typically filled just with the things the AI should be an "expert" in.
 
