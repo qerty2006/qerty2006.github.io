@@ -35,7 +35,7 @@ RAG has three core components, which is best explained with a library:
 
 ## How to put it together:
 
-A RAG model answering a question is very much like making a kid write a research papaer for school, and telling them they can't use the internet:
+A RAG model answering a question is very much like making a kid write a research paper for school, and telling them they can't use the internet:
 
 1. The kid goes to the library, because without the internet how can they possible know enough to write the paper just from their head? they possess a general idea of everything that has happened in their short lifespan, but it's far smaller than the vast collection of books in the library. This is where our knowledge area comes in. It's like a specialized section of the library, filled with books on the topic the kid needs to write about.
 
