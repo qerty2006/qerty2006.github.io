@@ -32,7 +32,7 @@ In Texas Hold'em, the most popular variant of poker, each player is dealt two pr
 
 Players bet after each stage, with the option to check, bet, call, raise, or fold.
 
-What's important is that you have two cards you know of, 5 cards evryone knows of, and you **dont** know the other players' hole cards. In games like poker, information is one of the most essential factors when making a descision.
+What's important is that you have two cards you know of, 5 cards evryone knows of, and you **don't** know the other players' hole cards. In games like poker, information is one of the most essential factors when making a descision.
 
 ## Basic Probability Example
 
