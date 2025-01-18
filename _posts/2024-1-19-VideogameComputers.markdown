@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Computers Running Video Games Running... Computers?"
-date: 2025-01-19 00:00:00
+date: 2025-01-18 00:00:00
 categories: Math Computer_Science Gaming
 author: 'Nishanth Tharakan'
 ---
@@ -27,6 +27,7 @@ With the fires nearing UCLA last week, I evacuated back home, dreading online cl
 
 Minecraft stands out as the quintessential sandbox game for in-game computer creation. Players have built impressive computing systems using redstone, a game element that functions similarly to electrical circuits. These creations range from fully functional 8-bit computers capable of running basic programs to working graphing calculators and even devices that can play simple games like Tetris or Snake. These redstone computers often use thousands of components and can take months to design and build, showcasing the incredible creativity and problem-solving skills of the Minecraft community.
 
+Redstone works a lot like real life signals, having a high and low version of the signal, and there are machines that can read the signal, like lamps (which act like pixels of a display)
 ![Redstone diagram](/qerty2006.github.io/_site/assets/images/g05ar4oaspt61.webp)
 
 If you want to learn more about redstone computing, I cannot recommend anyone more than [Mattbatwings] on Youtube. From [QR code generators] to [basic logic gate explanations], this channel not only showed me how to break servers with computationally complex operations but also gave me the building blocks to understand how regular computer chips work.
