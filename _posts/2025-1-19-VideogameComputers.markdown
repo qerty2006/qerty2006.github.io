@@ -29,6 +29,7 @@ Minecraft stands out as the quintessential sandbox game for in-game computer cre
 
 Redstone works a lot like real life signals, having a high and low version of the signal, and there are machines that can read the signal, like lamps (which act like pixels of a display)
 ![Redstone diagram](/assets/g05ar4oaspt61.webp)
+<img src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/g05ar4oaspt61.webp'/>
 
 If you want to learn more about redstone computing, I cannot recommend anyone more than [Mattbatwings] on Youtube. From [QR code generators] to [basic logic gate explanations], this channel not only showed me how to break servers with computationally complex operations but also gave me the building blocks to understand how regular computer chips work.
 
