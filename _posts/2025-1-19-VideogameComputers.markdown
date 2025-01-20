@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Computers Running Video Games Running... Computers?"
+title: "Computers, Running Video Games, Running... More Computers?"
 date: 2025-01-18 00:00:00
 categories: Math Computer_Science Gaming
 author: 'Nishanth Tharakan'
