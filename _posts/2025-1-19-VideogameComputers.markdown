@@ -33,7 +33,7 @@ With the fires nearing UCLA last week, I evacuated back home, dreading online cl
 Minecraft stands out as the quintessential sandbox game for in-game computer creation. Players have built impressive computing systems using redstone, a game element that functions similarly to electrical circuits. These creations range from fully functional 8-bit computers capable of running basic programs to working graphing calculators and even devices that can play simple games like Tetris or Snake. These redstone computers often use thousands of components and can take months to design and build, showcasing the incredible creativity and problem-solving skills of the Minecraft community.
 
 
-Redstone works a lot like real life signals, having a high and low version of the signal, and there are machines that can read the signal, like lamps (which act like pixels of a display). Using other redstone components, one can build almost anything, from logic gates like below, to transistors.
+Redstone works a lot like real life signals, having a high and low version of the signal, and there are machines that can read the signal, like lamps (which act like pixels of a display). Using other redstone components, one can build almost anything, from logic gates like below, to analogs of real life transistors.
 
 
 <img alt="Redstone diagram" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/g05ar4oaspt61.webp'/>
