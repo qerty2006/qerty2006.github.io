@@ -62,24 +62,43 @@ At the forefront of all this, the incredibly simple way to answer if you can mak
 
 ### What's a Turing Complete System?
 
-Imagine a person with a list of numbers written on a paper of arbitrary length. They can do only 3 things with it:
+Imagine a person who is given a list of numbers written on a paper of arbitrary length. They can do only 3 things with it:
 
-1. Read the symbol at the current position
-2. Write a symbol at the current position
-3. Move left or right one position
+1. Read the symbol at the current spot on the list
+2. Write a symbol at the current spot on the list, erasing the previous symbol
+3. Move up or down the list a specific amount of times.
 
-This simple model, known as a Turing machine, is capable of performing any computation that a modern computer can do. A system is considered Turing complete if it can simulate this Turing machine.
+Along with this, the person also has a **VERY** long set of instructions which has instructions for every possible combination of position on the list, like 
+
+"If you are on the first item of the list and it says '4', change it to 'apple' and move down the list 16 times."
+
+This simple model, known as a Turing machine, is capable of performing any computation that a modern computer can do, and a  system is considered Turing complete if it can simulate this Turing machine using its own built in operations. For example, Minecraft is Turing complete because of its ability to store information in blocks like copper bulbs and rails, and then using that information to change other blocks in a sequence. 
 
 
 ## Magic The Gathering (all hail card games)
 
 With this new idea of what games can make computers within them, we can jump out of a computer, and into games of carboard and paper.
 
+
+Magic: The Gathering, the popular trading card game, has been proven to be Turing complete, with a full detailed process of how to do so in this [paper], by drawing a very specific set of cards at the begining of the game, crippling your opponent's ability to play (totally legal play, and technically this uses a deck that was legal in the past), and then going off on your merry way, boosting and dropping the stats of monsters in a "feedtape" displayed on the board. This means that, in theory, it can simulate any computer algorithm. albeit in a highly impractical and complex manner. 
+
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pdmODVYPDLA?si=Zzzjbzg5bcfFmIG7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Kyle Hill's channel [Because Science] goes through the process of destroying your friendships in Magic, and also explains [how long it would take to complete your cardboard computer.](https://www.youtube.com/watch?v=uDCj-QOp5gE)
 
 # Why should we care?
 
-Though these may just seem like games for children (as a child I will be very disappointed if that is what you believe)
+Though these may just seem like games for children (as a child I will be very disappointed if that is what you believe) the ability to create computers within games has several important implications:
+
+
+1. **Educational Value:** These in-game computers serve as excellent tools for teaching basic computer science concepts. They provide a visual and interactive way to understand logic gates, circuits, and programming, and for me persoanlly made a lot more sense than many coding classes and textbooks. 
+
+2. **Understanding Computational Limits:** By exploring what can be built within these constrained environments, we gain insights into the abstract concept of computation itself and the limits of what computers can do.
+
+3. **Inspiration for Real-World Innovation:** Some of the creative solutions found in these game environments might inspire new approaches to real-world computing problems, maybe even revolutionizing modern computing. 
+
 
 [Mattbatwings]:https://www.youtube.com/c/Mattbatwings
 [QR code generators]: https://www.youtube.com/watch?v=ZizmvuZ3EFk
@@ -88,3 +107,5 @@ Though these may just seem like games for children (as a child I will be very di
 [transistors]: https://forums.terraria.org/index.php?threads/a-reference-guide-for-simple-logic-devices.81751/
 [From Scratch]: https://www.youtube.com/@built-from-scratch
 [building a computer in Terraria]: https://www.youtube.com/watch?v=zXPiqk0-zDY&t=204s
+[paper]: https://arxiv.org/abs/1904.09828
+[Because Science]: https://www.youtube.com/channel/UCvG04Y09q0HExnIjdgaqcDQ
