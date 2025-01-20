@@ -24,7 +24,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 
-With the fires nearing UCLA last week, I evacuated back home, dreading online classes but content with the idea that now I have slightly more free time to binge watch Youtube gaming channels. However, since I kept on watching videos by channels by Linus Tech Tips and other technical channels, the almighty Youtube algo threw a curveball straight into my feed and now I got videos of people building full computers from Minecraft redstone. With the image of running Minecraft on a redstone computer ***while*** playing Minecraft firmly ingrained in my head, I wanted to make a post showing off the technical prowess of gamers, displaying the variety of games that you can build a full (but laggy) computer in and a little description of Turing machines and their importance in all of this.
+With the fires nearing UCLA last week, I evacuated back home, dreading online classes but slightly happy with the idea that now I have a little more free time to binge watch Youtube gaming channels. However, since I keep watching videos by channels by Linus Tech Tips and other technical channels, the almighty Youtube algo threw a curveball straight into my feed and now I get videos of people building full computers from Minecraft redstone and Factorio conveyor belts. With the image of running Minecraft on a redstone computer ***while*** playing Minecraft firmly ingrained in my head, I wanted to make a post showing off the technical prowess of gamers, displaying the variety of games that you can build a full (but laggy) computer in, along with a little description of Turing machines and their importance in all of this.
 
 
 ## Minecraft (obviously)
@@ -33,7 +33,7 @@ With the fires nearing UCLA last week, I evacuated back home, dreading online cl
 Minecraft stands out as the quintessential sandbox game for in-game computer creation. Players have built impressive computing systems using redstone, a game element that functions similarly to electrical circuits. These creations range from fully functional 8-bit computers capable of running basic programs to working graphing calculators and even devices that can play simple games like Tetris or Snake. These redstone computers often use thousands of components and can take months to design and build, showcasing the incredible creativity and problem-solving skills of the Minecraft community.
 
 
-Redstone works a lot like real life signals, having a high and low version of the signal, and there are machines that can read the signal, like lamps (which act like pixels of a display). Using other redstone components. one can build almost anything, from logic gates like below, to transistors.
+Redstone works a lot like real life signals, having a high and low version of the signal, and there are machines that can read the signal, like lamps (which act like pixels of a display). Using other redstone components, one can build almost anything, from logic gates like below, to transistors.
 
 
 <img alt="Redstone diagram" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/g05ar4oaspt61.webp'/>
@@ -41,7 +41,7 @@ Redstone works a lot like real life signals, having a high and low version of th
 
 
 
-Redstone also has its own unique mechanic that we can't utilize as easily in real life; signal strength. Unlike real life, signal strength in Minecraft is discrete, and can be read and produced effectively by  redstone components like comparators. This means with the right circuitry, people have designed machines using this psuedo-analog signal system to make [MIDI inspired music machines] in Minecraft.
+Redstone also has its own unique mechanic that we can't utilize as easily in real life; signal strength. Unlike real life, signal strength in Minecraft is discrete, and can be read and produced effectively by  redstone components like comparators. This means with the right circuitry, people have designed machines using this pseudo-analog signal system to make [MIDI inspired music machines] in Minecraft.
 
 
 
