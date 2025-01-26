@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Forever and Ever: Infinite Chess And How to Visually Represent Infinity"
-date: 2025-01-27 00:00:00
+date: 2025-01-26 00:00:00
 categories: Math Games Infinity
 author: 'Nishanth Tharakan'
 ---
@@ -25,17 +25,17 @@ Many people enjoy chess, and with its popularity, chess has a major online prese
 
 ## Checkmate in Infinite chess
 
-For those who don't play chess, checkmate is the end result of the game, where a king is unable to move to a situation where they will not get captured the next turn. 
+For those who don't play chess, checkmate is the end result of the game, where a king is unable to move to a situation where they will not get captured the next turn. In the example below, the pawn attacks the king, and the edges of the board along with the bishop prevents the king from moving. 
 
 <img alt="Example of checkmate" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/checkmateex.webp'/>
 
 
-The pawn attacks the king, and the edges of the board along with the bishop prevents the king from moving. But in infinite chess, the board cannot restrict movement; when a piece has an unobstructed path, they can pick a direction and a number n, and then move that many spaces in that direction. This means an unblocked rook could move 2, 50, or 1,005,688,288,434 spaces to the right, and still be on the board.
+However, in infinite chess, the board cannot restrict movement; when a piece has an unobstructed path, they can pick a direction and a number n, and then move that many spaces in that direction. This means an unblocked rook could move 2, 50, or 1,005,688,288,434 spaces to the right, and still be on the board.
 
 An example of Checkmate-in-N is the diagram below, taken from the paper: 
 <img alt="Example of checkmate" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/mateinn.png'/>
 
-The black king can only move backwards to avoid mate, and the queen and rook will follow, eventually mating when the kings are almost touching. In this case, if each side plays optimally , the game will always end within N moves, where N is the distance between the kings.
+The black king can only move to the right to avoid mate, and the queen and rook will follow, eventually mating when the kings are almost touching. In this case, if each side plays optimally , the game will always end within N moves, where N is the distance between the kings.
 
 ## Time for Mate in ω
 
