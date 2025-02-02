@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beginner's Guide to Game Theory "
-date: 2025-02-03 00:00:00
+date: 2025-02-02 00:00:00
 categories: Math Games Logic 
 author: 'Nishanth Tharakan'
 ---
