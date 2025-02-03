@@ -19,7 +19,7 @@ author: 'Nishanth Tharakan'
 src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
-Game theory is the study of strategic decision-making between rational actors (individuals who given a situation will always pick the situation optimal for them, notably optimizing their strategy regardless of the actions of others). It provides a framework for understanding how individuals or entities make choices when their outcomes depend on the actions of others, and also provides insight into what are considered "equilibriums" in this kind of puzzle.  This post will introduce key concepts in game theory and explore various types of games that model real-world scenarios.
+Game theory is the study of strategic decision-making between rational actors (individuals who, given a situation, will always pick the situation optimal for them, notably optimizing their strategy regardless of the actions of others). It provides a framework for understanding how individuals or entities make choices when their outcomes depend on the actions of others, and also provides insight into what are considered "equilibriums" in this kind of puzzle.  This post will introduce key concepts in game theory and explore various types of games that model real-world scenarios.
 
 ## Four Main Types of Games
 
@@ -87,7 +87,11 @@ A Nash equilibrium occurs when no player can unilaterally improve their outcome 
 
 ## Practical Uses of Game Theory
 
-Game theory has wide-ranging applications, with heavy parallels to scenarios in economics and political science, like imposing price changes and tariffs across companies and countries (this does somewhat break down when communication is allowed though). Game theory also has some use in evolutionary biology, where limited communication between species can let us find scenarios very similar to assurance games (I think symbiotic relationships are very similar to assurance games due to the needed universal cooperation requirement).
+Game theory has wide-ranging applications:
+* **Economics**: Used in deciding price changes and modeling markets, though its use is limited due to the irrationality of human decisions
+* **International relations**: Used in negotiations, where communication can be limited by not revealing all information
+* **Evolutionary Biology**: Limited communication between species can lead to scenarios similar to assurance games, like symbiotic relationships,where universal cooperation is required for everyone to benefit.
+* **Sociology**: I recommend you research the [tragedy of the commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons), a scenario where a public good deteriorates because of overuse and lack of maintenance
 
 ## Conclusion
 
