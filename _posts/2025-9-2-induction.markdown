@@ -44,7 +44,8 @@ $$ \text{WTS (want to show) } 4^n -1 \equiv 0 \quad(\text{mod 3}) \text{ for all
 
 ### Base case (show the first domino has fallen down):
 
-Substituting $$n = 1$$ into the expression gives us:
+Substituting $n = 1$ into the expression gives us:
+
 $$4^1 - 1 = 4 - 1 = 3$$
 
 Since 3 is divisible by 3, the statement is true for $n = 1$.
@@ -88,7 +89,7 @@ Now we have 3 other non degenerate quadrants (in an L shape) that we need to til
 
 **Conclusion**: By the Principle of Induction, since $P_1$ (tile a $2^1 \times 2^1$) is true, and we showed that we can tile a $2^{n+1} \times 2^{n+1}$ given we can tile a $2^n \times 2^n$ square, our original problem is solved.                  
 
-##Why does this matter?
+## Why does this matter?
 
 I feel that induction is one of the most intuitive ways to prove something, and it makes sense why it’s one of the first methods one learns in an introductory proof class. However this method is used for much more for divisibility and tilings; the [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi), a famous game where you stack disks on top of each other, trying to move all the disks to a new tower while keeping them in the same relative order, has a proof for the fastest possible game being $$2^n - 1$$ turns for a game with $$n$$ disks. Induction is also a good way to check an initial hypothesis before writing a formal proof, many times by disproving it in the inductive step and moving on. 
 
