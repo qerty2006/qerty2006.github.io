@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Beginner's Guide to Mathematical Induction"
-date: 2025-02-02 00:00:00
-categories: Math Games Logic 
+date: 2025-02-09 00:00:00
+categories: Math Logic Proof
 author: 'Nishanth Tharakan'
 ---
 
