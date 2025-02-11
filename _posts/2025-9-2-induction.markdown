@@ -63,6 +63,7 @@ We need to show that if the statement is true for $n = k$, it is also true for $
 $4^{k+} - 1 \equiv 0 \quad(\text{mod 3}) \rightarrow 4^{k+1} - 1 \equiv 0 \quad(\text{mod 3})$
 
 Starting with $4^{k+1} - 1$, we can rewrite it as:
+
 $$4^{k+1} - 1 = 4 \cdot 4^k - 1 = 4 \cdot 4^k - 4 + 3 = 4(4^k - 1) + 3$$
 
 Since $4^k - 1$ is divisible by 3 (by our inductive hypothesis), $4(4^k - 1)$ is also divisible by 3. Adding 3 to a number divisible by 3 results in another number divisible by 3. Therefore, $4^{k+1} - 1$ is divisible by 3.
@@ -79,7 +80,7 @@ But there is a visual problem where we can use this method:
 
 This problem is really fun: show that if you are given a square with size $2^n \times 2^n$ and remove 1 tile, no matter what tile you remove, you can use trominos (3 piece tiles in an L shape) to tile the rest of the board.
 
-**Base Case**: For $$n = 1$$, the degenerate square is a $2 \times 2$ square with one tile removed. This can be tiled with one angular tromino if the removed tile is in a corner, which it will always be.
+**Base Case**: For $n = 1$, the degenerate square is a $2 \times 2$ square with one tile removed. This can be tiled with one angular tromino if the removed tile is in a corner, which it will always be.
 
 **Inductive Hypothesis**: Assume that a degenerate square of size $2^k$ can be tiled with angular trominos.
     
@@ -91,7 +92,7 @@ Now we have 3 other non degenerate quadrants (in an L shape) that we need to til
 
 ## Why does this matter?
 
-I feel that induction is one of the most intuitive ways to prove something, and it makes sense why it’s one of the first methods one learns in an introductory proof class. However this method is used for much more for divisibility and tilings; the [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi), a famous game where you stack disks on top of each other, trying to move all the disks to a new tower while keeping them in the same relative order, has a proof for the fastest possible game being $$2^n - 1$$ turns for a game with $$n$$ disks. Induction is also a good way to check an initial hypothesis before writing a formal proof, many times by disproving it in the inductive step and moving on. 
+I feel that induction is one of the most intuitive ways to prove something, and it makes sense why it’s one of the first methods one learns in an introductory proof class. However this method is used for much more for divisibility and tilings; the [Tower of Hanoi](https://en.wikipedia.org/wiki/Tower_of_Hanoi), a famous game where you stack disks on top of each other, trying to move all the disks to a new tower while keeping them in the same relative order, has a proof for the fastest possible game being $2^n - 1$ turns for a game with $$n$$ disks. Induction is also a good way to check an initial hypothesis before writing a formal proof, many times by disproving it in the inductive step and moving on. 
 
 Regardless, learning induction helps build foundational understanding and confidence in mathematical reasoning, which is essential for tackling more advanced and complex problems in mathematics and related fields. Whether you're an applied math student like yourself or a pure mathematician, mastering induction is a valuable skill that will serve you well in your mathematical journey.
 
