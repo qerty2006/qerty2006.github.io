@@ -25,7 +25,7 @@ When I go somewhere new, whether it be navigating to the Mathematical Sciences B
 
 ## [Wikipedia:](google.com)
 
-<img alt="Beginning of Wiki" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/wiki1.png'/>
+<img style='border:1px solid gray;' alt="Beginning of Wiki" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/wiki1.png'/>
 
 While not considered a common method by high school students who are taught not to trust it (due to possibilities of trolling and inaccurate information in its entries), Wikipedia can act as a better version of Google search if you put in the effort, just by using the sources at the very end. From here, I found articles about Google blurring parts of India, Spain, the Korean peninsula, Indonesia, and even Antarctica (though that may be due to the fact that most of Antarctica is very reflective and thus hard to photograph).  
 
