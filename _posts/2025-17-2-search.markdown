@@ -29,11 +29,16 @@ When I go somewhere new, whether it be navigating to the Mathematical Sciences B
 
 While not considered a common method by high school students who are taught not to trust it (due to possibilities of trolling and inaccurate information in its entries), Wikipedia can act as a better version of Google search if you put in the effort, just by using the sources at the very end. From here, I found articles about Google blurring parts of India, Spain, the Korean peninsula, Indonesia, and even Antarctica (though that may be due to the fact that most of Antarctica is very reflective and thus hard to photograph).  
 
-![References](image-1.png)
+
+<img alt="references" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/wikiref.png'/>
+
 Using Wikipedia also connected this to the extensive history of [cartographic censorship](https://en.wikipedia.org/wiki/Cartographic_censorship), where I learned how different nations over time utilized location data as an economic and political tool, restricting access to where new discoveries were to profit off of them. One thing of note is that the sources were pretty old, a disadvantage of crowdsourced research, but the combination of new and old sources displayed the prevalence of this phenomenon better than my experiences with google search ever could. Also on the plus side of Wikipedia, when you have an untarnished article like this one, most of the references are reliable, being public news sources  with high amounts of reputability due to the thoroughness of their journalism; this definitely made me more comfortable with using this method as compared to Google Search, where SEO can compromise the completeness of the information found on the page, as website owners scramble to make their sites advertiser friendly and attractive to the all-mighty Google algorithm.
 
-![beginning of list text](image-2.png)
+<img alt="List of censored places" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/wikilist.png'/>
 Even with an incomplete list of places, the locations noted are detailed thoroughly, allowing me to verify if areas are still blurred. For example here’s the max zoom of the Gaza strip vs. the east endzone of UCLA’s Spalding field (the UCLA one has 5x the resolution in spite of both being satellite imagery)
+
+
+<img alt="Gaza vs UCLA" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/GazavUCLA.png'/>
 ![alt text](image-3.png)
 
 
