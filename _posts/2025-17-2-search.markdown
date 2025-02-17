@@ -39,33 +39,36 @@ Even with an incomplete list of places, the locations noted are detailed thoroug
 
 
 <img alt="Gaza vs UCLA" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/GazavUCLA.png'/>
-![alt text](image-3.png)
+
 
 
 UCLA Library: “Map censorship”
 For our last assignment in our Data Justice and Society class, we learned how to look up information on our library database, and that was a method I wanted to try for this topic:
 
-![alt text](image-4.png)
+
+<img alt="List of censored places" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/library.png'/>
 
 Like Wikipedia, I could be certain that these were credible sources since they were human curated at a reputable institution, but unlike Wikipedia, which is crowd sourced information and thus suffers from the tragedy of the commons, UCLA is funded by other ventures (like high tuition) and thus can afford (and must afford) to not only add more current information but also archive older information and preserve it for as long as possible, allowing me to find obscure information related to map censorship, [like an artist using Google’s censorship of the Netherlands to make composite art pieces](https://www.cnn.com/2015/02/18/opinion/cnnphotos-sutter-google-dutch-landscapes/index.html).
 
 ## Deep Research Method: 
 [Google](https://docs.google.com/document/d/1dqsY4g_r7ySEoeXEi5lJFf5zFNdCIekYSVy8q0cx-6c/edit?tab=t.0) and [Perplexity](https://www.perplexity.ai/page/the-social-impacts-of-online-g-GkMxzY7dRbexaSpAOzofDg) both had deep research methods that I could use, but it wasn’t their content I was looking for; like the others, I wanted to see what they based their research off of and read that instead. 
 
-![alt text](image-5.png)
+<img alt="Perplexity's result" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/perplex.png'/>
+
 Perplexity preferred to stick to the topic, but was very general with its answer; I got more reading about cartographic activism on [maplibrary.org](maplibrary.org) than I did reading Perplexity’s summarization.
 
-![alt text](image-6.png)
+<img alt="List of censored places" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/google.png'/>
+
 Google gave extra context for the problem behind map censorship, and had lots of sources to read afterwards, including documentation on how Google Maps gets its data, which led me down a rabbit hole of different nation’s laws on what locational data outsiders can have. Overall, I expected more from something that's considered a premium and easy to use service (both of these normally cost $20 a month to access) but when used solely for getting access to large amounts of sources to read through yourself, it’s worth it so you can get an overview from the AI before diving in.
 
 ## My favorite method: Talk to someone affected by it
 One of my classmates is South Korean, and he was interested in seeing the differences in using google maps vs his main app while navigating in South Korea, so during dinner, we got our map apps out and got some pictures:
  
-![alt text](image-7.png)
+<img alt="List of censored places" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/maps.png'/>
 It’s crazy that I, an international traveler, wouldn't be able to navigate South Korea by foot or by car using Google Maps (not even talking about reduced resolution), a service I trust to be able to take me almost anywhere. It’s because of the [Spatial Data Industry Promotion Act](https://elaw.klri.re.kr/eng_mobile/viewer.do?hseq=32571&type=new&key=) which “contribute to the development of the national economy and the qualitative improvement in national life by *strengthening the competitiveness of the spatial data industry* and promoting the development thereof.” By “strengthening the competitiveness”, they mean giving the data to two chaebols in-country so they are the ones you rely on for everything. 
 Anyway, we also had a long conversation about [chaebols](https://en.wikipedia.org/wiki/Chaebol) and their influence on Korean society due to their large power over the country, which led us to talking about China, who we discovered, has some fun with the locational data they send Google:
 
-![alt text](image-8.png)
+<img alt="List of censored places" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/search/china.png'/>
 Notice the grey overlay? That’s where China told Google its roads are; China has accurate mappings of them, and Google has accurate images, but China feeds Google algorithm shifted data due to a Chinese prohibiting mapping the country without permission.
 
 My favorite part of this kind of research was literally doing research like my professors do, going out in the field, getting their hands dirty, speaking to new people, getting new perspectives, and most importantly, learning from each other. I knew that China altered its map data, but I didn’t know too much about Korea and was intrigued by the power of the chaebols in South Korean life, and my Korean friend had fun learning about being able to drive in the South China Sea (this is due to the algorithmic shift, you cannot actually drive in there)
