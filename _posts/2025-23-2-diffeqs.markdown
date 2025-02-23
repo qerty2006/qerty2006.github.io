@@ -1,0 +1,488 @@
+---
+layout: post
+title: "Beginner's Guide to Differential Equations: An Overview of UCLA's MATH33B Class"
+date: 2025-02-22 22:00:00
+categories: math education
+author: 'Nishanth Tharakan'
+---
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\$$","\$$"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" charset="utf-8" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
+https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
+
+
+Textbook for context: Polking, Differential Equations with Boundary Value Problems, 2nd edition
+
+With my differential equations midterm coming soon (literally next week), I wanted to come back to the basics, and go over all of the stuff that I learned over the last 8 weeks, hopefully in a format that will allow anyone with a basic understanding of calculus can follow along.
+
+## What is a differential equation?
+
+A differential equation is a mathematical equation that relates a function with its derivatives. In simpler terms, it describes how a particular quantity changes over time or space based on the rate at which it changes. Differential equations are crucial in modeling various phenomena in fields such as physics, engineering, biology, and economics.
+
+There are two main types of differential equations (our class only deals with the ordinary version due to wanting to be able to solve them):
+
+1. **Ordinary Differential Equations (ODEs):** These involve functions of a single variable and their derivatives. An example of an ODE is Newton's second law of motion, which relates force, mass, and acceleration.
+
+2. **Partial Differential Equations (PDEs):** These involve functions of multiple variables and their partial derivatives. PDEs are used to describe phenomena such as heat conduction, fluid flow, and electromagnetic fields.
+
+We write ordinary differential equations in the following format:
+$$
+\frac{d^ny}{dx^n} = f(x, y, y', y''... \frac{d^{n-1}y}{dx^{n-1}})
+$$
+
+Usually we're not taking the nth derivative of $y$, but when we do, we can write it in terms of our independent variable $x$, and our derivatives $y$ to $\frac{d^{n-1}y}{dx^{n-1}}$.
+
+## Variable separable: $\frac{dy}{dx} = f(x)g(y)$
+
+A separable differential equation is an equation that can be written in the form $\frac{dy}{dx} = f(x)g(y)$. This means the equation can be separated such that all terms involving $y$ are on one side and all terms involving $x$ can be place on the other side:
+
+1. Separate the variables: Rewrite the equation so that all terms involving $y$ are on one side and all terms involving $x$ are on the other:
+   $$ \frac{1}{g(y)} dy = f(x) dx $$
+   
+2. Integrate both sides:
+   $$ \int \frac{1}{g(y)} dy = \int f(x) dx $$
+
+3. Solve the resulting equations to find $y$ as a function of $x$.
+
+#### Example: $\frac{dy}{dx} = xy$
+
+1. Separate the variables:
+   $$ \frac{1}{y} dy = x dx $$
+
+2. Integrate both sides:
+   $$ \int \frac{1}{y} dy = \int x dx $$
+
+   This results in:
+   $$ \ln |y| = \frac{x^2}{2} + C $$
+
+3. Solve for $y$:
+   $$ y = \pm e^{\frac{x^2}{2} + C} $$
+   which can be simplified to:
+   $$ y = Ce^{\frac{x^2}{2}} $$
+
+Where $C$ is the constant of integration.
+
+
+### Uniqueness and Existence theorems: What is Lipschitz in y?
+
+The Lipschitz condition is a bound on how fast the derivative of a function changes as its input changes. It is commonly used in existence and uniqueness theorems for differential equations. The condition states that if a function $f(x,y)$ is Lipschitz in $y$, then there exists a constant $K$ such that
+
+$$|f(x,y_1) - f(x,y_2)| \leq K|y_1 - y_2|$$
+
+This condition is important in differential equations because it ensures that the solution to an initial value problem is unique, meaning only one solution to the differential equation passes through a given initial condition point.)We also have a quick way to show this is true: simply show that $\frac{d}{dy}f(x,y)$ is continuous at the point you are checking.
+
+Existence of a solution passing through a given point is a bit easier to determine and explain when it's not true. For example, the differential equation $\frac{dy}{dx} = \frac{1}{x}$ does not have a solution passing through the point $(0,0)$, since the left-hand side is not defined at $x=0$.
+
+The condition for existence is as follows: 
+
+If $f(x, y)$ is continuous in some region containing the point $(x_0, y_0)$, then there exists an interval around $x_0$ in which there is at least one solution to the initial value problem $\frac{dy}{dx} = f(x, y)$ with $y(x_0) = y_0$.
+
+This is known as the Picard-Lindelöf theorem or the existence theorem. It guarantees the existence of a solution but not necessarily its uniqueness.
+
+### Example of non-uniqueness: $\frac{dy}{dx} = f(y) = y^\frac{1}{5}$
+
+This differential equation has multiple solutions passing through the point $(0,0)$, which can be seen if we separate variables:
+
+$$ \int y^{-\frac{1}{5}} dy = \int dx $$
+
+$$ \frac{5}{4} y^\frac{4}{5} = x + C $$
+
+$$ y = \left(\frac{4}{5}(x + C)\right)^\frac{5}{4} $$
+
+But,  $y = 0$ also satisfies this equation and is notably different from the solution we got from the variable separable solution. Thus at (0,0) we have guaranteed the existence of a solution ($y$ and $f(y)$ are continuous) but not a unique one ($f'(y) = \frac{y^{-4/5}}{5}$ is not continuous at (0,0)).
+
+## Exact Differential Equation: $M(x,y)dx + N(x,y)dy = 0 \quad | \quad M_y = N_x$
+
+#### Intuitive Way to Reverse Engineer an Exact Differential Equation Solution
+
+The form of $M(x,y)dx + N(x,y)dy = 0$ is a very important form of differential equations, because it can be solved using "exact differentials" (not to be confused with exact differential equations). The way to solve this is to find a function $u(x,y)$ that satisfies the following:
+
+$$ \frac{\partial u}{\partial x} = M(x,y) \quad \text{and} \quad \frac{\partial u}{\partial y} = N(x,y) $$
+
+The solution $y(x)$ is then given by $u(x,y) = C$ for some constant $C$. To check if this is possible, we can use the following condition:
+
+$$ \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x} $$
+
+If this is true, then we can reverse engineer a solution to our differential equation by finding a function $u(x,y)$ which satisfies the first two equations above. We can then find the solution $y(x)$ by solving $u(x,y) = C$.
+
+For example, if we had a differential equation of the form
+
+$$ 2ydx + (3y^2 + 2x)dy = 0 $$
+
+We can check the condition above and find that it is satisfied. We can then find a function $u(x,y)$ that satisfies
+
+$$ \frac{\partial u}{\partial x} = 2y \quad \text{and} \quad \frac{\partial u}{\partial y} = 3y^2 + 2x $$
+
+$$ \int M(x,y) dx = xy + C_1 \quad \text{and} \quad \int N(x,y) dy = y^3 + xy + C_2 $$
+
+Solving for $u(x,y)$ and removing the duplicate term $xy + C$ , we get
+
+$$ u(x,y) = xy + y^3 + C $$
+
+
+## Linear: $\frac{dy}{dx} + g(x)y = f(x)$
+
+To solve linear differential equations, we use the integrating factor method. The integrating factor is a function, $\mu(x)$, that satisfies the following condition:
+
+$$ \frac{d\mu}{dx} = \mu(x) g(x) $$
+
+This is a simple first-order differential equation, so we can solve for $\mu(x)$ using separation of variables. The solution to this equation is given by the following:
+
+$$ \mu(x) = e^{\int g(x) dx} $$
+
+Now, we can multiply both sides of the original linear differential equation by $\mu(x)$, which gives us:
+
+$$ \frac{d}{dx} (\mu(x)y) = \mu(x) f(x) $$
+
+with the left hand side being condensed by product rule. This is now a separable differential equation, so we can solve for $y$ using separation of variables. The solution to this equation is given by the following:
+
+$$ y = \frac{1}{\mu(x)} \int \mu(x) f(x) dx + \frac{C}{\mu(x)} $$
+
+For example, consider the following linear differential equation:
+
+$$ \frac{dy}{dx} + \frac{2x}{1 + x^2}y = \frac{1}{1 + x^2} $$
+
+To solve this equation, we first need to find the integrating factor. In this case, the integrating factor is given by:
+
+$$ \mu(x) = e^{\int \frac{2x}{1 + x^2} dx} = e^{\ln(1 + x^2)} = 1 + x^2 $$
+
+Now, we can multiply both sides of the original linear differential equation by $\mu(x)$, which gives us:
+
+$$ \frac{d}{dx} ((1 + x^2)y) = 1 $$
+
+This is now a separable differential equation, so we can solve for $y$ using separation of variables. The solution to this equation is given by the following:
+
+$$ y = \frac{1}{1 + x^2} \int 1 dx + \frac{C}{1 + x^2} = \frac{x + C}{1 + x^2} $$
+
+## Autonomous: $\frac{dy}{dx} = f(y)$ (x doesn't affect the slope)
+
+### Stability
+
+In our class we didn't really go over solving them in the conventional sense since they aren't dependent on x at all. Instead we discussed how the graphs of different solutions would look.
+
+ An equilibrium point (or value in this case, an infinite line of points) $y_e$ satisfies $f(y_e) = 0$. To determine stability, consider the derivative of $f(y)$:
+
+1. **Stable (Attracting) Equilibrium**: If $f'(y_e) < 0$, then the equilibrium is stable. Solutions starting near $y_e$ will move towards it as $x$ increases.
+
+2. **Unstable (Repelling) Equilibrium**: If $f'(y_e) > 0$, then the equilibrium is unstable. Solutions starting near $y_e$ will move away from it as $x$ increases.
+
+3. **Semi-Stable Equilibrium**: If $f'(y_e) = 0$, further analysis is needed. The equilibrium might be stable from one direction and unstable from another.
+
+### Phase Line Analysis
+
+A phase line can be used to visualize the stability of equilibrium points. It is a one-dimensional diagram where:
+
+- Equilibrium points are marked on a vertical line.
+- Arrows indicate the direction of the flow (i.e., increase or decrease of $y$) between equilibrium points.
+- Stability is visually represented by the direction of arrows converging towards or diverging from equilibrium points.
+
+### Example
+
+Consider the autonomous differential equation:
+
+$$ \frac{dy}{dx} = y(1 - y) $$
+
+Equilibrium points are found by setting $f(y) = y(1 - y) = 0$, giving $y_e = 0$ and $y_e = 1$.
+
+- Compute $f'(y) = 1 - 2y$.
+- At $y_e = 0$: $f'(0) = 1 > 0$, so $y = 0$ is an unstable equilibrium.
+- At $y_e = 1$: $f'(1) = -1 < 0$, so $y = 1$ is a stable equilibrium.
+
+The phase line indicates that solutions approach $y = 1$ as $x$ increases if they start between $0$ and $1$, and solutions move away from $y = 0$ for $y > 0$.
+
+
+## Second Order Constant Coefficient Differential Equations: $ay + by' + cy'' = 0$
+
+### Characteristic Equations
+
+For a homogeneous second order linear differential equation of the form $ay'' + by' + cy = 0$, the characteristic equation is $ar^2 + br + c = 0$, by assuming $y = e^{r_nx}$. The discriminant of this equation is $b^2 - 4ac$.
+
+- **$b^2 - 4ac > 0$**: Two distinct real solutions, $y_1(x) = e^{r_1x}$ and $y_2(x) = e^{r_2x}$ where $r_1$ and $r_2$ are the two distinct real roots of the characteristic equation. The general solution is $y(x) = c_1y_1(x) + c_2y_2(x)$.
+- **$b^2 - 4ac = 0$**: One repeated real solution, $y_1(x) = e^{rx}$ where $r$ is the single real root of the characteristic equation. The general solution is $y(x) = c_1y_1(x) + c_2xy_1(x)$.
+- **$b^2 - 4ac < 0$**: Two distinct complex solutions, $y_1(x) = e^{r_1x}$ and $y_2(x) = e^{r_2x}$ where $r_1 = \alpha + \beta i$ and $r_2 = \alpha - \beta i$ are the two distinct complex roots of the characteristic equation. The general solution is $y(x) = c_1\cos(\beta x)e^{\alpha x} + c_2\sin(\beta x)e^{\alpha x}$.
+
+### Existence of 2 linearly independent solutions (and the Wronskian)
+
+It's important to note that now we can start having linear combinations of solutions; in fact for these second order equations, there will always be 2 linearly independent solutions, meaning one is not a multiple of the other. We can check this by using the Wronskian:
+
+### Existence of 2 linearly independent solutions (and the Wronskian)
+
+The Wronskian is a determinant used to determine whether a set of solutions is linearly independent. For two functions, $y_1(x)$ and  $y_2(x)$, the Wronskian $W(y_1, y_2)$ is defined as:
+
+$$
+W(y_1, y_2) = 
+\begin{vmatrix}
+y_1 & y_2 \\
+y_1' & y_2'
+\end{vmatrix}
+= y_1 y_2' - y_2 y_1'
+$$
+
+For a system of n differential equations, we can determine the linear independence of solutions using the Wronskian determinant of n functions, $y_1(x), y_2(x), \ldots, y_n(x)$. The Wronskian $W(y_1, y_2, \ldots, y_n)$ is defined as:
+
+$$
+W(y_1, y_2, \ldots, y_n) = 
+\det(
+\begin{vmatrix}
+y_1 & y_2 & \ldots & y_n \\
+y_1' & y_2' & \ldots & y_n' \\
+\vdots & \vdots & \ddots & \vdots \\
+y_1^{(n-1)} & y_2^{(n-1)} & \ldots & y_n^{(n-1)}
+\end{vmatrix} )
+$$
+
+If the Wronskian is non-zero for some $x$ in the interval of interest, the functions $y_1, y_2, \ldots, y_n$ are linearly independent.
+
+### Unforced Harmonic Motion
+
+The differential equation $ay'' + by' + cy = 0$ represents a model of **simple harmonic motion** if $a > 0$, $b = 0$, and $c > 0$. In this case, the equation has the form $ay'' + cy = 0$, and the general solution is $y(x) = c_1\cos\left(\sqrt{\frac{c}{a}}x\right) + c_2\sin\left(\sqrt{\frac{c}{a}}x\right)$.
+
+The differential equation $ay'' + by' + cy = 0$ does not represent simple harmonic motion if $b \neq 0$. In this case, the roots of the characteristic equation are $r_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. The motion is classified as:
+
+- **Overdamped**: $b^2 - 4ac > 0$, so $r_1$ and $r_2$ are distinct real numbers with $r_1 < 0$ and $r_2 < 0$. The general solution is $y(x) = c_1e^{r_1x} + c_2e^{r_2x}$.
+- **Underdamped**: $b^2 - 4ac < 0$, so $r_1 = \alpha + \beta i$ and $r_2 = \alpha - \beta i$ are distinct complex numbers with $\alpha < 0$ and $\beta \neq 0$. The general solution is $y(x) = c_1\cos(\beta x)e^{\alpha x} + c_2\sin(\beta x)e^{\alpha x}$.
+- **Critically Damped**: $b^2 - 4ac = 0$, so $r_1 = r_2 = -\frac{b}{2a}$ is a repeated real root. The general solution is $y(x) = c_1e^{rx} + c_2xe^{rx}$.
+
+## Second Order Undetermined Coefficient Differential Equations: $a(x)y + b(x)y' + c(x)y'' = d(x)$
+
+### Variation of Parameters (and the equation you should remember if you need to take this class)
+
+Variation of parameters is a method used to find particular solutions to non-homogeneous differential equations. For the second-order differential equation $a(x)y'' + b(x)y' + c(x)y = d(x)$, the particular solution can be found by assuming a solution of the form:
+
+$$ y_p(x) = u_1(x)y_1(x) + u_2(x)y_2(x) $$
+
+where $y_1(x)$ and $y_2(x)$ are solutions to the associated homogeneous equation, and $u_1(x)$ and $u_2(x)$ are functions to be determined. The derivatives of $u_1$ and $u_2$ are found using the following system of equations:
+
+1. $u_1'(x)y_1(x) + u_2'(x)y_2(x) = 0$
+2. $u_1'(x)y_1'(x) + u_2'(x)y_2'(x) = \frac{d(x)}{a(x)}$
+
+The solutions to this system are:
+
+$$ u_1'(x) = -\frac{y_2(x)d(x)}{a(x)W(y_1, y_2)} \quad \text{and} \quad u_2'(x) = \frac{y_1(x)d(x)}{a(x)W(y_1, y_2)} $$
+
+where $W(y_1, y_2)$ is the Wronskian of $y_1$ and $y_2$.
+
+Solving this system will provide $u_1'(x)$ and $u_2'(x)$, which can be integrated to find $u_1(x)$ and $u_2(x)$. Substituting these back into the equation for $y_p(x)$ will give the particular solution.
+
+### Example: Finding Particular and General Solutions
+
+Consider the non-homogeneous differential equation:
+
+$$ y'' - 3y' + 2y = e^x $$
+
+**Step 1: Solve the Homogeneous Equation**
+
+First, solve the associated homogeneous equation:
+
+$$ y'' - 3y' + 2y = 0 $$
+
+The characteristic equation is:
+
+$$ r^2 - 3r + 2 = 0 $$
+
+Solving for roots, we get:
+
+$$ r = 1, 2 $$
+
+Thus, the general solution to the homogeneous equation is:
+
+$$ y_h(x) = c_1e^x + c_2e^{2x} $$
+
+**Step 2: Find a Particular Solution**
+
+Now, find a particular solution using the method of undetermined coefficients. Assume a particular solution of the form:
+
+$$ y_p(x) = Ae^x $$
+
+Substitute $y_p(x)$ into the differential equation:
+
+$$ (Ae^x)'' - 3(Ae^x)' + 2(Ae^x) = e^x $$
+
+$$ A e^x - 3A e^x + 2A e^x = e^x $$
+
+$$ 0 = e^x $$
+
+This indicates a need to adjust our assumption due to overlap with the homogeneous solution. Try:
+
+$$ y_p(x) = Axe^x $$
+
+Substitute again:
+
+$$ (Axe^x)'' - 3(Axe^x)' + 2(Axe^x) = e^x $$
+
+After expanding and simplifying, solve for $A$:
+
+$$ A = 1 $$
+
+Thus, the particular solution is:
+
+$$ y_p(x) = Axe^x = xe^x $$
+
+**Step 3: Combine Solutions**
+
+The general solution to the non-homogeneous equation is:
+
+$$ y(x) = y_h(x) + y_p(x) $$
+
+$$ y(x) = c_1e^x + c_2e^{2x} + xe^x $$
+
+This is the complete solution to the differential equation.
+
+
+
+## System of Differential equations (Matrix Time!):  $y' = A(x,y)y$
+
+Let's say you have multiple first order differential equations that rely on each other as inputs for their differential equations, like this set of equations:
+### Example System of Differential Equations
+
+
+1. $\frac{dx}{dt} = ax - bxy$
+2. $\frac{dy}{dt} = -cy + dxy$
+
+where:
+- $x(t)$ and $y(t)$ represent the populations of two species at time $t$.
+- $a$, $b$, $c$, and $d$ are constants representing interaction and growth rates.
+
+### Matrix Representation
+
+The system can be written in matrix form as:
+
+$$
+\begin{bmatrix}
+\frac{dx}{dt} \\
+\frac{dy}{dt}
+\end{bmatrix}
+=
+\begin{bmatrix}
+a & -bx \\
+dy & -c
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+$$
+
+
+
+### 2x2 Variation with constant coefficients: $y' = Ay$
+
+
+To solve the system of differential equations using eigenvalues and eigenvectors, we assume solutions of the form:
+
+$$
+y(t) = \mathbf{v} e^{\lambda t}
+$$
+
+where $\mathbf{v}$ is an eigenvector and $\lambda$ is the corresponding eigenvalue. For the system of equations:
+
+$$
+\begin{bmatrix}
+\frac{dx}{dt} \\
+\frac{dy}{dt}
+\end{bmatrix}
+=
+\begin{bmatrix}
+a & -b \\
+d & -c
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+$$
+
+we represent it in the matrix form $y' = Ay$, where
+
+$$
+A =
+\begin{bmatrix}
+a & -b \\
+d & -c
+\end{bmatrix}
+$$
+
+**Step 1: Find Eigenvalues**
+
+Solve the characteristic equation $\det(A - \lambda I) = 0$, where $I$ is the identity matrix:
+
+$$
+\det
+\begin{bmatrix}
+a - \lambda & -b \\
+d & -c - \lambda
+\end{bmatrix}
+= 0
+$$
+
+Expanding the determinant:
+
+$$(a - \lambda)(-c - \lambda) - (-b)(d) = 0$$
+
+Solve the quadratic equation for $\lambda$.
+
+**Step 2: Find Eigenvectors for each Eigenvalue**
+
+For each eigenvalue $\lambda$, solve $(A - \lambda I)\mathbf{v} = 0$ to find the corresponding eigenvector $\mathbf{v}$.
+
+**Step 3: General Solution**
+
+The general solution is a linear combination of the solutions:
+
+$$
+y(t) = c_1 \mathbf{v_1} e^{\lambda_1 t} + c_2 \mathbf{v_2} e^{\lambda_2 t}
+$$
+
+where $c_1$ and $c_2$ are constants determined by initial conditions, and $\mathbf{v_1}$ and $\mathbf{v_2}$ are the eigenvectors corresponding to eigenvalues $\lambda_1$ and $\lambda_2$.
+
+### nxn variation:
+
+For systems of n linear differential equations, we need to find n eigenvalues and eigenvectors of the nxn matrix A. The general solution then is a linear combination of the n solutions:
+
+$$
+\mathbf{y}(t) = c_1 \mathbf{v_1} e^{\lambda_1 t} + \cdots + c_n \mathbf{v_n} e^{\lambda_n t}
+$$
+
+where $c_1, \ldots, c_n$ are constants determined by initial conditions, and $\mathbf{v_1}, \ldots, \mathbf{v_n}$ are the eigenvectors corresponding to eigenvalues $\lambda_1, \ldots, \lambda_n$.
+
+### What about repeated values?
+
+### What about repeated eigenvalues?
+
+When the matrix $A$ has repeated eigenvalues, the situation becomes more complex due to the possibility of the matrix not being diagonalizable. Here's how we handle it:
+
+**Degenerate Case (Defective Matrix):**
+
+If the matrix $A$ is defective, meaning it does not have enough linearly independent eigenvectors, we use generalized eigenvectors to form a Jordan chain. For a repeated eigenvalue $\lambda$ with algebraic multiplicity $m$ and geometric multiplicity $g < m$, we find $g$ linearly independent eigenvectors and $m-g$ generalized eigenvectors. The solution involves terms of the form:
+
+$$
+y(t) = (c_1 \mathbf{v_1} + c_2 t \mathbf{v_2} + \cdots) e^{\lambda t}
+$$
+
+where $\mathbf{v_1}$ is an eigenvector and $\mathbf{v_2}, \ldots$ are generalized eigenvectors.
+
+**Complete Case (Diagonalizable Matrix):**
+
+If $A$ is diagonalizable despite repeated eigenvalues, we can still find a full set of $n$ linearly independent eigenvectors. The general solution remains a linear combination of terms:
+
+$$
+y(t) = c_1 \mathbf{v_1} e^{\lambda_1 t} + c_2 \mathbf{v_2} e^{\lambda_2 t} + \cdots
+$$
+
+where $\lambda_1 = \lambda_2 = \cdots = \lambda_n$ are the repeated eigenvalues, and $\mathbf{v_1}, \mathbf{v_2}, \ldots$ are the corresponding eigenvectors.
+
+In both cases, the initial conditions determine the constants $c_1, c_2, \ldots$.
+
+
+## That's it so far
+
+I'll try to update this as the quarter finishes and make it a full resource, but until then, this is all the stuff you should learn for Differential Equations!
