@@ -128,7 +128,8 @@ Solving for $u(x,y)$ and removing the duplicate term $xy + C$ , we get
 $$ u(x,y) = xy + y^3 + C $$
 
 
-## Linear: $\frac{dy}{dx} + g(x)y = f(x)$
+## Linear: 
+### $\frac{dy}{dx} + g(x)y = f(x)$
 
 To solve linear differential equations, we use the integrating factor method. The integrating factor is a function, $\mu(x)$, that satisfies the following condition:
 
@@ -162,7 +163,8 @@ This is now a separable differential equation, so we can solve for $y$ using sep
 
 $$ y = \frac{1}{1 + x^2} \int 1 dx + \frac{C}{1 + x^2} = \frac{x + C}{1 + x^2} $$
 
-## Autonomous: $\frac{dy}{dx} = f(y)$ (x doesn't affect the slope)
+## Autonomous: 
+### $\frac{dy}{dx} = f(y)$ (x doesn't affect the slope)
 
 ### Stability
 
@@ -199,7 +201,8 @@ Equilibrium points are found by setting $f(y) = y(1 - y) = 0$, giving $y_e = 0$ 
 The phase line indicates that solutions approach $y = 1$ as $x$ increases if they start between $0$ and $1$, and solutions move away from $y = 0$ for $y > 0$.
 
 
-## Second Order Constant Coefficient Differential Equations: $ay + by' + cy'' = 0$
+## Second Order Constant Coefficient Differential Equations: 
+### $ay + by' + cy'' = 0$
 
 ### Characteristic Equations
 
@@ -251,7 +254,8 @@ The differential equation $ay'' + by' + cy = 0$ does not represent simple harmon
 - **Underdamped**: $b^2 - 4ac < 0$, so $r_1 = \alpha + \beta i$ and $r_2 = \alpha - \beta i$ are distinct complex numbers with $\alpha < 0$ and $\beta \neq 0$. The general solution is $y(x) = c_1\cos(\beta x)e^{\alpha x} + c_2\sin(\beta x)e^{\alpha x}$.
 - **Critically Damped**: $b^2 - 4ac = 0$, so $r_1 = r_2 = -\frac{b}{2a}$ is a repeated real root. The general solution is $y(x) = c_1e^{rx} + c_2xe^{rx}$.
 
-## Second Order Undetermined Coefficient Differential Equations: $a(x)y + b(x)y' + c(x)y'' = d(x)$
+## Second Order Undetermined Coefficient Differential Equations: 
+### $a(x)y + b(x)y' + c(x)y'' = d(x)$
 
 ### Variation of Parameters (and the equation you should remember if you need to take this class)
 
@@ -338,7 +342,8 @@ This is the complete solution to the differential equation.
 
 
 
-## System of Differential equations (Matrix Time!):  $y' = A(x,y)y$
+## System of Differential equations (Matrix Time!): 
+### $y' = A(x,y)y$
 
 Let's say you have multiple first order differential equations that rely on each other as inputs for their differential equations, like this set of equations:
 ### Example System of Differential Equations
