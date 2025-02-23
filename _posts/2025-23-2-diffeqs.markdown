@@ -35,9 +35,7 @@ There are two main types of differential equations (our class only deals with th
 2. **Partial Differential Equations (PDEs):** These involve functions of multiple variables and their partial derivatives. PDEs are used to describe phenomena such as heat conduction, fluid flow, and electromagnetic fields.
 
 We write ordinary differential equations in the following format:
-$$
-\frac{d^ny}{dx^n} = f(x, y, y', y''... \frac{d^{n-1}y}{dx^{n-1}})
-$$
+$$ \frac{d^ny}{dx^n} = f(x, y, y', y''... \frac{d^{n-1}y}{dx^{n-1}}) $$
 
 Usually we're not taking the nth derivative of $y$, but when we do, we can write it in terms of our independent variable $x$, and our derivatives $y$ to $\frac{d^{n-1}y}{dx^{n-1}}$.
 
@@ -46,28 +44,28 @@ Usually we're not taking the nth derivative of $y$, but when we do, we can write
 A separable differential equation is an equation that can be written in the form $\frac{dy}{dx} = f(x)g(y)$. This means the equation can be separated such that all terms involving $y$ are on one side and all terms involving $x$ can be place on the other side:
 
 1. Separate the variables: Rewrite the equation so that all terms involving $y$ are on one side and all terms involving $x$ are on the other:
-   $$ \frac{1}{g(y)} dy = f(x) dx $$
+   $$\frac{1}{g(y)} dy = f(x)dx$$
    
 2. Integrate both sides:
-   $$ \int \frac{1}{g(y)} dy = \int f(x) dx $$
+   $$\int \frac{1}{g(y)} dy = \int f(x) dx$$
 
 3. Solve the resulting equations to find $y$ as a function of $x$.
 
 #### Example: $\frac{dy}{dx} = xy$
 
 1. Separate the variables:
-   $$ \frac{1}{y} dy = x dx $$
+   $$\frac{1}{y} dy = x dx$$
 
 2. Integrate both sides:
-   $$ \int \frac{1}{y} dy = \int x dx $$
+   $$\int \frac{1}{y} dy = \int x dx$$
 
    This results in:
-   $$ \ln |y| = \frac{x^2}{2} + C $$
+   $$\ln |y| = \frac{x^2}{2} + C$$
 
 3. Solve for $y$:
-   $$ y = \pm e^{\frac{x^2}{2} + C} $$
+   $$y = \pm e^{\frac{x^2}{2} + C}$$
    which can be simplified to:
-   $$ y = Ce^{\frac{x^2}{2}} $$
+   $$y = Ce^{\frac{x^2}{2}}$$
 
 Where $C$ is the constant of integration.
 
@@ -100,7 +98,8 @@ $$ y = \left(\frac{4}{5}(x + C)\right)^\frac{5}{4} $$
 
 But,  $y = 0$ also satisfies this equation and is notably different from the solution we got from the variable separable solution. Thus at (0,0) we have guaranteed the existence of a solution ($y$ and $f(y)$ are continuous) but not a unique one ($f'(y) = \frac{y^{-4/5}}{5}$ is not continuous at (0,0)).
 
-## Exact Differential Equation: $M(x,y)dx + N(x,y)dy = 0 \quad | \quad M_y = N_x$
+## Exact Differential Equation:
+### $M(x,y)dx + N(x,y)dy = 0 \quad | \quad M_y = N_x$
 
 #### Intuitive Way to Reverse Engineer an Exact Differential Equation Solution
 
