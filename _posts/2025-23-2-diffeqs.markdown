@@ -22,7 +22,7 @@ https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 Textbook for context: Polking, Differential Equations with Boundary Value Problems, 2nd edition
 
-With my differential equations midterm coming soon (literally next week), I wanted to come back to the basics, and go over all of the stuff that I learned over the last 8 weeks, hopefully in a format that will allow anyone with a basic understanding of calculus can follow along.
+With my differential equations midterm coming soon (literally next week), I wanted to come back to the basics, and go over all of the types of differential equations that I learned about over the last 8 weeks, hopefully in a format that will allow anyone with a basic understanding of calculus can follow along. 
 
 ## What is a differential equation?
 
@@ -121,11 +121,11 @@ We can check the condition above and find that it is satisfied. We can then find
 
 $$ \frac{\partial u}{\partial x} = 2y \quad \text{and} \quad \frac{\partial u}{\partial y} = 3y^2 + 2x $$
 
-$$ \int M(x,y) dx = xy + C_1 \quad \text{and} \quad \int N(x,y) dy = y^3 + xy + C_2 $$
+$$ \int M(x,y) dx = 2xy + C_1 \quad \text{and} \quad \int N(x,y) dy = y^3 + 2xy + C_2 $$
 
-Solving for $u(x,y)$ and removing the duplicate term $xy + C$ , we get
+Solving for $u(x,y)$ and removing the duplicate term $2xy + C$ , we get
 
-$$ u(x,y) = xy + y^3 + C $$
+$$ u(x,y) = 2xy + y^3 + C $$
 
 
 ## Linear: 
@@ -183,8 +183,8 @@ In our class we didn't really go over solving them in the conventional sense sin
 A phase line can be used to visualize the stability of equilibrium points. It is a one-dimensional diagram where:
 
 - Equilibrium points are marked on a vertical line.
-- Arrows indicate the direction of the flow (i.e., increase or decrease of $y$) between equilibrium points.
-- Stability is visually represented by the direction of arrows converging towards or diverging from equilibrium points.
+- Arrows indicate the direction of the flow (i.e., increase or decrease of $y$) with respect to x between equilibrium points. on the equilibrium points, open and closed dots are used to notate stability.
+- Stability is also visually represented by the direction of arrows converging towards or diverging from equilibrium points, which is a good method for checking the accuracy of the phase line points.
 
 ### Example
 
@@ -312,9 +312,9 @@ $$ (Ae^x)'' - 3(Ae^x)' + 2(Ae^x) = e^x $$
 
 $$ A e^x - 3A e^x + 2A e^x = e^x $$
 
-$$ 0 = e^x $$
+$\to 0 = e^x$, which is false. The issue is that $e^x$ is already a solution to the homogenous differential equation when $r = 1.$
 
-This indicates a need to adjust our assumption due to overlap with the homogeneous solution. Try:
+This indicates a need to adjust our assumption due to overlap with the homogeneous solution, so instead we'll try:
 
 $$ y_p(x) = Axe^x $$
 
@@ -380,6 +380,7 @@ $$
 
 ### 2x2 Variation with constant coefficients: $y' = Ay$
 
+Note that we'll change the matrix from above to remove the x and y in the matrix; that we can solve a system  with constant coefficients.
 
 To solve the system of differential equations using eigenvalues and eigenvectors, we assume solutions of the form:
 
