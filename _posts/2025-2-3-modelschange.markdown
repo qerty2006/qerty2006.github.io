@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How Changing Our Perspective on Math Expanded Its Possibilities"
-date: 2025-01-03 22:00:00
+date: 2025-03-01 22:00:00
 categories: Math Theory
 author: 'Nishanth Tharakan'
 ---
