@@ -6,6 +6,21 @@ categories: Math Theory
 author: 'Nishanth Tharakan'
 ---
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\$$","\$$"] ],
+      processEscapes: true
+    }
+  });
+
+</script>
+
+<script type="text/javascript" charset="utf-8" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
+https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
+
+
 While talking to one of my professors for my Data, Justice, and Society class (Dr. Posner you're the best!), we discussed how models are only our best approximations of things in the world, and we replace them as we learn more and have to model new things. That being said, as someone who wants to delve further into mathematics, our field creates a lot of frameworks, which are inevitably used in other fields to make models. Today I wanted to talk about some instances where mathematics itself changed its own model, adding in new features like an operating system to solve new problems.
 
 Certainly! Here's a rewritten version of the imaginary numbers section in a similar style to the Cantor time section:
