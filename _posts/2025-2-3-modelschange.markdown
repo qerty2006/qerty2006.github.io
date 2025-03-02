@@ -23,8 +23,6 @@ https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 While talking to one of my professors for my Data, Justice, and Society class (Dr. Posner you're the best!), we discussed how models are only our best approximations of things in the world, and we replace them as we learn more and have to model new things. That being said, as someone who wants to delve further into mathematics, our field creates a lot of frameworks, which are inevitably used in other fields to make models. Today I wanted to talk about some instances where mathematics itself changed its own model, adding in new features like an operating system to solve new problems.
 
-Certainly! Here's a rewritten version of the imaginary numbers section in a similar style to the Cantor time section:
-
 ## Imaginary Numbers: Unlocking the Secrets of Negative Roots
 
 The concept of imaginary numbers, which allows us to take the square root of negative numbers, has been a cornerstone of mathematics since its introduction in the 16th century. Initially met with skepticism, it wasn't until the 18th century that mathematicians like Leonhard Euler and Carl Friedrich Gauss fully developed and popularized this idea. Euler's work was instrumental in applying imaginary numbers to solve equations that were previously unsolvable, while Gauss used them to develop the theory of Gaussian integers, which are complex numbers of the form $a + bi$, where $a$ and $b$ are integers and $i$ is the imaginary unit (the square root of -1).
@@ -45,7 +43,6 @@ Today, imaginary numbers have numerous practical applications across several fie
 - **Computer Science**: They are used in designing algorithms that solve complex problems efficiently, often leveraging powerful mathematical tools like the Fourier transform.
 
 By embracing imaginary numbers, mathematics expanded its capabilities, enabling solutions to problems that were once deemed unsolvable. This shift in perspective not only enriched mathematical theory but also empowered technological advancements across multiple disciplines.
-
 
 ## Cantor Time! Comparing Infinities and the Creation of Set Theory
 
