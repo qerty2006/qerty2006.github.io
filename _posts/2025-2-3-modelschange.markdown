@@ -42,8 +42,6 @@ Today, imaginary numbers have numerous practical applications across several fie
 - **Statistics**: Imaginary numbers aid in analyzing and modeling complex systems by correcting for data movement during analysis.
 - **Computer Science**: They are used in designing algorithms that solve complex problems efficiently, often leveraging powerful mathematical tools like the Fourier transform.
 
-By embracing imaginary numbers, mathematics expanded its capabilities, enabling solutions to problems that were once deemed unsolvable. This shift in perspective not only enriched mathematical theory but also empowered technological advancements across multiple disciplines.
-
 ## Cantor Time! Comparing Infinities and the Creation of Set Theory
 
 The concept of infinity has long fascinated mathematicians and philosophers alike. Originally, the Aristotelian philosophical tradition viewed infinity as potential or incomplete. In the late 19th century, Georg Cantor revolutionized our understanding of infinity by developing set theory, which allowed for the comparison of different infinite sets by quantifying them in a sense.. This breakthrough transformed mathematics by showing that not all infinities are equal.
@@ -65,7 +63,6 @@ Today, Cantor's work on infinity has far-reaching implications across various fi
 - **Philosophy**: Cantor's ideas have sparked debates about the nature of infinity and its implications for our understanding of reality.
 - **Physics**: The concept of infinity is crucial in theories like quantum mechanics and cosmology, where infinite series and sets are used to model complex phenomena.
 
-Cantor's innovative perspective on infinity not only expanded our mathematical toolkit but also challenged traditional philosophical views, demonstrating how changing our perspective on fundamental concepts can unlock new possibilities in mathematics and beyond.
 
 ## Removing Geometric Axioms: What Happens When Geometry Goes Non-Euclidean?
 
@@ -91,7 +88,6 @@ Today, non-Euclidean geometries have numerous applications:
 - **Computer Science**: Non-Euclidean geometries are used in computer graphics and game development to create realistic models of curved spaces.
 - **Navigation**: GPS systems rely on non-Euclidean geometry to accurately calculate positions on the Earth's surface, which is not perfectly Euclidean.
 
-By challenging traditional geometric axioms, mathematicians opened up new avenues for understanding space and its properties, demonstrating how changing our perspective on fundamental assumptions can lead to groundbreaking discoveries.
 
 ## Conclusion
 
