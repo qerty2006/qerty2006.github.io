@@ -27,6 +27,7 @@ Finals Week is coming up at UCLA, and I am the most busy that I've ever been her
 A set is a collection of distinct objects, considered as an object in its own right. For example, the numbers 1, 2, and 3 are distinct objects when considered separately, but when they are considered collectively as the set $\{1, 2, 3\}$, they form a single object. Sets are one of the most fundamental concepts in mathematics.
 
 Sets can also contain other objects, such as strings, mathematical functions, or even other sets. For example, the set of all words in the English language can be represented as $\{\text{"hello"}, \text{"world"}, \ldots\}$ or the set of all functions that take a single real number and output a single real number could be represented as $\{f(x) = x, g(x) = x^2, h(x) = 3x, \ldots\}$.
+
 ### Basic Set Operations
 
 1. **Union**: The union of two sets $A$ and $B$, denoted by $A \cup B$, is the set of elements that are in $A$, in $B$, or in both.
@@ -63,7 +64,7 @@ The following are some examples of set operations in action:
 
 5. **Cartesian Product**: If $A = \{1, 2\}$ and $B = \{a, b\}$, then $A \times B = \{(1, a), (1, b), (2, a), (2, b)\}$.
 
-### Relations: How do they work with sets
+## Relations: How do they work with sets
 
 A relation is a set of ordered pairs. For example, the relation "friend of" can be represented as the set of all pairs of people who are friends. We can also represent a relation between two sets $A$ and $B$ as a subset of $A \times B$. For example, the set of all pairs of points in the plane and the distance between them is a relation.
 
@@ -77,7 +78,7 @@ $$ R = \{ (1, a), (2, b), (3, c) \} $$
 
 This matrix represents the relation $R$ such that $1$ is related to $a$, $2$ is related to $b$, and $3$ is related to $c$. The $ij$-th entry of the matrix is $1$ if $i$ is related to $j$ and $0$ otherwise. Also note that this requires you to state the ordering of A and B when writing the matrix.
 
-### Possible properties of relations
+### Properties of relations
 
 A relation where both sides of the relation come from the same set can have several properties:
 
