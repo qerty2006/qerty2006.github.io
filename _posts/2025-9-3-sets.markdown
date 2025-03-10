@@ -1,0 +1,112 @@
+---
+layout: post
+title: "Beginner's Guide to Sets"
+date: 2025-03-09 00:00:00
+categories: Math Theory
+author: 'Nishanth Tharakan'
+---
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\$$","\$$"] ],
+      processEscapes: true
+    }
+  });
+
+</script>
+
+<script type="text/javascript" charset="utf-8" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
+https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
+
+Finals Week is coming up at UCLA, and I am the most busy that I've ever been here: I'm writing a paper on map censorship in China, and my other math classes are getting more complicated, meaning more time is being spent going over content from my textbook on my bed, wrapping my head around planar graphs, eigenvectors, and C++ pointers (I hate C++ so much right now). That being said, I wanted to go back to basics again, similar to my [Beginner's Guide to Mathematical Induction](https://qerty2006.github.io/math/logic/proof/2025/02/09/induction.html) blog post, and talk about sets.
+
+## What are Sets?
+
+A set is a collection of distinct objects, considered as an object in its own right. For example, the numbers 1, 2, and 3 are distinct objects when considered separately, but when they are considered collectively as the set $\{1, 2, 3\}$, they form a single object. Sets are one of the most fundamental concepts in mathematics.
+
+Sets can also contain other objects, such as strings, mathematical functions, or even other sets. For example, the set of all words in the English language can be represented as $\{\text{"hello"}, \text{"world"}, \ldots\}$ or the set of all functions that take a single real number and output a single real number could be represented as $\{f(x) = x, g(x) = x^2, h(x) = 3x, \ldots\}$.
+### Basic Set Operations
+
+1. **Union**: The union of two sets $A$ and $B$, denoted by $A \cup B$, is the set of elements that are in $A$, in $B$, or in both.
+
+   $$ A \cup B = \{ x \mid x \in A \text{ or } x \in B \} $$
+
+2. **Intersection**: The intersection of two sets $A$ and $B$, denoted by $A \cap B$, is the set of elements that are in both $A$ and $B$.
+
+   $$ A \cap B = \{ x \mid x \in A \text{ and } x \in B \} $$
+
+3. **Difference**: The difference of two sets $A$ and $B$, denoted by $A - B$, is the set of elements that are in $A$ but not in $B$.
+
+   $$ A - B = \{ x \mid x \in A \text{ and } x \notin B \} $$
+
+4. **Complement**: The complement of a set $A$, denoted by $A^c$, is the set of elements that are not in $A$.
+
+   $$ A^c = \{ x \mid x \notin A \} $$
+
+5. **Cartesian Product**: The Cartesian product of two sets $A$ and $B$, denoted by $A \times B$, is the set of all ordered pairs where the first element is from $A$ and the second is from $B$.
+
+   $$ A \times B = \{ (a, b) \mid a \in A \text{ and } b \in B \} $$
+
+### Examples
+
+The following are some examples of set operations in action:
+
+1. **Union**: If $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A \cup B = \{1, 2, 3, 4, 5\}$.
+
+2. **Intersection**: If $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A \cap B = \{3\}$.
+
+3. **Difference**: If $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A - B = \{1, 2\}$.
+
+4. **Complement**: If $A = \{1, 2, 3\}$, then $A^c = \{4, 5, 6, \ldots\}$.
+
+5. **Cartesian Product**: If $A = \{1, 2\}$ and $B = \{a, b\}$, then $A \times B = \{(1, a), (1, b), (2, a), (2, b)\}$.
+
+### Relations: How do they work with sets
+
+A relation is a set of ordered pairs. For example, the relation "friend of" can be represented as the set of all pairs of people who are friends. We can also represent a relation between two sets $A$ and $B$ as a subset of $A \times B$. For example, the set of all pairs of points in the plane and the distance between them is a relation.
+
+Formally, a relation $R$ from a set $A$ to a set $B$ is a subset of $A \times B$. We can define a relation $R$ with the following notation:
+
+$$ R = \{ (a, b) \mid a\ R\ b \} $$
+
+The expression $a\ R\ b$ is read as "a is related to b" and is used to define the relation. For example, if $A = \{1, 2, 3\}$ and $B = \{a, b, c\}$, we can define the relation $R$ such that $a$ is related to $1$, $b$ is related to $2$, and $c$ is related to $3$ with the following notation:
+
+$$ R = \{ (1, a), (2, b), (3, c) \} $$
+
+This matrix represents the relation $R$ such that $1$ is related to $a$, $2$ is related to $b$, and $3$ is related to $c$. The $ij$-th entry of the matrix is $1$ if $i$ is related to $j$ and $0$ otherwise. Also note that this requires you to state the ordering of A and B when writing the matrix.
+
+### Possible properties of relations
+
+A relation where both sides of the relation come from the same set can have several properties:
+
+1. **Transitive**: A relation $R$ is transitive if whenever $(a, b) \in R$ and $(b, c) \in R$, then $(a, c) \in R$. Formally, $R$ is transitive if $\forall a, b, c ( (a, b) \in R \land (b, c) \in R \Rightarrow (a, c) \in R )$.
+
+2. **Reflexive**: A relation $R$ is reflexive if for all $a \in A$, $(a, a) \in R$. Formally, $R$ is reflexive if $\forall a \in A ( (a, a) \in R )$.
+
+3. **Symmetric**: A relation $R$ is symmetric if for all $a, b \in A$, $(a, b) \in R \Rightarrow (b, a) \in R$. Formally, $R$ is symmetric if $\forall a, b \in A ( (a, b) \in R \Rightarrow (b, a) \in R )$.
+
+4. **Antisymmetric**: A relation $R$ is antisymmetric if for all $a, b \in A$, if $(a, b) \in R$ and $(b, a) \in R$, then $a = b$. Formally, $R$ is antisymmetric if $\forall a, b \in A ( (a, b) \in R \land (b, a) \in R \Rightarrow a = b )$.
+
+5. **Equivalence relation**: A relation $R$ is an equivalence relation if it is transitive, reflexive, and symmetric. Formally, $R$ is an equivalence relation if $R$ is transitive, $R$ is reflexive, and $R$ is symmetric.
+
+### Examples of relations
+
+
+1. **Equality**: The relation of equality on the set of real numbers $\mathbb{R}$ is an equivalence relation. It is reflexive (every number is equal to itself), symmetric (if $a = b$, then $b = a$), and transitive (if $a = b$ and $b = c$, then $a = c$).
+(This is **the** equivilance relation)
+
+2. **Less than or equal to**: The relation "less than or equal to" ($\leq$) on the set of real numbers $\mathbb{R}$ is reflexive and transitive but not symmetric. If $a \leq b$ and $b \leq a$, it implies $a = b$, which makes it antisymmetric.
+
+3. **Friendship**: Consider the relation "is a friend of" among a group of people. This relation is symmetric (if Alice is a friend of Bob, then Bob is a friend of Alice) but not necessarily transitive (Alice may not be friends with Bob, even if Carol is friends with Bob and Alice) or reflexive (but y=you should be friends with yourself :) ).
+
+4. **Divisibility**: Within the set of integers $\mathbb{Z}$, the relation "divides" is transitive (if $a$ divides $b$ and $b$ divides $c$, then $a$ divides $c$) but not symmetric or reflexive.
+
+5. **Parallel lines**: In Euclidean geometry, the relation "is parallel to" among lines in a plane is an equivalence relation. It is reflexive (a line is parallel to itself), symmetric (if line $l_1$ is parallel to line $l_2$, then $l_2$ is parallel to $l_1$), and transitive (if $l_1$ is parallel to $l_2$ and $l_2$ is parallel to $l_3$, then $l_1$ is parallel to $l_3$).
+
+## Conclusion
+
+Sets and relations are fundamental concepts in mathematics that provide a powerful framework for representing and analyzing complex structures. By understanding sets and relations, we can model a wide range of phenomena, from social networks to family trees, and make predictions about the behavior of systems. 
+
+with this topic covered, I will most likely go over basic graph theory, which takes the properties of sets and allows you to model new things with them. Hopefully you stick around for that post!
