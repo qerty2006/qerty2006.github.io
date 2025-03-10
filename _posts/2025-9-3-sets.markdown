@@ -24,45 +24,45 @@ Finals Week is coming up at UCLA, and I am the most busy that I've ever been her
 
 ## What are Sets?
 
-A set is a collection of distinct objects, considered as an object in its own right. For example, the numbers 1, 2, and 3 are distinct objects when considered separately, but when they are considered collectively as the set $\{1, 2, 3\}$, they form a single object. Sets are one of the most fundamental concepts in mathematics.
+A set is a collection of distinct objects, considered as an object in its own right. For example, the numbers 1, 2, and 3 are distinct objects when considered separately, but when they are considered collectively as the set $\\{1, 2, 3\\}$, they form a single object. Sets are one of the most fundamental concepts in mathematics.
 
-Sets can also contain other objects, such as strings, mathematical functions, or even other sets. For example, the set of all words in the English language can be represented as $\{\text{"hello"}, \text{"world"}, \ldots\}$ or the set of all functions that take a single real number and output a single real number could be represented as $\{f(x) = x, g(x) = x^2, h(x) = 3x, \ldots\}$.
+Sets can also contain other objects, such as strings, mathematical functions, or even other sets. For example, the set of all words in the English language can be represented as $\\{\text{"hello"}, \text{"world"}, \ldots\\}$ or the set of all functions that take a single real number and output a single real number could be represented as $\\{f(x) = x, g(x) = x^2, h(x) = 3x, \ldots\\}$.
 
 ### Basic Set Operations
 
 1. **Union**: The union of two sets $A$ and $B$, denoted by $A \cup B$, is the set of elements that are in $A$, in $B$, or in both.
 
-   $$ A \cup B = \{ x \mid x \in A \text{ or } x \in B \} $$
+   $$ A \cup B = \\{ x \mid x \in A \text{ or } x \in B \\} $$
 
 2. **Intersection**: The intersection of two sets $A$ and $B$, denoted by $A \cap B$, is the set of elements that are in both $A$ and $B$.
 
-   $$ A \cap B = \{ x \mid x \in A \text{ and } x \in B \} $$
+   $$ A \cap B = \\{ x \mid x \in A \text{ and } x \in B \\} $$
 
 3. **Difference**: The difference of two sets $A$ and $B$, denoted by $A - B$, is the set of elements that are in $A$ but not in $B$.
 
-   $$ A - B = \{ x \mid x \in A \text{ and } x \notin B \} $$
+   $$ A - B = \\{ x \mid x \in A \text{ and } x \notin B \\} $$
 
 4. **Complement**: The complement of a set $A$, denoted by $A^c$, is the set of elements that are not in $A$.
 
-   $$ A^c = \{ x \mid x \notin A \} $$
+   $$ A^c = \\{ x \mid x \notin A \\} $$
 
 5. **Cartesian Product**: The Cartesian product of two sets $A$ and $B$, denoted by $A \times B$, is the set of all ordered pairs where the first element is from $A$ and the second is from $B$.
 
-   $$ A \times B = \{ (a, b) \mid a \in A \text{ and } b \in B \} $$
+   $$ A \times B = \\{ (a, b) \mid a \in A \text{ and } b \in B \\} $$
 
 ### Examples
 
 The following are some examples of set operations in action:
 
-1. **Union**: If $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A \cup B = \{1, 2, 3, 4, 5\}$.
+1. **Union**: If $A = \\{1, 2, 3\\}$ and $B = \\{3, 4, 5\\}$, then $A \cup B = \\{1, 2, 3, 4, 5\\}$.
 
-2. **Intersection**: If $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A \cap B = \{3\}$.
+2. **Intersection**: If $A = \\{1, 2, 3\\}$ and $B = \\{3, 4, 5\\}$, then $A \cap B = \\{3\\}$.
 
-3. **Difference**: If $A = \{1, 2, 3\}$ and $B = \{3, 4, 5\}$, then $A - B = \{1, 2\}$.
+3. **Difference**: If $A = \\{1, 2, 3\\}$ and $B = \\{3, 4, 5\\}$, then $A - B = \\{1, 2\\}$.
 
-4. **Complement**: If $A = \{1, 2, 3\}$, then $A^c = \{4, 5, 6, \ldots\}$.
+4. **Complement**: If $A = \\{1, 2, 3\\}$, then $A^c = \\{4, 5, 6, \ldots\\}$.
 
-5. **Cartesian Product**: If $A = \{1, 2\}$ and $B = \{a, b\}$, then $A \times B = \{(1, a), (1, b), (2, a), (2, b)\}$.
+5. **Cartesian Product**: If $A = \\{1, 2\\}$ and $B = \\{a, b\\}$, then $A \times B = \\{(1, a), (1, b), (2, a), (2, b)\\}$.
 
 ## Relations: How do they work with sets
 
@@ -70,11 +70,11 @@ A relation is a set of ordered pairs. For example, the relation "friend of" can 
 
 Formally, a relation $R$ from a set $A$ to a set $B$ is a subset of $A \times B$. We can define a relation $R$ with the following notation:
 
-$$ R = \{ (a, b) \mid a\ R\ b \} $$
+$$ R = \\{ (a, b) \mid a\ R\ b \\} $$
 
-The expression $a\ R\ b$ is read as "a is related to b" and is used to define the relation. For example, if $A = \{1, 2, 3\}$ and $B = \{a, b, c\}$, we can define the relation $R$ such that $a$ is related to $1$, $b$ is related to $2$, and $c$ is related to $3$ with the following notation:
+The expression $a\ R\ b$ is read as "a is related to b" and is used to define the relation. For example, if $A = \\{1, 2, 3\\}$ and $B = \\{a, b, c\\}$, we can define the relation $R$ such that $a$ is related to $1$, $b$ is related to $2$, and $c$ is related to $3$ with the following notation:
 
-$$ R = \{ (1, a), (2, b), (3, c) \} $$
+$$ R = \\{ (1, a), (2, b), (3, c) \\} $$
 
 This matrix represents the relation $R$ such that $1$ is related to $a$, $2$ is related to $b$, and $3$ is related to $c$. The $ij$-th entry of the matrix is $1$ if $i$ is related to $j$ and $0$ otherwise. Also note that this requires you to state the ordering of A and B when writing the matrix.
 
