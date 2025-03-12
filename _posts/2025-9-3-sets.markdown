@@ -80,7 +80,7 @@ $$ R = \\{ (1, a), (2, b), (3, c) \\} $$
 
 A relation between two sets $A$ and $B$ can also be represented as a matrix. First, we must order the elements of $A$ and $B$ in some way. Then, we can create a matrix $M$ of size 
 
-$|A| \times |B|$ 
+$$|A| \times |B|$$ 
 
 where $M_{ij}$ is $1$ if the $i^{th}$ element of $A$ is related to the $j^{th}$ element of $B$ and $0$ otherwise.
 
