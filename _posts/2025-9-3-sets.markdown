@@ -78,7 +78,11 @@ $$ R = \\{ (1, a), (2, b), (3, c) \\} $$
 
 ### Representing relations as matrices
 
-A relation between two sets $A$ and $B$ can also be represented as a matrix. First, we must order the elements of $A$ and $B$ in some way. Then, we can create a matrix $M$ of size $|A| \times |B|$ where $M_{ij}$ is $1$ if the $i^{th}$ element of $A$ is related to the $j^{th}$ element of $B$ and $0$ otherwise.
+A relation between two sets $A$ and $B$ can also be represented as a matrix. First, we must order the elements of $A$ and $B$ in some way. Then, we can create a matrix $M$ of size 
+
+$|A| \times |B|$ 
+
+where $M_{ij}$ is $1$ if the $i^{th}$ element of $A$ is related to the $j^{th}$ element of $B$ and $0$ otherwise.
 
 For example, if $A = \\{1, 2, 3\\}$ and $B = \\{a, b, c\\}$, and the relation $R$ is $R = \\{ (1, a), (2, b), (3, c) \\}$, then $M$ could be represented as follows (using the ordering of $\\{1, 2, 3\\}$ and $\\{a, b, c\\}$):
 
