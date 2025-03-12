@@ -76,7 +76,19 @@ The expression $a\ R\ b$ is read as "a is related to b" and is used to define th
 
 $$ R = \\{ (1, a), (2, b), (3, c) \\} $$
 
-This matrix represents the relation $R$ such that $1$ is related to $a$, $2$ is related to $b$, and $3$ is related to $c$. The $ij$-th entry of the matrix is $1$ if $i$ is related to $j$ and $0$ otherwise. Also note that this requires you to state the ordering of A and B when writing the matrix.
+### Representing relations as matrices
+
+A relation between two sets $A$ and $B$ can also be represented as a matrix. First, we must order the elements of $A$ and $B$ in some way. Then, we can create a matrix $M$ of size $|A| \times |B|$ where $M_{ij}$ is $1$ if the $i^{th}$ element of $A$ is related to the $j^{th}$ element of $B$ and $0$ otherwise.
+
+For example, if $A = \\{1, 2, 3\\}$ and $B = \\{a, b, c\\}$, and the relation $R$ is $R = \\{ (1, a), (2, b), (3, c) \\}$, then $M$ could be represented as follows (using the ordering of $\\{1, 2, 3\\}$ and $\\{a, b, c\\}$):
+
+$$
+M = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
 
 ### Properties of relations
 
