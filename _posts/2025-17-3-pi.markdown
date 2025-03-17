@@ -556,3 +556,7 @@ for prec in [20, 50, 100]:
 The arithmetic-geometric mean method provides exceptional efficiency for calculating π to high precision. This approach demonstrates the deep connection between π and the convergence properties of iterative sequences.
 
 ## Conclusion: 
+
+The main thing I learned is that I have a lot of stuff to talk about for the next PI day, and that I should have done this post earlier. With my first final tomorrow at 8AM, this post was a race against the clock. 
+
+$\pi$, $e$, $\phi$ are all very interesting irrational constants with uses across many fields, and I wish we had more days for these constants too. So, I'll see you guys on January 27th for e day (2.71 -> 27/1) and January 16th for $\phi$ day (1.61 -> 16/1). Yes, I had to use non-US date systems to make it work, but now they'll have representation too!
