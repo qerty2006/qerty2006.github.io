@@ -20,3 +20,30 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 Pi ($ \pi $) stands as perhaps the most recognizable mathematical constant in human history, transcending the boundaries of pure mathematics to permeate science, engineering, art, and popular culture. This irrational number, approximately equal to 3.14159, represents the ratio of a circle's circumference to its diameter. What begins as a simple geometric relationship unfolds into an endless decimal with no discernible pattern, captivating mathematicians and enthusiasts for millennia while finding surprising applications across diverse disciplines.
+
+## Ancient Approximations of Pi  
+
+Long before modern mathematics formalized $ \pi $ as an irrational constant, ancient civilizations developed remarkably sophisticated approximations through practical geometry and observational calculations. Their methods reveal both cultural priorities and mathematical ingenuity.  
+
+### **Babylonians (c. 1900–1600 BCE)**  
+The Babylonians approximated $\pi$ as $\frac{25}{8}$ ($\approx3.125$)—a value found on clay tablets describing geometric problems. Their sexagesimal (base-60) system enabled fractional precision, and they derived this ratio by comparing the perimeter of a hexagon inscribed in a circle to the circle’s circumference. Though slightly low, this approximation remained influential in Mesopotamian mathematics for centuries.  
+
+### **Egyptians (c. 1650 BCE)**  
+The Rhind Mathematical Papyrus, an Egyptian textbook, presents a circle area calculation implying $\pi \approx \frac{256}{81} \approx 3.1605$. By constructing squares and octagons within circles, scribes developed a formula for area: $(d - \frac{d}{9})^2,$ where $d$ is the diameter. This method prioritized practical land measurement over theoretical precision but achieved an error margin of just 0.6%.
+
+### **Indian Vedas (c. 800–500 BCE)**  
+The Baudhayana Sulba Sutra, a Vedic text, states:  
+> *“The cord stretched across a circle produces an area equal to the square whose side is reduced by 13%.”*  
+
+This implies $ \pi \approx 3.088 $, derived from comparing circle areas to squares. While less accurate, this “rope geometry” (śulba) method highlights early Indo-Aryan contributions to applied mathematics.  
+
+### **Archimedes of Syracuse (c. 250 BCE)**  
+The Greek polymath revolutionized pi calculation with his **[method of exhaustion](https://en.wikipedia.org/wiki/Method_of_exhaustion)**, using inscribed and circumscribed polygons. Starting with a hexagon, he doubled sides iteratively to 96-sided polygons, bounding pi between:  
+- **$\\frac{223}{71} \approx 3.1408\$** (lower bound)  
+- **$\\frac{22}{7} \approx 3.1429\$** (upper bound)  
+This fractional range ($3.1408 < \pi < 3.1429$) remained the most accurate for nearly 1,000 years.  
+
+### **Chinese Mathematicians (c. 5th–15th century CE)**  
+- **Liu Hui (263 CE)**: Using inscribed polygons with 3,072 sides, he calculated **π ≈ 3.1416**.  
+- **Zu Chongzhi (429–500 CE)**: Achieved **355/113 (≈3.1415929)**, accurate to six decimal places, by extending Liu’s method to 24,576-sided polygons. His fraction remained the world’s most precise approximation until the 15th century.  
+ 
