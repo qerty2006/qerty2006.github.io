@@ -44,6 +44,515 @@ The Greek polymath revolutionized pi calculation with his **[method of exhaustio
 This fractional range ($3.1408 < \pi < 3.1429$) remained the most accurate for nearly 1,000 years.  
 
 ### **Chinese Mathematicians (c. 5th–15th century CE)**  
-- **Liu Hui (263 CE)**: Using inscribed polygons with 3,072 sides, he calculated **π ≈ 3.1416**.  
-- **Zu Chongzhi (429–500 CE)**: Achieved **355/113 (≈3.1415929)**, accurate to six decimal places, by extending Liu’s method to 24,576-sided polygons. His fraction remained the world’s most precise approximation until the 15th century.  
- 
+- **Liu Hui (263 CE)**: Using inscribed polygons with 3,072 sides, he calculated $$\pi \approx 3.1416$$.  
+- **Zu Chongzhi (429–500 CE)**: Achieved $$\frac{355}{113} \approx 3.1415929$$, accurate to six decimal places, by extending Liu’s method to 24,576-sided polygons. His fraction remained the world’s most precise approximation until the 15th century.  
+
+
+
+
+## Pi Beyond Mathematics: Unexpected Applications Across Disciplines
+
+The transcendental number $\pi$ extends far beyond geometric circles, appearing in equations that govern phenomena across seemingly unrelated disciplines. This omnipresence reveals the deep mathematical structure underlying our universe, where $\pi$ serves as a connecting thread between disparate fields of human knowledge and creation.
+
+### Physics and Vibration
+
+In physics, $\pi$ naturally appears in equations describing oscillatory motion, wave propagation, and fields with circular or spherical symmetry. The simple pendulum's period directly involves $\pi$:
+
+$$ T = 2\pi\sqrt{\frac{L}{g}} $$
+
+Where T represents the period, L the length of the pendulum, and g the gravitational acceleration. This equation appears in mechanical watches, seismic instruments, and even our understanding of planetary orbits. Similarly, Einstein's field equations in general relativity incorporate $\pi$ in describing spacetime curvature:
+
+$$ G_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} $$
+
+Here the gravitational constant G multiplied by 8$\pi$ relates the energy-momentum tensor to the curvature of spacetime itself. The appearance of $\pi$ in these fundamental equations suggests its deep connection to the fabric of reality rather than merely circular geometry.
+
+### Information Theory
+
+ In information theory, Claude Shannon's entropy formula measures information content:
+
+$$ H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i) $$
+
+While $\pi$ isn't explicitly visible, the natural extension to continuous distributions introduces $\pi$ through the differential entropy formula:
+
+$$ h(X) = -\int_{-\infty}^{\infty} f(x) \log f(x) dx $$
+
+For a Gaussian distribution with variance σ², this equals:
+
+$$ h(X) = \frac{1}{2}\log(2\pi e\sigma^2) $$
+
+Thus, $\pi$ helps define the fundamental limits of data compression and information transmission in our digital world.
+
+### Probability and Statistics
+
+The normal distribution, describing countless natural phenomena from measurement errors to human heights, prominently features $\pi$ in its probability density function:
+
+$$ f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2} $$
+
+This bell curve appears in fields far removed from circles, including financial risk models, quality control, and psychological testing. The central limit theorem, which explains why many random processes tend toward normal distributions, connects $\pi$ to randomness itself. Similarly, the distribution of points in Brownian motion (random walks) relates to $\pi$ through the probability density function:
+
+$$ p(x,t) = \frac{1}{\sqrt{4\pi Dt}}e^{-\frac{x^2}{4Dt}} $$
+
+Where D represents the diffusion coefficient and t the time. These applications demonstrate how $\pi$ emerges naturally when describing random processes and uncertainty.
+
+### Biology and Medicine
+
+Remarkably, $\pi$ appears in biological systems that have no obvious connection to circles. The predator-prey Lotka-Volterra equations produce solutions involving $\pi$ when describing periodic population cycles:
+
+$$ \frac{dx}{dt} = \alpha x - \beta xy $$
+$$ \frac{dy}{dt} = \delta xy - \gamma y $$
+
+The period of oscillation in these systems involves $\pi$, demonstrating how this constant describes natural biological rhythms. In neural science, the Hodgkin-Huxley model of action potentials contains $\pi$ in equations describing membrane voltages and ion channel dynamics:
+
+$$ C_m\frac{dV_m}{dt} = -g_K(V_m-V_K) - g_{Na}(V_m-V_{Na}) - g_L(V_m-V_L) + I $$
+
+The frequency response of these neurons involves $\pi$ through the Fourier analysis of neural signals, connecting our very consciousness to this mathematical constant.
+
+### Economics and Finance
+
+Financial mathematics incorporates $\pi$ in unexpected ways. The Black-Scholes option pricing model—the foundation of modern derivatives markets—includes $\pi$ in its formula:
+
+$$ C(S,t) = SN(d_1) - Ke^{-r(T-t)}N(d_2) $$
+
+Where 
+
+$$ d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}} $$
+$$ d_2 = d_1 - \sigma\sqrt{T-t} $$
+
+And N(x) is the cumulative distribution function of the standard normal distribution, containing $\pi$:
+
+$$ N(x) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-\frac{t^2}{2}}dt $$
+
+This equation helps price financial instruments worth trillions of dollars globally. Similarly, $\pi$ appears in econometric time series analysis through spectral density functions:
+
+$$ f_X(\omega) = \frac{1}{2\pi}\sum_{k=-\infty}^{\infty}\gamma_X(k)e^{-i\omega k} $$
+
+Where γX(k) represents the autocovariance function. These applications show how $\pi$ helps model human economic behavior despite no obvious connection to circular geometry.
+
+### Art, Music, and Architecture
+
+The aesthetics of music involve $\pi$ through harmonic analysis. The equation for a standing wave on a string:
+
+$$ y(x,t) = \sum_{n=1}^{\infty}A_n\sin\left(\frac{n\pi x}{L}\right)\cos\left(\frac{n\pi vt}{L}\right) $$
+
+Incorporates $\pi$ in describing musical harmonics and overtones. This explains why $\pi$ influences our perception of musical consonance and dissonance. In architecture, the phenomenon of whispering galleries relates to elliptical reflections where sound follows paths described by equations containing $\pi$. The Fibonacci sequence, golden ratio, and $\pi$ appear together in aesthetic proportions considered naturally pleasing (though this is likely a result of humans finding coincidences and tweaking the true ratios):
+
+$$ \lim_{n\to\infty}\frac{F_{n+1}}{F_n} = \phi \approx 1.618 $$
+
+With interesting connections to $\pi$ through trigonometric functions:
+
+$$ \phi = \frac{4}{\pi}\sum_{k=0}^{\infty}\frac{(-1)^k}{2k+1}\cos\left(\frac{(2k+1)\pi}{5}\right) $$
+
+These mathematical relationships underpin artistic composition principles from Renaissance paintings to modern architectural design.
+
+### Computer Science and Artificial Intelligence
+
+Monte Carlo methods, essential in modern AI and simulation, rely on $\pi$ for estimating areas and volumes in high-dimensional spaces. The basic Monte Carlo integration technique:
+
+$$ \int_a^b f(x) dx \approx (b-a)\frac{1}{N}\sum_{i=1}^{N}f(x_i) $$
+
+Uses random sampling that frequently involves generating points distributed according to functions containing $\pi$. Machine learning regularization techniques incorporate Gaussian priors with probability distributions containing $\pi$:
+
+$$ p(w|\alpha) = \prod_{i=1}^{M}\mathcal{N}(w_i|0,\alpha^{-1}) = \prod_{i=1}^{M}\sqrt{\frac{\alpha}{2\pi}}e^{-\frac{\alpha w_i^2}{2}} $$
+
+Where w represents neural network weights. Even in quantum computing, $\pi$ appears in the phase angles of quantum gates:
+
+$$ R_y(\theta) = e^{-i\theta\sigma_y/2} = \cos(\theta/2)I - i\sin(\theta/2)\sigma_y $$
+
+These examples illustrate how $\pi$ extends into our newest computational frontiers, from artificial intelligence to quantum information processing.
+
+
+## Computing π: Famous Algorithms and Their Python Implementations
+
+The quest to calculate π with increasing precision has driven mathematical innovation for millennia. Each new method reveals different mathematical properties while yielding practical computational advantages. This section explores famous algorithms for computing π, with Python implementations that build the value from scratch without relying on built-in constants.
+
+### The Monte Carlo Method: Probability Meets Geometry
+
+One of the most intuitive approaches to calculate π leverages random sampling through the Monte Carlo method. By generating random points within a square and counting those that fall inside an inscribed circle, we can approximate π through the ratio of areas.
+
+```python
+import random
+
+def monte_carlo_pi(num_points):
+    inside_circle = 0
+    
+    for _ in range(num_points):
+        # Generate random point in unit square
+        x = random.random() 
+        y = random.random()
+        
+        # Check if point lies within unit circle
+        if x**2 + y**2  0:
+            arr.insert(0, carry % 10)
+            carry //= 10
+    
+    # Format result as a string with decimal point
+    pi_str = ""
+    for i, digit in enumerate(arr):
+        if i == 1:  # Position after first digit
+            pi_str += "."
+        pi_str += str(digit)
+    
+    return pi_str[:digits+2]  # +2 for "3." prefix
+
+# Generate digits of pi
+for n in [10, 20, 50]:
+    print(f"Pi to {n} digits: {spigot_pi(n)}")
+```
+
+The spigot algorithm produces correct digits from left to right, making it useful for incremental calculations where you need a certain number of digits without computing beyond that precision. While not the most efficient for massive calculations, this approach illustrates how π can be computed one digit at a time through a non-traditional algorithmic framework.
+
+### Machin-like Formulas: Arctangent Acceleration
+
+John Machin discovered in 1706 that π could be calculated using the arctangent function:
+
+$$ \frac{\pi}{4} = 4 \arctan\left(\frac{1}{5}\right) - \arctan\left(\frac{1}{239}\right) $$
+
+This formula and its variants provide efficient π computation:
+
+```python
+def arctan(x, terms):
+    """Compute arctan(x) using Taylor series expansion"""
+    result = 0
+    x_squared = x * x
+    term = x
+    for n in range(1, terms*2, 2):
+        result += term / n
+        term = -term * x_squared
+    return result
+
+def machin_pi(terms):
+    """Compute pi using Machin's formula"""
+    return 4 * (4 * arctan(1/5, terms) - arctan(1/239, terms))
+
+# Calculate with increasing precision
+for terms in [10, 100, 1000]:
+    print(f"{terms} terms: {machin_pi(terms)}")
+```
+
+Machin-like formulas dominated π calculation from the 18th through 20th centuries, with various mathematicians finding different arctangent combinations that converge faster. These formulas achieve a good balance between simplicity of implementation and computational efficiency, making them historically significant in the development of numerical methods.
+
+## Gauss-Legendre Algorithm: Rapid Quadratic Convergence
+
+The Gauss-Legendre algorithm offers astonishing efficiency, doubling the number of correct digits with each iteration through arithmetic-geometric mean calculations:
+
+```python
+def gauss_legendre_pi(iterations):
+    # Initialize variables
+    a = 1.0
+    b = 1.0 / (2.0 ** 0.5)
+    t = 1.0 / 4.0
+    p = 1.0
+    
+    # Iterative process
+    for _ in range(iterations):
+        a_next = (a + b) / 2
+        b = (a * b) ** 0.5
+        t = t - p * (a - a_next) ** 2
+        p = 2 * p
+        a = a_next
+    
+    # Calculate pi approximation
+    return ((a + b) ** 2) / (4 * t)
+
+# Show rapid convergence
+for i in range(1, 6):
+    pi_approx = gauss_legendre_pi(i)
+    print(f"Iteration {i}: {pi_approx}")
+```
+
+This algorithm achieves remarkable efficiency, typically producing twice as many correct digits with each iteration. After just 5 iterations, it yields over 30 decimal places of accuracy. The method leverages the arithmetic-geometric mean, demonstrating how π emerges naturally from this mathematical relationship.
+
+## Nilakantha Series: Ancient Indian Wisdom
+
+Dating to the 15th century, the Nilakantha series provides faster convergence than the Leibniz formula while maintaining mathematical elegance:
+
+```python
+def nilakantha_pi(terms):
+    result = 3.0
+    sign = 1
+    
+    for i in range(1, terms + 1):
+        denominator = 2 * i * (2 * i + 1) * (2 * i + 2)
+        term = 4.0 / denominator
+        result += sign * term
+        sign *= -1  # Alternate signs
+    
+    return result
+
+# Calculate with increasing terms
+for n in [10, 100, 1000, 10000]:
+    print(f"{n} terms: {nilakantha_pi(n)}")
+```
+
+This series converges more rapidly than the Leibniz formula, with accuracy improving by approximately 1 digit for every 10 terms. Attributed to the Kerala mathematician Nilakantha Somayaji, it exemplifies the sophisticated mathematical developments in medieval India. The series reveals how π can be expressed through a pattern of fractions with elegant structure.
+
+## Wallis Product: Infinite Product Representation
+
+In 1655, John Wallis discovered a remarkable infinite product formula for π:
+
+```python
+def wallis_pi(terms):
+    result = 1.0
+    
+    for i in range(1, terms + 1):
+        # Calculate individual Wallis product term
+        left_factor = (2.0 * i) / (2.0 * i - 1)
+        right_factor = (2.0 * i) / (2.0 * i + 1)
+        result *= left_factor * right_factor
+    
+    return 2 * result  # The product approaches π/2
+
+# Demonstrate convergence
+for n in [100, 1000, 10000, 100000]:
+    print(f"{n} terms: {wallis_pi(n)}")
+```
+
+The Wallis product converges slowly, requiring thousands of terms for just a few decimal places. However, it holds historical significance as one of the first infinite product representations of π, opening new mathematical territory beyond infinite series. This formula connects π to combinatorial mathematics and provided inspiration for later developments in analysis.
+
+## Vieta's Formula: Nested Radicals
+
+François Viète developed a beautiful formula in 1593 that expresses π through nested square roots:
+
+```python
+import math
+
+def vieta_pi(iterations):
+    # Start with a = sqrt(2)
+    a = math.sqrt(2)
+    # Initialize product
+    product = a / 2
+    
+    for _ in range(1, iterations):
+        # Compute next term in the sequence
+        a = math.sqrt(2 + a)
+        # Multiply into our product
+        product *= a / 2
+    
+    # Final calculation
+    return 2 / product
+
+# Show convergence
+for i in range(1, 11):
+    print(f"Iteration {i}: {vieta_pi(i)}")
+```
+
+Vieta's formula provides an elegant connection between π and nested radicals. While not the most computationally efficient method, it demonstrates how π emerges from purely algebraic operations involving square roots, suggesting deep connections to the geometry of regular polygons.
+
+## Buffon's Needle: Probability Meets Geometry
+
+In 1777, Georges-Louis Leclerc, Comte de Buffon, developed a probability experiment to estimate π by dropping needles on a lined surface:
+
+```python
+import random
+import math
+
+def buffon_needle(num_drops, needle_length=1.0, line_distance=1.0):
+    # Ensure needle isn't longer than distance between lines
+    if needle_length > line_distance:
+        raise ValueError("Needle length must not exceed line distance")
+    
+    # Count needles crossing a line
+    crossings = 0
+    
+    for _ in range(num_drops):
+        # Random position from nearest line (0 to line_distance/2)
+        distance = random.uniform(0, line_distance/2)
+        # Random angle (0 to π/2)
+        angle = random.uniform(0, math.pi/2)
+        
+        # Check if needle crosses a line
+        if distance <= (needle_length/2) * math.sin(angle):
+            crossings += 1
+    
+    # When needle_length = line_distance, probability = 2/π
+    # So π = 2*num_drops/crossings
+    return (2.0 * num_drops) / crossings
+
+# Run with increasing number of needle drops
+for drops in [10000, 100000, 1000000]:
+    approximation = buffon_needle(drops)
+    print(f"{drops} drops: {approximation}")
+```
+
+This method connects π to probability theory through geometric reasoning. While statistically similar to the Monte Carlo method, it operates through a different mechanism, demonstrating how π emerges at the intersection of geometry and probability. The approach requires many simulations for reasonable accuracy but offers a physically intuitive understanding of π's emergence.
+
+## Borwein Quartic Algorithm: Fourth-Order Convergence
+
+Jonathan and Peter Borwein developed several rapidly converging algorithms, including this quartic method that approximately quadruples correct digits with each iteration:
+
+```python
+from decimal import Decimal, getcontext
+
+def borwein_quartic_pi(iterations):
+    getcontext().prec = 100  # Set precision
+    
+    # Initialize variables
+    y = Decimal('1').sqrt() - Decimal('1') / Decimal('2')
+    a = Decimal('6') - Decimal('4') * Decimal('2').sqrt()
+    
+    for i in range(iterations):
+        # Calculate intermediate values
+        y_4 = y**4
+        m = Decimal('1') - y_4
+        m_sqrt = m.sqrt()
+        
+        # Update variables for next iteration
+        y = (Decimal('1') - m_sqrt) / (Decimal('1') + m_sqrt)
+        a = a * ((Decimal('1') + y)**4) / (Decimal('8') * y * (Decimal('1') + y + y**2))
+        
+        # Display current approximation
+        print(f"Iteration {i+1}: {1/a}")
+    
+    return 1/a
+
+# Each iteration approximately quadruples correct digits
+borwein_quartic_pi(4)
+```
+
+The Borwein algorithm provides exceptional efficiency, with each iteration multiplying the number of correct digits by approximately four. The method builds on earlier work by Ramanujan and demonstrates the continuing evolution of π calculation techniques into the modern era.
+
+## Newton's Method with Sine Function
+
+We can calculate π by finding the root of the sine function, since sin(π) = 0:
+
+```python
+import math
+
+def newton_sine_pi(iterations, starting_guess=3.0):
+    x = starting_guess
+    
+    for i in range(iterations):
+        # Newton's method: x_next = x - f(x)/f'(x)
+        # For sine: f(x) = sin(x), f'(x) = cos(x)
+        x = x - math.sin(x) / math.cos(x)
+        print(f"Iteration {i+1}: {x}")
+    
+    return x
+
+# Find pi by finding root of sine function
+newton_sine_pi(6)
+```
+
+This approach demonstrates how π emerges naturally as a root of trigonometric functions. While circular reasoning might seem evident (since trigonometric functions are defined using circles), this method highlights π's role as a fundamental constant in periodic functions.
+
+## Euler's Identity and Complex Analysis
+
+Euler's famous identity e^(iπ) + 1 = 0 can be rearranged to calculate π:
+
+```python
+import math
+from decimal import Decimal, getcontext
+
+def complex_logarithm_pi(iterations=50):
+    getcontext().prec = 100
+    
+    # Using the relation pi = -ln(-1)/i
+    # We approximate ln(-1) using series
+    
+    # For z = -1, ln(z) = ln(1 + (z-1)) = ln(1 + (-2))
+    # ln(1+x) = x - x²/2 + x³/3 - ...
+    # But this series doesn't converge for |x| ≥ 1
+    
+    # Instead, we use ln(-1) = ln(e^(iπ)) = iπ
+    # So we need to calculate arctan(1) * 4 (from the unit circle)
+    
+    sum_value = Decimal(0)
+    for k in range(iterations):
+        term = Decimal((-1) ** k) / Decimal(2 * k + 1)
+        sum_value += term
+    
+    # arctan(1) = π/4, so multiply by 4
+    return Decimal(4) * sum_value
+
+# Calculate pi through complex analysis principles
+pi_approx = complex_logarithm_pi()
+print(f"Complex logarithm approach: {pi_approx}")
+```
+
+This method connects π to complex analysis and illustrates how the constant emerges from the properties of complex exponentials and logarithms. While effectively implementing the Leibniz series, the conceptual framework links π to the complex plane.
+
+## Gregory-Leibniz-Madhava Series Acceleration
+
+We can significantly accelerate the convergence of the Leibniz series using Euler transformation:
+
+```python
+def euler_transform_pi(terms):
+    # Start with standard Leibniz terms
+    series = [(-1)**k / (2*k + 1) for k in range(terms)]
+    
+    # Apply Euler transformation to accelerate convergence
+    transformed = [0] * terms
+    for i in range(terms):
+        value = 0
+        for j in range(i + 1):
+            # Binomial coefficient (i choose j)
+            binomial = 1
+            for k in range(j):
+                binomial *= (i - k) / (k + 1)
+            
+            value += binomial * 2**(-i) * series[j]
+        transformed[i] = value
+    
+    # Sum the transformed series and multiply by 4
+    return 4 * sum(transformed)
+
+# Compare standard Leibniz vs accelerated version
+from math import pi
+
+for n in [10, 20, 50]:
+    standard = 4 * sum((-1)**k / (2*k + 1) for k in range(n))
+    accelerated = euler_transform_pi(n)
+    print(f"{n} terms, standard: {standard}")
+    print(f"{n} terms, accelerated: {accelerated}")
+```
+
+This acceleration technique can extract significantly better approximations from slowly converging series. The transformation represents an important class of numerical methods that improve computational efficiency without changing the underlying mathematical relationships.
+
+## Digit Extraction Using the AGM Method
+
+The arithmetic-geometric mean method can be adapted for high-precision π calculation:
+
+```python
+from decimal import Decimal, getcontext
+
+def agm_pi(precision=100):
+    getcontext().prec = precision + 10
+    
+    # Initialize variables
+    a = Decimal(1)
+    b = Decimal(1) / Decimal(2).sqrt()
+    s = Decimal(1) / Decimal(4)
+    
+    # Iteration counter
+    i = 2
+    
+    while True:
+        # Store previous value of a
+        a_prev = a
+        
+        # Calculate next values
+        mean = (a + b) / 2
+        b = (a * b).sqrt()
+        a = mean
+        
+        # Update s
+        s -= i * (a - a_prev) ** 2
+        i *= 2
+        
+        # Check convergence (when a and b are equal to precision)
+        if a == b:
+            break
+    
+    # Calculate pi
+    result = (a + b) ** 2 / (4 * s)
+    return result
+
+# Calculate pi to different precisions
+for prec in [20, 50, 100]:
+    getcontext().prec = prec + 10
+    print(f"Pi to {prec} digits: {agm_pi(prec)}")
+```
+
+The arithmetic-geometric mean method provides exceptional efficiency for calculating π to high precision. This approach demonstrates the deep connection between π and the convergence properties of iterative sequences.
+
+## Conclusion: 
