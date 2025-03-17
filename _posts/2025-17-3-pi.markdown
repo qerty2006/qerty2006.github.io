@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pi: The Number That Has Made Its Way Into Everything"
-date: 17-3-2025 00:00:00
+date: 16-3-2025 00:00:00
 categories: math pi history
 author: 'Nishanth Tharakan'
 ---
