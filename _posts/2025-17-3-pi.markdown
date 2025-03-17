@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Pi: The Number That Has Made Its Way Into Everything"
+date: 17-3-2025 00:00:00
+categories: math pi history
+author: 'Nishanth Tharakan'
+---
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\$$","\$$"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" charset="utf-8" 
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
+https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
+
+Pi ($ \pi $) stands as perhaps the most recognizable mathematical constant in human history, transcending the boundaries of pure mathematics to permeate science, engineering, art, and popular culture. This irrational number, approximately equal to 3.14159, represents the ratio of a circle's circumference to its diameter. What begins as a simple geometric relationship unfolds into an endless decimal with no discernible pattern, captivating mathematicians and enthusiasts for millennia while finding surprising applications across diverse disciplines.
