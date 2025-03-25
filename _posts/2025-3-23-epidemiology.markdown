@@ -238,6 +238,7 @@ The full code can be viewed at [my new GitHub dedicated to blog post related cod
 
 Here are some results where I ran simulations on my college campus, assuming no one is vaccinated and no one is wearing masks.:
 
+<div align="center">
 <table>
   <tr>
     <td>
@@ -277,7 +278,7 @@ percentage_unvaccinated_survived: 90.27%
     </td>
   </tr>
 </table>
-
+</div>
 
 So far, the results are pretty bad, with almost a tenth of the population dying (That's half of my year gone! ). As expected, people who are immunocompromised are the most likely to die with only 35% surviving.
 
