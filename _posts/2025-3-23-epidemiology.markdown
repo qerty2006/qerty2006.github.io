@@ -240,6 +240,10 @@ Here are some results where I ran simulations on my college campus, assuming no 
 
 <div align="center">
 <table>
+<tr>
+    <th>Config</th>
+    <th>Results</th>
+  </tr>
   <tr>
     <td>
       <pre><code class="python">
@@ -286,6 +290,10 @@ Let's see how the results change if we change some social aspects, like vaccinat
 
 ### Masking
 <table>
+<tr>
+    <th>Config</th>
+    <th>Results</th>
+  </tr>
   <tr>
     <td>
       <pre><code class="python">
