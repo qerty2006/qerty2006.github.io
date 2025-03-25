@@ -13,6 +13,12 @@ main { display: block; /* Default value of `display` of `main` element is 'inlin
 /** Images */
 img { max-width: 100%; vertical-align: middle; }
 
+/** center all tables */
+table {
+    margin: auto;
+    text-align: center;
+  }
+
 /** Figures */
 figure > img { display: block; }
 
