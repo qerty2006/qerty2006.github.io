@@ -81,19 +81,19 @@ While the viruses that cause outbreaks have their own intrinsic factors, the soc
     </thead>
     <tbody>
         <tr>
-            <td>**Interactions between people**</td>
+            <td><strong>Interactions between people<></strong></td>
             <td>One way to reduce transmission and catching COVID-19 was through social distancing and quarantining; merely reducing contact frequency with others helped us limit the spread of COVID by letting those with the virus fight it before they could spread it to others.</td>
             <td>If society is represented by a graph, where nodes are people and edges are interactions between people, then social distancing and quarantine can be represented by reducing the amount of social contact between people, or cutting edges off the graph. Ultimately, the goal is to quarantine off the effects of a virus, and prevent it from spreading to others, or in this case, lower the odds of a node being a neighbor of an infected node.</td>
             <td>In my simulation, the amount of social contact is determined by the odds of 2 nodes being connected $P_n$, which is a function of social distancing and other measures.</td>
         </tr>
         <tr>
-            <td>**Barriers for transmission**</td>
+            <td><strong>Barriers for transmission</strong></td>
             <td>When contact cannot be avoided, we still can reduce the odds of transmission through disinfection, masks, and other barriers.</td>
             <td>Mathematically, these barriers act as a new probability game, with the increasing layers of barriers reducing the probability of transmission by a certain amount. For example, if the odds that two people are in contact are $P_u$, and one person wears a mask with an efficacy of $mask_{effectiveness}$, then the probability of transmission is $P_u \cdot (1 - mask_{effectiveness})$. If both wear that same type of mask the odds are $P_u \cdot (1 - mask_{effectiveness})^2$, which is much lower.</td>
             <td>In my simulation, the probability of transmission is reduced by percentage if people masking $P_m$ and their efficacy $mask_{effectiveness}$. This is important because if 2 masked people are in contact, they are less likely to transmit the virus than 2 unmasked people or 1 masked person and 1 unmasked person.</td>
         </tr>
         <tr>
-            <td>**Vaccines!**</td>
+            <td><strong>Vaccines!</strong></td>
             <td>The best way to stop a virus is to prepare the body to fight it; that way, people spend less time infected, are less likely to die, and since they cough and sneeze less, for viruses that rely on airborne transmission, the virus is less likely to spread. Even more importantly, large groups of people getting vaccinated can induce an epidemiological principle called "herd immunity," in which a "herd" of people act as a greater immune system for those who can't get vaccinated (like immunocompromised people) and thus provide protection for them as well.</td>
             <td>In my view on how these vaccines work, they slightly reduce the probability of transmission by a certain amount but definitely reduce the probability of death. as well as increase the probability of recovery. That means people spent less time infected, are less likely to die, and since they cough and sneeze less, for viruses that rely on airborne transmission, the virus is less likely to spread.</td>
             <td>In my simulation, the probability of transmission is reduced by percentage if people are vaccinated $P_v$. Also, I've added a function ${Vaccine}_{function}$ that allows people to be vaccinated over time</td>
