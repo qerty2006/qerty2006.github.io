@@ -28,13 +28,42 @@ In memory of this event that changed the trajectory of my education and the worl
 An epidemic is defined biologically as the rapid spread of disease exceeding baseline expectations in a population, often driven by factors like pathogen evolution, host immunity changes, or environmental shifts. Mathematically, epidemics are modeled using frameworks like the **SIR model** ($\frac{dS}{dt} = -\beta SI$, $\frac{dI}{dt} = \beta SI - \gamma I$, $\frac{dR}{dt} = \gamma I$), where transmission rate ($\beta$), recovery rate ($\gamma$), and the basic reproduction number ($R_0 = \beta/\gamma$) determine outbreak dynamics. While PDEs (partial differential equations) can be used to model epidemics, I will focus on discrete probability-based models using graphs so more interesting scenarios can be built and tested.
 
 ## Intrinsic Factors of Viruses
-| Factor | Biological Basis | Mathematical Representation|  
-|-|-|-|  
-|**Susceptibility**|Based both on the soon-to-be host and the pathogen, such as being immune or having a weakened immune system, and the viral load of the pathogen, different viruses have different odds of infecting a host when they enter the host's body.|For my simulation, this is represented by $P_c$, the average odds of getting infected by a virus when coming into contact with it.|  
-| **Transmission ease**| While the odds of catching the virus depends on the recipient and the virus, the original host plays a vital role in how easily the pathogen spreads, from merely touching something already infected, sneezing, and coughing, or even sex, as is seen with HIV | For my simulation, this is represented by $P_u$, the probability of transmission when two individuals are in contact (this is a mutually independent event to getting infected once in contact with the virus)|       |  
-| **Recovery time**| The length of time a person is infected before fulling recovery and thus not transmitting the virus to others; in this scenario recovery time begins from infection, not from symptoms, one because you can transmit the virus before symptoms appear, and two because some people are asymptomatic and do not show symptoms for the duration of the infection| Rather than set a recovery time, I set a recovery probability $P_r$, which I then use to determine the time until a person recovers|  
-| **Death rate**| The rate at which a person dies from the disease, which is often dependent on age, being immunocompromised, and other factors| $P_k$ is used to determine the probability of death from the disease in a given time step |  
-| **Resistance evolution** |Viruses in real life are not static, but rather evolve over time, often by mutation; as a result, the transmission rate ($\beta$) and recovery rate ($\gamma$) can change over time as different strains of the same virus evolve and compete to infect people| Strain competition equations will help with this, but my simulations do not attempt to model this yet.|  
+<table>
+  <thead>
+    <tr>
+      <th>Factor</th>
+      <th>Biological Basis</th>
+      <th>Mathematical Representation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Susceptibility</strong></td>
+      <td>Based both on the soon-to-be host and the pathogen, such as being immune or having a weakened immune system, and the viral load of the pathogen, different viruses have different odds of infecting a host when they enter the host's body.</td>
+      <td>For my simulation, this is represented by \(P_c\), the average odds of getting infected by a virus when coming into contact with it.</td>
+    </tr>
+    <tr>
+      <td><strong>Transmission ease</strong></td>
+      <td>While the odds of catching the virus depends on the recipient and the virus, the original host plays a vital role in how easily the pathogen spreads, from merely touching something already infected, sneezing, and coughing, or even sex, as is seen with HIV.</td>
+      <td>For my simulation, this is represented by \(P_u\), the probability of transmission when two individuals are in contact (this is a mutually independent event to getting infected once in contact with the virus).</td>
+    </tr>
+    <tr>
+      <td><strong>Recovery time</strong></td>
+      <td>The length of time a person is infected before fully recovering and thus not transmitting the virus to others; in this scenario, recovery time begins from infection, not from symptoms, one because you can transmit the virus before symptoms appear, and two because some people are asymptomatic and do not show symptoms for the duration of the infection.</td>
+      <td>Rather than set a recovery time, I set a recovery probability \(P_r\), which I then use to determine the time until a person recovers.</td>
+    </tr>
+    <tr>
+      <td><strong>Death rate</strong></td>
+      <td>The rate at which a person dies from the disease, which is often dependent on age, being immunocompromised, and other factors.</td>
+      <td>\(P_k\) is used to determine the probability of death from the disease in a given time step.</td>
+    </tr>
+    <tr>
+      <td><strong>Resistance evolution</strong></td>
+      <td>Viruses in real life are not static, but rather evolve over time, often by mutation; as a result, the transmission rate (\(\beta\)) and recovery rate (\(\gamma\)) can change over time as different strains of the same virus evolve and compete to infect people.</td>
+      <td>Strain competition equations will help with this, but my simulations do not attempt to model this yet.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## The 3 Societal Factors We CAN Change  
