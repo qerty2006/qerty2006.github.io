@@ -859,7 +859,7 @@ However, some important nuances emerged:
 
 - Very few people (0.008%) remained untouched by the virus, indicating that high transmissibility can still lead to widespread infection despite precautions.
 
-- The shorter average simulation duration (57 days) suggests that the virus sp read quickly through the population, emphasizing the importance of rapid response and preventive measures in the early stages of an outbreak.
+- The shorter average simulation duration (57 days) suggests that the virus so read quickly through the population, emphasizing the importance of rapid response and preventive measures in the early stages of an outbreak.
 
 These results reinforce the effectiveness of a multi-faceted approach to disease control, combining high vaccination rates with other preventive measures like masking and some degree of social distancing. While vaccines prove to be the most powerful tool, they work best in conjunction with other strategies, especially to protect the most vulnerable members of the population.
 
