@@ -45,8 +45,8 @@ The transmission dynamics are triggered as follows:
 2. **Masking Effects:** The masking effects now account for various preventative measures like wearing masks, washing hands, and elbow coughing.
 3. **Probability Calculation:** The odds of catching an infection from a sick person on a given day are calculated using the formula:
 
-   $$P_u \times P_c \times (1 - (mask_{effectiveness} \text{ if masked else } 0))^2$$
-   $$\times (\text{extra odds based on if the people are immunocompromised, vaccinated, asymptomatic, etc})$$
+   $P_u \times P_c \times (1 - (mask_{effectiveness} \text{ if masked else } 0))^2$
+   $\times (\text{extra odds based on if the people are immunocompromised, vaccinated, asymptomatic, etc})$
 
    This formula accounts for the probabilities of spreading and catching the virus, as well as the effectiveness of masks, being vaccinated, asymptomatic, etc.
 
