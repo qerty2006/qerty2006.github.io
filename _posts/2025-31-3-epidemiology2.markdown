@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Epidemiology Part 2: My Journey Through simulating a Pandemic"
+title: "Epidemiology Part 2: My Journey Through Simulating a Pandemic"
 date: 31-3-2025 00:00:00
 categories: math simulation pandemic 
 author: 'Nishanth Tharakan'
@@ -19,7 +19,7 @@ author: 'Nishanth Tharakan'
 src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
-After a week of no video games, I attempted to rewrite my outbreak simulator. It sounds simple, but it was a lot of work (hence no Minecraft) and was a ton of fun. Even as I'm writing this introduction, I'm running simulations, and as you read this post, you'll see what new phenomenons stem from a more accurate simulation.
+After a week of no video games, I attempted to rewrite my outbreak simulator (you can find the previous post about it [here](https://qerty2006.github.io/math/simulation/pandemic/2025/03/24/epidemiology.html)) It sounds simple, but it was a lot of work (hence no Minecraft) and was a ton of fun. Even as I'm writing this introduction, I'm running simulations, and as you read this post, you'll see what new phenomenons stem from a more accurate simulation.
 
 ## The Rewrite
 
@@ -154,5 +154,5 @@ Moreover, as we push the boundaries with more advanced programming techniques an
 
 In essence, this project serves as a testament to the potential of computational epidemiology: with refined methods and robust computing resources, we can transform theoretical models into actionable insights that help us better predict and control the spread of disease.
 
-Also the code for this is available on [Github](https://github.com/qerty2006/Blog-Post-Code), at `31-3-2025-epi2.py` If you want to try it yourself, add `virussim2.py` to your files and look at the `main.py` and `main2.py` to see examples of the code being used.
+Also the code for this is available on [Github](https://github.com/qerty2006/Blog-Post-Code), at `Epidemiology Part 2` If you want to try it yourself, add `virussim2.py` to your files and look at the `main.py` and `main2.py` to see examples of the code being used.
 
