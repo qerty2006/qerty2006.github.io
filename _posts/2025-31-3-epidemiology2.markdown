@@ -154,5 +154,5 @@ Moreover, as we push the boundaries with more advanced programming techniques an
 
 In essence, this project serves as a testament to the potential of computational epidemiology: with refined methods and robust computing resources, we can transform theoretical models into actionable insights that help us better predict and control the spread of disease.
 
-Also the 
+Also the code for this is available on [Github](https://github.com/qerty2006/Blog-Post-Code), at `31-3-2025-epi2.py` If you want to try it yourself, add `virussim2.py` to your files and look at the `main.py` and `main2.py` to see examples of the code being used.
 
