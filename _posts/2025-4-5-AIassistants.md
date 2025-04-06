@@ -10,8 +10,9 @@ The digital assistants that have become ubiquitous in our daily lives - Siri, Al
 
 I want to thank [Thomas Otter](https://www.linkedin.com/in/thomasotter/) for the idea of this with his [post](https://www.linkedin.com/posts/thomasotter_psa-stop-calling-your-agent-bot-after-activity-7311501852888506372-WkDM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD9ulKYBkEbtxtn0SsbpUer8Am30LQwnNv8) reminding me of the prevalence of female-voiced digital assistants. Hopefully with this article I can shed light on where the trend came from and the work being done to challenge it.
 
-## Step 1: Women's Voices in Service
 -----
+
+## Step 1: Women's Voices in Service
 
 Before digital assistants and even modern computers, we had telephones, and if you are old enough, you'll know of telephone operators, who before automated connections were the key in routing calls to the right person. 
 
@@ -20,6 +21,8 @@ Prior to 1878, telephone operators were exclusively teenage boys and young men, 
 On September 1, 1878, Emma Nutt became the world's first female telephone operator when she was hired at the Boston Telephone Dispatch Company. Bell personally recruited Nutt from her previous position at a telegraph office, offering her $10 per month for a demanding 54-hour work week. Just hours after Emma began work, her sister Stella became the second female telephone operator, making them the first pair of sisters to work in this capacity. The transition to female operators wasn't merely coincidental - it represented a deliberate strategy based on gendered assumptions about women's temperaments and abilities.
 
 The response to female operators was overwhelmingly positive, with customers responding favorably to Emma Nutt's reportedly "soothing, cultured voice" and patient demeanor. Her success established a model that telephone companies eagerly replicated, and within just two years, telephone operators had become an almost exclusively female workforce. This rapid transition reflected not only customer preferences but also economic incentives for companies, as women were typically paid significantly less than their male counterparts. Bell and other employers also operated under the assumption that women possessed inherent qualities of gentleness, patience, and politeness that made them naturally suited to service roles.
+
+-----
 
 ## Step 2: Feminization of Voice Technology
 
@@ -37,6 +40,8 @@ An intriguing early example of the deliberate gendering of technological voices 
 
 Moreover, the field of speech synthesis, particularly in its early stages, was largely dominated by male researchers. This demographic imbalance potentially led to a research focus that prioritized male vocal models, inadvertently contributing to the initial difficulties in creating high-quality female synthesized voices. The lack of sufficient data and understanding of female speech production in the early research also hindered the development of more natural-sounding female voices. Therefore, the initial scarcity of convincing female synthesized voices might not have been due to an inherent limitation of the technology itself but rather a reflection of the research priorities and potential biases within the field.
 
+-----
+
 ## Step 3: Combination
 
 AI assistants had two roles to fill: they were introduced as a tool to do menial tasks on your phone, and they needed to be easier to market. 
@@ -46,6 +51,8 @@ The 200+ year history of women in secretarial roles significantly influenced AI 
 Even more contribution to the female voice dominance came from was from a lack of male training data. Much in the way that face recognition was really bad on women and people of color due to them being a tiny part of the training set, the reverse was true for voice synthesis.
 
 So we get a precedence of women in secretarial roles, plus a precedence of people preferring female voice (although this has been disputed extensively and is often overblown), plus the lack of male training data in voice synthesis, and we get the female voice dominance in AI assistants.
+
+-----
 
 ## Step 4: Advancements to Defeminize the Assistant
 
@@ -78,6 +85,8 @@ While maintaining gendered voice options, Microsoft shifted Cortana's role from 
 #### Issues with Gender Neutral Voices
 
 Despite these innovations, research indicates that user acceptance of gender-neutral voices presents its own challenges. Auditory perception studies show that many people feel uncomfortable with voices that don't fit clearly into traditional gender categories, potentially affecting adoption rates for products featuring such voices. This discomfort reflects how deeply ingrained gender expectations are in our auditory processing and social interactions. Creating voices that are both gender-neutral and pleasant to listen to requires navigating complex cultural and perceptual territory, as listeners often unconsciously apply gender categories even to deliberately neutral voices.
+
+-----
 
 ## Conclusion
 
