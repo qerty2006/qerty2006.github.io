@@ -11,6 +11,7 @@ The digital assistants that have become ubiquitous in our daily lives - Siri, Al
 I want to thank [Thomas Otter](https://www.linkedin.com/in/thomasotter/) for the idea of this with his [post](https://www.linkedin.com/posts/thomasotter_psa-stop-calling-your-agent-bot-after-activity-7311501852888506372-WkDM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD9ulKYBkEbtxtn0SsbpUer8Am30LQwnNv8) reminding me of the prevalence of female-voiced digital assistants. Hopefully with this article I can shed light on where the trend came from and the work being done to challenge it.
 
 ## Step 1: Women's Voices in Service
+-----
 
 Before digital assistants and even modern computers, we had telephones, and if you are old enough, you'll know of telephone operators, who before automated connections were the key in routing calls to the right person. 
 
