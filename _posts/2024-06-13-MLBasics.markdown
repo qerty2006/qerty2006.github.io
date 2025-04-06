@@ -34,7 +34,7 @@ All images are 28x28 pixel drawings with black backgrounds with grayscale drawin
 1 row   |   0,0,0,0,0,....0  
         |____________________]
 ```
-In the eyes of the neural network, as long as the 28x28 matrix is mapped to this 1x784 matrix in the exact same way every time, these 2 matricies are just two forms of the same thing. One version is for the human to understand it as a grayscale image, and the other version is the format used by the neural network for calculations. 
+In the eyes of the neural network, as long as the 28x28 matrix is mapped to this 1x784 matrix in the exact same way every time, these 2 matrices are just two forms of the same thing. One version is for the human to understand it as a grayscale image, and the other version is the format used by the neural network for calculations. 
 
 
 As for the calculations, how does the neural network arrive at its answer?
@@ -43,9 +43,9 @@ As for the calculations, how does the neural network arrive at its answer?
 
 In this part, I'll explain the basic parts we put into a neural network for it to work. 
 
-Neural networks work by sequentially activating layers of artificial nuerons to varying degrees. A final answer is reached after the network passes results through the last layer. A particular neuron performs 3 steps:
+Neural networks work by sequentially activating layers of artificial neurons to varying degrees. A final answer is reached after the network passes results through the last layer. A particular neuron performs 3 steps:
 
-1. Compute a **weighted sum** of the values of all neurons it recieves numbers from. A given neuron determines how to weight each of the neurons inputting into it to prioritize some neurons' values over others.
+1. Compute a **weighted sum** of the values of all neurons it receives numbers from. A given neuron determines how to weight each of the neurons inputting into it to prioritize some neurons' values over others.
        
 2. Apply a **bias** to the weighted sum calculated which is just a positive or negative number added to the result. Biases allow neurons that output values that are really high to reduce their output value, or allow neurons that don't output really high values to increase their base value. 
 
@@ -74,21 +74,21 @@ In calculus classes, students learn that optimization problems are problems wher
 {% highlight python %}
 Error(expected_matrix, output_matrix) =
    squarederror = 0
-   for each cell in the same position in both matricies a:
+   for each cell in the same position in both matrices a:
    add (output_matrix[a] - expected_matrix[0])^2
    return squarederror
 {% endhighlight %}
 
 This error function should be as close to 0 as possible (in our case, above 1), but it starts out very high, since the model is made of random values for its biases and weights. To know how to modify the neural network we can take the gradient of the function Error(expected_value, neuralnetwork(neuron_values, input_matrix)) with respect to the values of the neurons in the current iteration of the neurons' values. The gradient will return a matrix that gives the values needed to adjust the current neurons, **but** using these values directly will *increase* the error, not reduce it! Simply flip the signs to go in the direction that makes the error go down. 
 
-## Gameplan to Make Our Neural Network
+## Game Plan to Make Our Neural Network
 
 Before I show you how to make a neural network in python, let's go over the key steps to this process (when understood, you can translate these steps to other coding languages):
 
 1. Get your dataset. For this project, I'll be using the [MNIST dataset][dataset] as shown above, but this will work for any dataset that you can translate into arrays that your neural network can read. You'll also need a way to translate the answers in the dataset (given as integers) into arrays to use in the error function. I showed a method [two sections ago][tsa].
 2. Make your starting neural network. You'll not only need to know the size of your input matrix and output matrix, but also decide how many layers and neurons per layer that you want.
 3. Write the function that takes in your input matrix and neuron values to make the output matrix.
-4. Write the function that trains your neural network. This has three parts: get the gradient matricies for a set number of randomly chosen inputs, take the average of those matricies to get one that approximates the best possible shift, and then makes the following adjustment.
+4. Write the function that trains your neural network. This has three parts: get the gradient matrices for a set number of randomly chosen inputs, take the average of those matrices to get one that approximates the best possible shift, and then makes the following adjustment.
 5. Test the model! It is good practice to separate training data from testing data to see how the model does with something new.
 
 ## Making the Neural Network in Python
