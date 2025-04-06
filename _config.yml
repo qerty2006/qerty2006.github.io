@@ -28,7 +28,10 @@ google_analytics: G-WRFE4YR7KG
 twitter_username: 
 github_username:  qerty2006
 # Build settings
-theme: minima
+# theme: minima
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
 minima:
   skin: dark
 plugins:
