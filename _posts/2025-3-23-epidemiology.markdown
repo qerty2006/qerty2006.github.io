@@ -877,5 +877,5 @@ Unlike my other posts, I actually have time this week to go more in depth with t
 
 - Probably won't happen: Strain evolution and competition. I'm not sure how to simulate this, it would be interesting. During Covid, we had multiple waves due to different strains having different effects (even with some being more resistant to certain vaccines), and I want to see if we can simulate this in our models.
 
-Part 2 will be posted [here](https://qerty2006.github.io/math/simulation/pandemic/2025/03/31/epidemiology2.html) when it's ready, but until then, please check out the new [GitHub repository]((https://github.com/qerty2006/Blog-Post-Code)) (Under `Epidemiology Part 1`) if you want to see the code for this project, as well as the code for my previous posts.
+Part 2 will be posted [here](https://qerty2006.github.io/math/simulation/pandemic/2025/03/31/epidemiology2.html) when it's ready, but until then, please check out the new [GitHub repository](https://github.com/qerty2006/Blog-Post-Code) (Under `Epidemiology Part 1`) if you want to see the code for this project, as well as the code for my previous posts.
 
