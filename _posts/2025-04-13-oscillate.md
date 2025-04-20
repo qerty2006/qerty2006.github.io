@@ -44,20 +44,25 @@ $$ F = ma = -kx - bv $$
 ### Equation of Motion
 
 From Newton's second law:
+
 $$ m\frac{d^2x}{dt^2} + b\frac{dx}{dt} + kx = 0 $$
 
 Define:
+
 $$ \gamma = -\frac{b}{2m}, \quad \omega_0 = \sqrt{\frac{k}{m}} $$
 
 The equation simplifies to:
+
 $$ \frac{d^2x}{dt^2} + 2\gamma\frac{dx}{dt} + \omega_0^2 x = 0 $$
 
 ### General Solution ([Check out my post on differential equations to learn how to solve the above equation](https://qerty2006.github.io/math/education/2025/02/22/diffeqs.html))
 
 The solution depends on the relationship between $\gamma$ and $\omega_0$. Let:
+
 $$ x(t) = e^{-\gamma t} \left( C_1 e^{\sqrt{\gamma^2 - \omega_0^2}t} + C_2 e^{-\sqrt{\gamma^2 - \omega_0^2}t} \right) $$
 
 #### Overdamped Case ($\gamma^2 > \omega_0^2$)
+
 $$ x(t) = C_1 e^{\gamma t + \sqrt{\gamma^2 - \omega_0^2}t} + C_2 e^{\gamma t - \sqrt{\gamma^2 - \omega_0^2}t}  $$
 
 $$ x(t) = C_1 e^{t(\gamma + \sqrt{\gamma^2 - \omega_0^2})} 1 + \frac{C_2}{C_1} e^{ -2t \sqrt{\gamma^2 - \omega_0^2}}  )$$
@@ -67,17 +72,22 @@ For overdamped cases, the second term can be ignored at large values of $t$, and
 
 
 #### Underdamped Case ($\gamma^2 < \omega_0^2$)
+
 $$ x(t) = e^{\gamma t} \left[ C_1 \cos\left(t\sqrt{\omega_0^2 - \gamma^2}\right) + C_2 \sin\left(t\sqrt{\omega_0^2 - \gamma^2}\right) \right] $$
 
 Alternatively:
+
 $$ x(t) = A e^{\gamma t} \cos\left(t\sqrt{\omega_0^2 - \gamma^2} + \phi\right) $$
+
 Where:
+
 $$ A = \sqrt{C_1^2 + C_2^2}, \quad \phi = \arctan\left(\frac{C_1}{C_2}\right) $$
 
 In underdamped cases, you can see something similar to simple harmonic motion; there is a sinusoidal oscillation with a period of $2\pi/\sqrt{\omega_0^2 - \gamma^2}$ and an amplitude of $Ae^{\gamma t}$.
 
 
 #### Critically Damped Case ($\gamma^2 = \omega_0^2$)
+
 $$ x(t) = e^{\gamma t}(C_1 + C_2 t) $$
 
 At first glance, this looks like the overdamped case, but notably this case has the smallest amount of dampening needed to stop the oscillations, meaning for a given starting point, the critically damped case returns to equilibrium faster than the overdamped case.
