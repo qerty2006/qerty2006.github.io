@@ -130,8 +130,9 @@ Balancing speed and stability, critically damped systems reach equilibrium faste
 ---
 
 ### **Comparison of Damping Types**  
+
 | **Parameter**       | **Underdamped**          | **Critically Damped**       | **Overdamped**              |  
-|----------------------|--------------------------|-----------------------------|-----------------------------|  
+|-|-|-|-|  
 | **Response Time**    | Fast (with oscillations) | Fastest (no oscillations)   | Slow (no oscillations)      |  
 | **Overshoot**        | Yes                      | No                          | No                          |  
 | **Typical Uses**     | Suspensions, audio EQ    | Shock absorbers, scales     | Door closers, skyscrapers   |  
