@@ -106,7 +106,7 @@ From the wave equation's tyranny over vibrating strings to the brain's dance wit
  Now as I wrote that last part, I was thinking, "Hmm... how does culture influence mathematics? It can clearly influence music, so maybe there could be a case to say culture influences math." That will probably be a pst for next week.... 
 
 
-Stuff I Read for this:
+**Stuff I Read for this:**
 
 Bark Scale: https://en.wikipedia.org/wiki/Bark_scale
 
