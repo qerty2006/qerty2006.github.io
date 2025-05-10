@@ -5,4 +5,4 @@
 layout: home
 ---
 
-hello....
+Welcome to my blog! The latest posts are listed top to bottom.
