@@ -22,5 +22,5 @@ https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 So I was talking to my friends in UCLA's Game Music Ensemble ([check them out here](https://community.ucla.edu/studentorg/2463)) about what the different states in India are known for (it was an interesting discussion), and I tried asking Gemini what Kerala is known for:
 
-<img alt="What Gemini said" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/2025-05-09/modelthink.png'/>
+<img alt="What Gemini said" src='https://raw.githubusercontent.com/qerty2006/qerty2006.github.io/refs/heads/main/_site/assets/images/2025-05-09/promptresponse.png'/>
 

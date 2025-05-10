@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: The Mathematician Coder
-email: qerty2006@gmail.com
+email: nishanth@tharakan.org
 description: >- # this means to ignore newlines until "baseurl:"
    Wacky coding from an applied mathematics student
 baseurl: "" # the subpath of your site, e.g. /blog
