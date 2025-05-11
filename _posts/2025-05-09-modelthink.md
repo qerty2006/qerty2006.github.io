@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How Do Models Think, and Why Is There Chinese In My English Responses?"
-date: 11-5-2025 00:00:00
+date: 2025-05-11 00:00:00
 categories: AI Theory
 author: 'Nishanth Tharakan'
 ---
