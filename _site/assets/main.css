@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 /** Links */
 a { color: #6cb5f2; text-decoration: none; }
 
-a:visited { color: #4a91d9; }
+a:visited { color:rgb(184, 74, 217); }
 
 a:hover { color: #d9fea5; text-decoration: underline; }
 
