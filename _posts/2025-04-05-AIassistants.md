@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Evolution of Feminized Digital Assistants: From Telephone Operators to AI"
-date: 6-4-2025 00:00:00
+date: 2025-04-05 00:00:00
 categories: AI History 
 author: 'Nishanth Tharakan'
 ---
